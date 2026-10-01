@@ -44,3 +44,53 @@
     }, 2400);
   }
 })();
+
+/* HOME V2 motion layer */
+(() => {
+  const header = document.querySelector('[data-v2-header]');
+  const heroPhoto = document.querySelector('[data-v2-parallax] img');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (header) {
+    const syncHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 34);
+    syncHeader();
+    window.addEventListener('scroll', syncHeader, { passive: true });
+  }
+
+  if (heroPhoto && !reduce && window.matchMedia('(pointer:fine)').matches) {
+    const hero = document.querySelector('.v2-hero');
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
+    const draw = () => {
+      cx += (tx - cx) * .055;
+      cy += (ty - cy) * .055;
+      heroPhoto.style.transform = 'scale(1.055) translate3d(' + cx + 'px,' + cy + 'px,0)';
+      if (Math.abs(tx-cx) > .05 || Math.abs(ty-cy) > .05) raf = requestAnimationFrame(draw);
+      else raf = 0;
+    };
+    if (hero) {
+      hero.addEventListener('pointermove', (e) => {
+        const r = hero.getBoundingClientRect();
+        tx = ((e.clientX - r.left) / r.width - .5) * -10;
+        ty = ((e.clientY - r.top) / r.height - .5) * -7;
+        if (!raf) raf = requestAnimationFrame(draw);
+      }, { passive: true });
+      hero.addEventListener('pointerleave', () => {
+        tx = 0; ty = 0;
+        if (!raf) raf = requestAnimationFrame(draw);
+      }, { passive: true });
+    }
+  }
+
+  const packs = document.querySelectorAll('.v2-pack');
+  if (!reduce && window.matchMedia('(pointer:fine)').matches) {
+    packs.forEach((card) => {
+      card.addEventListener('pointermove', (e) => {
+        const r = card.getBoundingClientRect();
+        const rx = ((e.clientY-r.top)/r.height-.5) * -2.8;
+        const ry = ((e.clientX-r.left)/r.width-.5) * 3.6;
+        card.style.transform = 'translateY(-9px) perspective(700px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
+      });
+      card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+    });
+  }
+})();
