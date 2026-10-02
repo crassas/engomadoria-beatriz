@@ -145,3 +145,32 @@
 @media(prefers-reduced-motion:reduce){
   .visual-main img,.visual-side-photo img{transition:none}
 }
+
+/* Current-home integration */
+body.home .hero-bg{
+  background:
+    linear-gradient(90deg,rgba(255,250,251,.99) 0%,rgba(255,248,250,.92) 34%,rgba(255,255,255,.20) 57%,rgba(255,255,255,.03) 100%),
+    url("https://images.pexels.com/photos/28576619/pexels-photo-28576619.jpeg?auto=compress&cs=tinysrgb&w=1800") 72% 47%/cover no-repeat;
+}
+.visual-copy .script{
+  margin:0;
+  font:700 31px/.95 "Caveat",cursive;
+  letter-spacing:.01em;
+}
+body.home .section-head h2,
+body.home .pack-card strong,
+body.home .price-option h3,
+body.home .visual-copy h2,
+body.home .visual-caption strong,
+body.home .service-photo-copy h3{
+  font-family:"Fraunces","Playfair Display",serif;
+  font-optical-sizing:auto;
+}
+@media(max-width:640px){
+  body.home .hero-bg{
+    background:
+      linear-gradient(180deg,rgba(255,249,251,.97) 0%,rgba(255,247,250,.88) 28%,rgba(255,247,250,.38) 48%,rgba(255,255,255,.05) 70%,rgba(12,62,114,.18) 100%),
+      url("https://images.pexels.com/photos/28576618/pexels-photo-28576618.jpeg?auto=compress&cs=tinysrgb&w=1200") center 62%/cover no-repeat;
+  }
+  body.home .hero-grid{min-height:725px;padding-bottom:150px}
+}
