@@ -5,24 +5,20 @@
 ## Confirmado
 Nome comunicado: Engomadoria Beatriz Lavandaria
 
+Mensagem:
+- Qualidade, confiança e higiene
+- Roupas bem cuidadas, sempre com um toque especial
+
 Packs de engomadoria:
-- 20 peças — 20 €
-- 40 peças — 35 €
-- 60 peças — 45 €
-- 80 peças — 55 €
+- 20 peças — 19 €
+- 40 peças — 39 €
+- 60 peças — 49 €
+- 80 peças — 59 €
 - 100 peças — 65 €
 
-Alternativa ao quilo:
-- 3,50 €/kg
-- Roupa diversificada · Serviço completo
-
 Alojamento Local:
-- Tratamento de roupa AL — 2 €/kg
-
-Recolha e entrega:
-- Recolha ao domicílio disponível
-- Entrega ao domicílio disponível
-- Zona, prazos e condições específicas devem ser confirmados directamente
+- Lavandaria para Alojamento Local
+- Roupa branca — 2 €/kg
 
 Outros serviços:
 - Limpeza a seco
@@ -32,6 +28,7 @@ Outros serviços:
 - Limpeza de edredões
 - Limpeza de cobertores
 - Entre outros serviços
+- Limpeza têxtil
 
 Contacto:
 - 923 250 845
@@ -42,14 +39,19 @@ Horário:
 - Sábados: 10:00 às 15:00
 - Domingos e feriados: encerrado
 
+## Informação anterior que deixa de ser usada na página
+- Serviço completo a 3,50 €/kg
+- Recolha e entrega ao domicílio
+
 ## Ainda não confirmado
 - Morada exacta
 - Bairro/localidade
 - Email
 - Domínio final
-- Zona abrangida pela recolha/entrega
 - Condições específicas de cada serviço
 - Prazos de entrega
+- Recolha/entrega ao domicílio
 
 ## Regra
+A informação deste ficheiro substitui os dados comerciais anteriores quando existir conflito.
 Não publicar informação não confirmada sem autorização.
