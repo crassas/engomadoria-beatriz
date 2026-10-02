@@ -3,19 +3,29 @@
   const body = document.body;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Mark enhancement immediately; the intro covers the page while the cinematic handoff is prepared.
+  doc.classList.add('js-ready');
+
   const intro = document.querySelector('[data-intro]');
-  let alreadySeen = false;
-  try { alreadySeen = sessionStorage.getItem('beatriz-intro-seen') === '1'; } catch (_) {}
   if (intro) {
-    if (reduceMotion || alreadySeen) {
-      body.classList.add('intro-done');
+    if (reduceMotion) {
+      body.classList.add('intro-done', 'page-entered');
     } else {
+      // Door copy fades, then the two panels open.
       window.setTimeout(() => body.classList.add('intro-ready'), 850);
+
+      // Leave a very short clean beat after the doors finish opening.
       window.setTimeout(() => {
         body.classList.add('intro-done');
-        try { sessionStorage.setItem('beatriz-intro-seen', '1'); } catch (_) {}
-      }, 1780);
+      }, 1810);
+
+      // The page then fades + scales in like a soft cinematic pop-up.
+      window.setTimeout(() => {
+        window.requestAnimationFrame(() => body.classList.add('page-entered'));
+      }, 1940);
     }
+  } else {
+    body.classList.add('page-entered');
   }
 
   const header = document.querySelector('[data-header]');
@@ -98,6 +108,4 @@
   document.querySelectorAll('[data-year]').forEach(el => {
     el.textContent = String(new Date().getFullYear());
   });
-
-  doc.classList.add('js-ready');
 })();
