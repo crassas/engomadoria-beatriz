@@ -294,3 +294,103 @@ body:not(.home){background:var(--creme);color:var(--texto);padding-bottom:0}
   .hero-logo-real{width:min(92vw,440px)}
   .footer-logo-real{width:165px}
 }
+
+
+/* 2026-10-02 — crisp Beatriz identity + corrected intro proportions */
+.beatriz-logo{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  width:max-content;
+  max-width:100%;
+  line-height:1;
+}
+.beatriz-simbolo{width:92px;height:auto;overflow:visible;flex:0 0 auto}
+.beatriz-simbolo path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.beatriz-simbolo .cabide-rosa{stroke:var(--rosa-2);stroke-width:8}
+.beatriz-simbolo .cabide-azul{stroke:var(--azul);stroke-width:8}
+.beatriz-simbolo .coracao-logo{fill:none;stroke:var(--rosa-2);stroke-width:6}
+.beatriz-palavras{display:grid;align-items:end;line-height:.78;text-align:left}
+.beatriz-palavras small{
+  font:400 29px/.9 var(--script);
+  color:var(--rosa-2);
+  white-space:nowrap;
+  text-shadow:0 2px 0 rgba(255,255,255,.85)
+}
+.beatriz-palavras strong{
+  font:400 62px/.8 var(--script);
+  color:#1768ad;
+  white-space:nowrap;
+  text-shadow:0 2px 0 rgba(255,255,255,.9),0 7px 16px rgba(28,95,151,.09)
+}
+
+.intro-marca{
+  position:absolute;
+  left:50%;
+  top:38%;
+  transform:translate(-50%,-50%);
+  width:min(90vw,760px);
+  z-index:5;
+  text-align:center;
+  display:grid;
+  place-items:center
+}
+.intro-logo{gap:14px}
+.intro-logo .beatriz-simbolo{width:132px}
+.intro-logo .beatriz-palavras small{font-size:42px}
+.intro-logo .beatriz-palavras strong{font-size:92px}
+body.intro-abrir .intro-marca{
+  opacity:0;
+  transform:translate(-50%,calc(-50% - 10px)) scale(.985)
+}
+.intro-carrinha{
+  left:-54vw;
+  bottom:7%;
+  width:min(560px,52vw);
+  animation:carrinhaPassa 2.15s cubic-bezier(.2,.72,.32,1) .18s both
+}
+
+.header-logo{gap:5px}
+.header-logo .beatriz-simbolo{width:40px}
+.header-logo .beatriz-palavras small{font-size:13px}
+.header-logo .beatriz-palavras strong{font-size:28px}
+.marca-logo{min-width:205px}
+
+.hero-marca-real{display:block}
+.hero-logo{gap:10px}
+.hero-logo .beatriz-simbolo{width:104px}
+.hero-logo .beatriz-palavras small{font-size:34px}
+.hero-logo .beatriz-palavras strong{font-size:76px}
+.hero-logo-real{width:auto!important}
+.hero-marca{margin-bottom:4px}
+
+.footer-logo .beatriz-simbolo{width:50px}
+.footer-logo .beatriz-palavras small{font-size:17px}
+.footer-logo .beatriz-palavras strong{font-size:34px}
+
+/* keep the hero identity present but not billboard-sized */
+@media(max-width:1050px){
+  .hero-logo .beatriz-simbolo{width:90px}
+  .hero-logo .beatriz-palavras small{font-size:30px}
+  .hero-logo .beatriz-palavras strong{font-size:67px}
+}
+@media(max-width:680px){
+  .intro-marca{top:36%;width:94vw}
+  .intro-logo{gap:8px}
+  .intro-logo .beatriz-simbolo{width:82px}
+  .intro-logo .beatriz-palavras small{font-size:27px}
+  .intro-logo .beatriz-palavras strong{font-size:59px}
+  .intro-carrinha{left:-94vw;width:88vw;bottom:8%;animation-duration:2.25s}
+  .marca-logo{min-width:0}
+  .header-logo{gap:3px}
+  .header-logo .beatriz-simbolo{width:35px}
+  .header-logo .beatriz-palavras small{font-size:10px}
+  .header-logo .beatriz-palavras strong{font-size:22px}
+  .hero-logo{gap:6px}
+  .hero-logo .beatriz-simbolo{width:66px}
+  .hero-logo .beatriz-palavras small{font-size:23px}
+  .hero-logo .beatriz-palavras strong{font-size:51px}
+  .footer-logo .beatriz-simbolo{width:43px}
+  .footer-logo .beatriz-palavras small{font-size:14px}
+  .footer-logo .beatriz-palavras strong{font-size:29px}
+}
