@@ -4,12 +4,12 @@
 
   if(intro&&!reduced){
     document.documentElement.classList.add('lock');
-    setTimeout(()=>intro.classList.add('leave'),900);
+    setTimeout(()=>intro.classList.add('leave'),1150);
     setTimeout(()=>{
       intro.remove();
       document.documentElement.classList.remove('lock');
       document.body.classList.add('ready');
-    },2100);
+    },2550);
   } else {
     intro?.remove();
     document.body.classList.add('ready');
