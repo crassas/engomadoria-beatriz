@@ -338,3 +338,58 @@ body:before{
 @media(prefers-reduced-motion:reduce){
   .brand-ribbon-track,.hero:after,.hero:before{animation:none!important}
 }
+
+
+/* Entrance sequencing + scroll state */
+.hero-title .line{
+  opacity:0;
+  transform:translateY(24px) rotateX(5deg);
+  transform-origin:left bottom;
+}
+body.ready .hero-title .line:first-child{
+  animation:heroLineIn .72s .05s cubic-bezier(.2,.8,.2,1) forwards;
+}
+body.ready .hero-title .line:nth-child(2){
+  animation:heroLineIn .82s .17s cubic-bezier(.2,.8,.2,1) forwards;
+}
+body.ready .hero-copy>.body,
+body.ready .hero-copy>.stay,
+body.ready .hero-copy>.btn{
+  animation:heroSoftIn .65s .3s both;
+}
+body.ready .hero-copy>.stay{animation-delay:.38s}
+body.ready .hero-copy>.btn{animation-delay:.46s}
+@keyframes heroLineIn{
+  to{opacity:1;transform:none}
+}
+@keyframes heroSoftIn{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:none}
+}
+.nav a.active:after{left:0!important;right:0!important}
+.mobile-nav a.active{
+  color:var(--pink2);
+  background:#fff2f7;
+}
+.price-item.motion-active,
+.local-card.motion-active,
+.service.motion-active{
+  transform:translateY(-4px);
+  border-color:rgba(242,31,121,.34);
+  box-shadow:0 15px 34px rgba(7,52,95,.10)
+}
+.gallery-card.motion-active img{transform:scale(1.055)}
+.feature.motion-active{
+  transform:translateY(-3px);
+  background:rgba(255,255,255,.62);
+  border-color:rgba(242,31,121,.14)
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-title .line,
+  body.ready .hero-title .line,
+  body.ready .hero-copy>.body,
+  body.ready .hero-copy>.stay,
+  body.ready .hero-copy>.btn{
+    opacity:1!important;transform:none!important;animation:none!important
+  }
+}
