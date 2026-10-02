@@ -1,6 +1,6 @@
 # CONTENT TRUTH — Engomadoria Beatriz Lavandaria
 
-Última actualização: 2026-10-01
+Última actualização: 2026-10-02
 
 ## Confirmado
 Nome comunicado: Engomadoria Beatriz Lavandaria
@@ -11,6 +11,9 @@ Packs de engomadoria:
 - 60 peças — 45 €
 - 80 peças — 55 €
 - 100 peças — 65 €
+
+Alojamento Local:
+- Tratamento de roupa AL — 2 €/kg
 
 Outros serviços:
 - Limpeza a seco
