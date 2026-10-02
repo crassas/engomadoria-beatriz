@@ -8,12 +8,12 @@
   const intro = document.querySelector('[data-intro]');
   if (intro && !reduzirMovimento) {
     // A carrinha entra primeiro. Quando atravessa o centro, as portas começam a abrir.
-    window.setTimeout(() => body.classList.add('intro-carrinha-run'), 220);
-    window.setTimeout(() => body.classList.add('intro-abrir'), 760);
-    window.setTimeout(() => body.classList.add('intro-fim'), 2030);
+    window.setTimeout(() => body.classList.add('intro-carrinha-run'), 180);
+    window.setTimeout(() => body.classList.add('intro-abrir'), 930);
+    window.setTimeout(() => body.classList.add('intro-fim'), 2420);
     window.setTimeout(() => {
       window.requestAnimationFrame(() => body.classList.add('pagina-visivel'));
-    }, 2160);
+    }, 2550);
   } else {
     body.classList.add('intro-fim', 'pagina-visivel');
   }
