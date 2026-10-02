@@ -17,12 +17,78 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}img{max-w
 .btn.blue{background:linear-gradient(180deg,#176eb6,#07559a);color:#fff;border-color:#267ec1}
 
 /* INTRO */
-.intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:var(--pinkSoft)}
-.intro:before{content:"";position:absolute;inset:-4%;background:linear-gradient(90deg,rgba(255,220,233,.96),rgba(255,220,233,.60) 52%,rgba(7,52,95,.13)),url("https://images.pexels.com/photos/28576619/pexels-photo-28576619.jpeg?auto=compress&cs=tinysrgb&w=1800") center/cover no-repeat;filter:saturate(.88) contrast(.98)}
-.intro-word{position:relative;z-index:2;font:850 clamp(62px,14vw,175px)/.78 "Fraunces",serif;letter-spacing:-.06em;color:var(--blue2);text-shadow:0 15px 45px rgba(123,58,87,.15);will-change:transform,filter,opacity}
-.intro-word em{color:var(--pink);font-style:italic}.intro small{position:absolute;z-index:3;bottom:10%;font-size:7px;font-weight:900;letter-spacing:.32em;color:var(--blue2)}
-.intro.leave{animation:introFade .9s .35s ease forwards}.intro.leave .intro-word{animation:introWord .6s ease forwards}
-@keyframes introFade{to{opacity:0;visibility:hidden}}@keyframes introWord{to{transform:scale(.97) translateY(-8px);filter:blur(8px);opacity:0}}
+.intro{
+  position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;
+  background:#ffdce9;perspective:1200px;isolation:isolate
+}
+.intro-bg{
+  position:absolute;inset:-7%;z-index:0;
+  background:
+    linear-gradient(90deg,rgba(255,248,251,.34),rgba(255,236,245,.12) 44%,rgba(7,52,95,.10)),
+    url("https://images.pexels.com/photos/28576619/pexels-photo-28576619.jpeg?auto=compress&cs=tinysrgb&w=2000") 82% center/cover no-repeat;
+  filter:saturate(.92) contrast(1.02) brightness(1.03);
+  transform:scale(1.10);
+  animation:introPan 2.55s cubic-bezier(.18,.72,.22,1) both;
+  will-change:transform,background-position,filter
+}
+.intro-bg:after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 24% 22%,rgba(255,255,255,.58),transparent 34%),
+    radial-gradient(circle at 76% 68%,rgba(242,31,121,.13),transparent 32%),
+    linear-gradient(180deg,rgba(255,255,255,.05),rgba(7,52,95,.08));
+  mix-blend-mode:screen
+}
+.intro-wash{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,238,246,.18));
+  backdrop-filter:blur(.6px)
+}
+.intro-logo{
+  position:relative;z-index:3;width:min(66vw,680px);max-width:78vh;height:auto;object-fit:contain;
+  filter:drop-shadow(0 22px 42px rgba(7,52,95,.18)) drop-shadow(0 8px 18px rgba(215,12,98,.16));
+  transform:translateZ(0) scale(.92);
+  opacity:0;
+  animation:introLogoIn .62s .08s cubic-bezier(.16,.84,.2,1) forwards;
+  will-change:transform,filter,opacity
+}
+.intro.leave{animation:introDissolve 1.18s .18s cubic-bezier(.22,.72,.22,1) forwards}
+.intro.leave .intro-logo{animation:introLogoAway 1.08s cubic-bezier(.2,.72,.2,1) forwards}
+.intro.leave .intro-bg{animation:introPanAway 1.18s cubic-bezier(.2,.72,.2,1) forwards}
+@keyframes introPan{
+  from{background-position:88% center;transform:scale(1.14)}
+  to{background-position:28% center;transform:scale(1.055)}
+}
+@keyframes introLogoIn{
+  from{opacity:0;transform:translateZ(90px) scale(1.08);filter:blur(7px) drop-shadow(0 24px 48px rgba(7,52,95,.20))}
+  to{opacity:1;transform:translateZ(0) scale(1);filter:blur(0) drop-shadow(0 22px 42px rgba(7,52,95,.18)) drop-shadow(0 8px 18px rgba(215,12,98,.16))}
+}
+@keyframes introLogoAway{
+  0%{opacity:1;transform:translateZ(0) scale(1);filter:blur(0) drop-shadow(0 22px 42px rgba(7,52,95,.18))}
+  55%{opacity:.62;transform:translateZ(-260px) scale(.68);filter:blur(3px) drop-shadow(0 10px 24px rgba(7,52,95,.10))}
+  100%{opacity:0;transform:translateZ(-620px) scale(.34);filter:blur(14px)}
+}
+@keyframes introPanAway{
+  from{background-position:28% center;transform:scale(1.055);filter:saturate(.92) contrast(1.02) brightness(1.03)}
+  to{background-position:8% center;transform:scale(1.01);filter:saturate(.88) contrast(1.01) brightness(1.07) blur(2px)}
+}
+@keyframes introDissolve{to{opacity:0;visibility:hidden;pointer-events:none}}
+@media(max-width:760px){
+  .intro-logo{width:min(88vw,520px);max-width:none}
+  .intro-bg{
+    background-position:84% center;background-size:auto 116%;
+    animation-name:introPanMobile
+  }
+  .intro.leave .intro-bg{animation-name:introPanAwayMobile}
+}
+@keyframes introPanMobile{
+  from{background-position:92% center;transform:scale(1.12)}
+  to{background-position:44% center;transform:scale(1.045)}
+}
+@keyframes introPanAwayMobile{
+  from{background-position:44% center;transform:scale(1.045)}
+  to{background-position:22% center;transform:scale(1.01);filter:blur(2px) saturate(.9) brightness(1.07)}
+}
 
 /* HERO / TOPBAR */
 .hero{position:relative;height:526px;isolation:isolate;border-bottom:1px solid var(--line);background:var(--pinkSoft);overflow:hidden}
