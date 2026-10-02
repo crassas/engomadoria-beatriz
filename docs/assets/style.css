@@ -262,3 +262,35 @@ body:not(.home){background:var(--creme);color:var(--texto);padding-bottom:0}
   .intro-carrinha,.bolhas i{animation:none!important}.reveal{opacity:1!important;transform:none!important;transition:none!important}
   *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* REAL BEATRIZ WORDMARK — extracted from the supplied identity */
+.logo-real{
+  display:block;
+  background-image:var(--logo-real);
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:contain;
+  aspect-ratio:180/48;
+  flex:0 0 auto;
+}
+.intro-logo-real{
+  width:clamp(300px,48vw,610px);
+  filter:drop-shadow(0 10px 22px rgba(171,45,93,.14));
+}
+.header-logo-real{width:190px;max-width:24vw}
+.hero-marca-real{display:flex;align-items:flex-start}
+.hero-logo-real{
+  width:min(560px,100%);
+  filter:drop-shadow(0 12px 22px rgba(171,45,93,.13));
+}
+.footer-logo-real{width:185px}
+.marca-logo{min-width:0}
+@media(max-width:1050px){
+  .header-logo-real{width:170px;max-width:none}
+}
+@media(max-width:680px){
+  .intro-logo-real{width:min(84vw,430px)}
+  .header-logo-real{width:145px}
+  .hero-logo-real{width:min(92vw,440px)}
+  .footer-logo-real{width:165px}
+}
