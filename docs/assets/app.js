@@ -7,11 +7,11 @@
 
   const intro = document.querySelector('[data-intro]');
   if (intro && !reduzirMovimento) {
-    window.setTimeout(() => body.classList.add('intro-abrir'), 760);
-    window.setTimeout(() => body.classList.add('intro-fim'), 1640);
+    window.setTimeout(() => body.classList.add('intro-abrir'), 780);
+    window.setTimeout(() => body.classList.add('intro-fim'), 1660);
     window.setTimeout(() => {
       window.requestAnimationFrame(() => body.classList.add('pagina-visivel'));
-    }, 1760);
+    }, 1790);
   } else {
     body.classList.add('intro-fim', 'pagina-visivel');
   }
@@ -64,6 +64,51 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
 
     elementos.forEach(el => observador.observe(el));
+  }
+
+  // Escolhas rápidas do primeiro ecrã: levam directamente ao ponto certo.
+  document.querySelectorAll('[data-ir]').forEach(botao => {
+    botao.addEventListener('click', () => {
+      const destino = document.querySelector(botao.dataset.ir || '');
+      if (!destino) return;
+
+      destino.scrollIntoView({
+        behavior: reduzirMovimento ? 'auto' : 'smooth',
+        block: 'start'
+      });
+
+      const destacar = botao.dataset.destacar;
+      if (destacar) {
+        const pack = document.getElementById(destacar);
+        if (pack) {
+          window.setTimeout(() => {
+            pack.classList.add('pack-pulso');
+            window.setTimeout(() => pack.classList.remove('pack-pulso'), 1500);
+          }, reduzirMovimento ? 0 : 620);
+        }
+      }
+    });
+  });
+
+  // CTA móvel aparece depois do hero para não competir com a abertura.
+  const hero = document.querySelector('.hero');
+  if (hero && 'IntersectionObserver' in window) {
+    const ctaObserver = new IntersectionObserver(([entrada]) => {
+      body.classList.toggle('mostrar-cta', !entrada.isIntersecting);
+    }, { threshold: 0.12 });
+    ctaObserver.observe(hero);
+  } else {
+    body.classList.add('mostrar-cta');
+  }
+
+  // Pequena resposta física nos botões e cartões, sem exagerar.
+  if (!reduzirMovimento && window.matchMedia('(pointer:fine)').matches) {
+    document.querySelectorAll('.pack,.servico,.botao').forEach(el => {
+      el.addEventListener('pointerdown', () => el.style.transform = 'scale(.985)');
+      const limpar = () => el.style.removeProperty('transform');
+      el.addEventListener('pointerup', limpar);
+      el.addEventListener('pointerleave', limpar);
+    });
   }
 
   document.querySelectorAll('[data-ano]').forEach(el => {
