@@ -12,8 +12,17 @@ Packs de engomadoria:
 - 80 peças — 55 €
 - 100 peças — 65 €
 
+Alternativa ao quilo:
+- 3,50 €/kg
+- Roupa diversificada · Serviço completo
+
 Alojamento Local:
 - Tratamento de roupa AL — 2 €/kg
+
+Recolha e entrega:
+- Recolha ao domicílio disponível
+- Entrega ao domicílio disponível
+- Zona, prazos e condições específicas devem ser confirmados directamente
 
 Outros serviços:
 - Limpeza a seco
@@ -38,9 +47,9 @@ Horário:
 - Bairro/localidade
 - Email
 - Domínio final
+- Zona abrangida pela recolha/entrega
 - Condições específicas de cada serviço
 - Prazos de entrega
-- Recolhas/entregas ao domicílio
 
 ## Regra
 Não publicar informação não confirmada sem autorização.
