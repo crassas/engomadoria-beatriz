@@ -394,3 +394,114 @@ body.intro-abrir .intro-marca{
   .footer-logo .beatriz-palavras small{font-size:14px}
   .footer-logo .beatriz-palavras strong{font-size:29px}
 }
+
+
+/* MOBILE INTRO + HERO CORRECTION — 2026-10-02 */
+.hero-eyebrow{
+  margin:0 0 8px;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.08em;
+  color:var(--rosa);
+}
+.hero-frase{
+  margin:0;
+  font-family:var(--sans);
+  font-size:clamp(48px,5.7vw,74px);
+  line-height:.97;
+  letter-spacing:-.05em;
+  font-weight:800;
+  color:var(--azul);
+}
+.hero-frase strong{
+  color:var(--rosa-2);
+  font-weight:900;
+}
+.hero-copy{padding-top:0}
+
+/* Force the intro composition to read as one screen, not a tall empty poster. */
+.intro{
+  height:100dvh;
+  min-height:100dvh;
+  max-height:100dvh;
+}
+.intro-marca{
+  top:31%;
+  width:min(88vw,720px);
+}
+.intro-logo .beatriz-simbolo{width:118px}
+.intro-logo .beatriz-palavras small{font-size:38px}
+.intro-logo .beatriz-palavras strong{font-size:84px}
+
+/* Van stays visible long enough to cross while the doors open. */
+.intro-carrinha{
+  z-index:8;
+  left:-48vw;
+  bottom:7.5%;
+  width:min(520px,48vw);
+  opacity:1;
+  animation:introVanCross 1.72s cubic-bezier(.22,.72,.32,1) .20s both;
+}
+@keyframes introVanCross{
+  0%{transform:translate3d(0,0,0);opacity:0}
+  7%{opacity:1}
+  88%{opacity:1}
+  100%{transform:translate3d(152vw,0,0);opacity:0}
+}
+
+@media(max-width:1050px){
+  .hero-grid{padding-top:42px}
+  .hero-copy{max-width:680px}
+}
+
+@media(max-width:680px){
+  .intro:after{height:18%}
+  .intro-marca{
+    top:29%;
+    width:92vw;
+  }
+  .intro-logo{
+    gap:7px;
+    transform:scale(.96);
+    transform-origin:center;
+  }
+  .intro-logo .beatriz-simbolo{width:72px}
+  .intro-logo .beatriz-palavras small{font-size:24px}
+  .intro-logo .beatriz-palavras strong{font-size:53px}
+
+  .intro-bolhas i:nth-child(1){width:48px;height:48px;left:7%;top:13%}
+  .intro-bolhas i:nth-child(2){width:31px;height:31px;left:24%;top:7%}
+  .intro-bolhas i:nth-child(3){width:58px;height:58px;right:8%;top:17%}
+  .intro-bolhas i:nth-child(4){width:28px;height:28px;right:24%;top:38%}
+  .intro-bolhas i:nth-child(5){width:36px;height:36px;left:44%;bottom:31%}
+
+  .intro-carrinha{
+    left:-92vw;
+    bottom:5.5%;
+    width:86vw;
+    max-width:none;
+    animation-duration:1.78s;
+  }
+
+  .hero-grid{
+    padding:38px 0 165px;
+    gap:24px;
+  }
+  .hero-eyebrow{font-size:8px;margin-bottom:7px}
+  .hero-frase{
+    font-size:44px;
+    line-height:1;
+  }
+  .hero-texto{margin-top:15px}
+  .hero-vantagens{margin-top:19px}
+  .hero-botoes{margin-top:18px}
+  .hero-visual{min-height:300px}
+  .hero-foto{height:300px}
+  .hero-carrinha{
+    width:78vw;
+    left:-2vw;
+    bottom:48px;
+  }
+}
+
+/* The old duplicate-logo rules stay harmless because the hero logo was removed. */
