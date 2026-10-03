@@ -126,3 +126,8 @@ main[tabindex="-1"]:focus{outline:none}
 .button-pink,.header-cta.button-dark,.mobile-dock a:last-child{background:var(--action-rose);color:#fff;border:1px solid #a93059;box-shadow:inset 0 1px 0 #ffffff20,0 3px 8px #71334912}
 .button-pink:hover,.header-cta.button-dark:hover,.mobile-dock a:last-child:hover{background:var(--action-rose-hover);box-shadow:inset 0 1px 0 #ffffff16,0 4px 10px #7133491c}
 .button-pink:active,.header-cta.button-dark:active,.mobile-dock a:last-child:active{box-shadow:inset 0 2px 4px #71334922}
+
+/* Fine woven grain and diffuse light give the rose actions a velvet finish. */
+.button-pink,.header-cta.button-dark,.mobile-dock a:last-child{background-color:#b93463;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.075'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' d='M0 0h128v128H0z'/%3E%3C/svg%3E"),radial-gradient(ellipse at 22% 0%,#d85d8538,transparent 65%),linear-gradient(145deg,#bc3c68,#ae2f5b);border-color:#a12c54;box-shadow:inset 0 1px 2px #f4b6cd38,inset 0 -2px 5px #70203f24,0 4px 10px #71334918}
+.button-pink:hover,.header-cta.button-dark:hover,.mobile-dock a:last-child:hover{background-color:#ae2f5b;filter:brightness(1.035);box-shadow:inset 0 1px 2px #f4b6cd38,inset 0 -2px 5px #70203f24,0 5px 12px #71334922}
+.button-pink:active,.header-cta.button-dark:active,.mobile-dock a:last-child:active{filter:brightness(.97);box-shadow:inset 0 2px 5px #70203f35}
