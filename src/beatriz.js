@@ -4,7 +4,7 @@ const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.documentElement.classList.add('js');
 const intro=document.querySelector('.intro');
 const finishIntro=()=>{document.body.classList.add('intro-done');intro?.remove()};
-if(reduced)finishIntro();else{setTimeout(finishIntro,1850);setTimeout(()=>{animate('.hero-copy',{opacity:[.4,1],y:[15,0]},{duration:.65,ease:[.2,.8,.2,1]})},1250)}
+if(reduced)finishIntro();else{setTimeout(finishIntro,3150);setTimeout(()=>{animate('.hero-copy',{opacity:[.4,1],y:[15,0]},{duration:.65,ease:[.2,.8,.2,1]})},2650)}
 const menu=document.querySelector('.menu-toggle');const mobile=document.querySelector('#mobile-menu');
 const closeMenu=()=>{if(!menu||!mobile)return;mobile.hidden=true;menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Abrir menu');document.body.classList.remove('menu-open')};
 menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');mobile.hidden=!open;document.body.classList.toggle('menu-open',open)});

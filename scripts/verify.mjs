@@ -11,10 +11,15 @@ await new Promise(r=>server.listen(4173,'127.0.0.1',r));
 const browser=await chromium.launch({headless:true});const results=[];const errors=[];
 const check=(condition,name)=>{results.push({name,passed:Boolean(condition)});if(!condition)errors.push(name)};
 try{
+for(const width of [390,1440]){
+ const context=await browser.newContext({viewport:{width,height:1000}});const page=await context.newPage();await page.goto('http://127.0.0.1:4173',{waitUntil:'domcontentloaded'});await page.locator('.intro-van').waitFor();
+ const drive=await page.locator('.intro-van').evaluate(async van=>{await van.decode();const animation=van.getAnimations()[0];animation.pause();animation.currentTime=0;const start=van.getBoundingClientRect();animation.currentTime=1300;const middle=van.getBoundingClientRect();animation.currentTime=2600;const end=van.getBoundingClientRect();animation.currentTime=1300;return {loaded:van.naturalWidth>0,startRight:start.right,middleLeft:middle.left,endLeft:end.left}});
+ check(drive.loaded,`${width}: transparent van asset loads`);check(drive.startRight<0&&drive.middleLeft>0&&drive.endLeft>width,`${width}: van crosses from left to right`);await page.screenshot({path:`${out}/${width===390?'mobile':'desktop'}-intro.png`});await context.close();
+}
 for(const width of [320,360,390,768,1440]){
  const context=await browser.newContext({viewport:{width,height:1000},deviceScaleFactor:1});const page=await context.newPage();let consoleErrors=[];let failed=[];
  page.on('pageerror',e=>consoleErrors.push(e.message));page.on('response',r=>{if(r.status()>=400)failed.push(r.url())});
- await page.goto('http://127.0.0.1:4173',{waitUntil:'networkidle'});await page.waitForTimeout(2100);await page.evaluate(()=>document.fonts.ready);
+ await page.goto('http://127.0.0.1:4173',{waitUntil:'networkidle'});await page.waitForTimeout(3300);await page.evaluate(()=>document.fonts.ready);
  check(await page.locator('h1').count()===1,`${width}: one visible page heading`);
  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width}: no horizontal overflow`);
  check(await page.evaluate(()=>Array.from(document.images).every(i=>i.complete&&i.naturalWidth>0)),`${width}: all images load`);
