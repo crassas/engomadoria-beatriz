@@ -172,3 +172,10 @@ main[tabindex="-1"]:focus{outline:none}
 @media(prefers-reduced-motion:reduce){.hero-steam-title>span{animation:none;filter:none;transform:none}.hero-steam-title>span:not(:first-child){display:none}.hero-image:before{animation:none}.hero-motion-toggle{display:none}}
 
 .hero-motion-toggle{opacity:1;color:#17475e}
+
+/* A quiet but prominent route for local accommodation managers. */
+.hero-al-link{display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:center;margin-top:22px;max-width:420px;padding:13px 17px;border:1px solid #b66b8980;border-radius:8px;background:linear-gradient(120deg,#fffaf8,#f1d8df);box-shadow:inset 0 1px 0 #fff,0 3px 10px #7133490d;color:var(--blue)}
+.hero-al-link>span{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#9a2952}.hero-al-link strong{font-size:16px;font-weight:600}.hero-al-link .icon{grid-column:2;grid-row:1/3}.hero-al-link:hover{border-color:#a93059;background:linear-gradient(120deg,#fffaf8,#eccbd7)}
+.al-rate{padding:22px 24px;border:1px solid #b66b8970;border-radius:10px;background:linear-gradient(130deg,#fffaf8,#edd3db);box-shadow:inset 0 1px 2px #fff,0 5px 14px #7133490d}.al-rate strong{color:var(--pink-deep)}
+.al-example{margin:0 0 24px}.al-example strong{display:block;font-size:16px;color:var(--blue)}.al-example span{display:block;font-size:12px;line-height:1.65;margin-top:5px}.al-copy .button{max-width:100%;text-align:center}
+@media(max-width:700px){.hero-al-link{margin-top:18px}.hero-inner{padding-bottom:220px}}
