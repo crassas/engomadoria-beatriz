@@ -1,0 +1,38 @@
+{
+  "name": "engomadoria-beatriz",
+  "version": "1.0.0",
+  "description": "Engomadoria Beatriz — montra digital e pedidos por WhatsApp",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "video:render": "node video/render.mjs",
+    "preview": "python3 -m http.server 4173 --directory docs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crassas/engomadoria-beatriz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/crassas/engomadoria-beatriz/issues"
+  },
+  "homepage": "https://github.com/crassas/engomadoria-beatriz#readme",
+  "dependencies": {
+    "@remotion/bundler": "4.0.532",
+    "@remotion/cli": "4.0.532",
+    "@remotion/renderer": "4.0.532",
+    "agent-browser": "0.38.2",
+    "esbuild": "0.28.2",
+    "motion": "14.0.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0"
+  }
+}
