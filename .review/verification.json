@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-03T14:31:23.025Z",
+  "checkedAt": "2026-10-03T14:35:33.071Z",
   "checks": [
     {
       "name": "390: transparent van asset loads",
@@ -27,7 +27,7 @@
     },
     {
       "name": "320: all images load",
-      "passed": false
+      "passed": true
     },
     {
       "name": "320: local fonts load",
@@ -115,7 +115,7 @@
     },
     {
       "name": "360: all images load",
-      "passed": false
+      "passed": true
     },
     {
       "name": "360: local fonts load",
@@ -203,7 +203,7 @@
     },
     {
       "name": "390: all images load",
-      "passed": false
+      "passed": true
     },
     {
       "name": "390: local fonts load",
@@ -291,7 +291,7 @@
     },
     {
       "name": "768: all images load",
-      "passed": false
+      "passed": true
     },
     {
       "name": "768: local fonts load",
@@ -371,7 +371,7 @@
     },
     {
       "name": "1440: all images load",
-      "passed": false
+      "passed": true
     },
     {
       "name": "1440: local fonts load",
@@ -490,11 +490,5 @@
       "passed": true
     }
   ],
-  "errors": [
-    "320: all images load",
-    "360: all images load",
-    "390: all images load",
-    "768: all images load",
-    "1440: all images load"
-  ]
+  "errors": []
 }
