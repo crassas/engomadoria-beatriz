@@ -1,52 +1,64 @@
 {
-  "checkedAt": "2026-10-03T15:21:21.258Z",
+  "checkedAt": "2026-10-03T15:46:55.085Z",
   "checks": [
     {
-      "name": "delivery: front angle becomes visible during turn",
+      "name": "390: full portrait Flow clip plays",
       "passed": true
     },
     {
-      "name": "delivery: opening completes after curve",
+      "name": "390: Enter appears with laundry",
       "passed": true
     },
     {
-      "name": "390: original logo assembles from 29 pieces",
+      "name": "390: final frame waits for visitor",
       "passed": true
     },
     {
-      "name": "390: both van angles load",
+      "name": "390: background cannot receive focus before entry",
       "passed": true
     },
     {
-      "name": "390: van enters, stops for delivery and dissolves",
+      "name": "390: complete film fits without cropping",
       "passed": true
     },
     {
-      "name": "390: clothing delivery and restrained tyre smoke present",
+      "name": "390: accessible intro controls",
       "passed": true
     },
     {
-      "name": "390: all logo pieces become visible",
+      "name": "390: Enter reveals usable page",
       "passed": true
     },
     {
-      "name": "1440: original logo assembles from 29 pieces",
+      "name": "1440: full portrait Flow clip plays",
       "passed": true
     },
     {
-      "name": "1440: both van angles load",
+      "name": "1440: Enter appears with laundry",
       "passed": true
     },
     {
-      "name": "1440: van enters, stops for delivery and dissolves",
+      "name": "1440: final frame waits for visitor",
       "passed": true
     },
     {
-      "name": "1440: clothing delivery and restrained tyre smoke present",
+      "name": "1440: background cannot receive focus before entry",
       "passed": true
     },
     {
-      "name": "1440: all logo pieces become visible",
+      "name": "1440: complete film fits without cropping",
+      "passed": true
+    },
+    {
+      "name": "1440: accessible intro controls",
+      "passed": true
+    },
+    {
+      "name": "1440: Enter reveals usable page",
+      "passed": true
+    },
+    {
+      "name": "intro: immediate entry works",
       "passed": true
     },
     {
