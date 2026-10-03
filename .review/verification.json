@@ -1,16 +1,20 @@
 {
-  "checkedAt": "2026-10-03T14:58:54.222Z",
+  "checkedAt": "2026-10-03T15:18:36.169Z",
   "checks": [
     {
       "name": "390: original logo assembles from 29 pieces",
       "passed": true
     },
     {
-      "name": "390: transparent van asset loads",
+      "name": "390: both van angles load",
       "passed": true
     },
     {
-      "name": "390: van crosses from left to right",
+      "name": "390: van enters, stops for delivery and dissolves",
+      "passed": true
+    },
+    {
+      "name": "390: clothing delivery and restrained tyre smoke present",
       "passed": true
     },
     {
@@ -22,11 +26,15 @@
       "passed": true
     },
     {
-      "name": "1440: transparent van asset loads",
+      "name": "1440: both van angles load",
       "passed": true
     },
     {
-      "name": "1440: van crosses from left to right",
+      "name": "1440: van enters, stops for delivery and dissolves",
+      "passed": true
+    },
+    {
+      "name": "1440: clothing delivery and restrained tyre smoke present",
       "passed": true
     },
     {
