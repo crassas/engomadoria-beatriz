@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-03T13:49:09.832Z",
+  "checkedAt": "2026-10-03T13:52:06.378Z",
   "checks": [
     {
       "name": "320: one visible page heading",
@@ -59,6 +59,10 @@
     },
     {
       "name": "320: mobile menu closes after selection",
+      "passed": true
+    },
+    {
+      "name": "320: film preserves full 16:9 composition",
       "passed": true
     },
     {
@@ -146,6 +150,10 @@
       "passed": true
     },
     {
+      "name": "360: film preserves full 16:9 composition",
+      "passed": true
+    },
+    {
       "name": "360: rendered film plays",
       "passed": true
     },
@@ -230,6 +238,10 @@
       "passed": true
     },
     {
+      "name": "390: film preserves full 16:9 composition",
+      "passed": true
+    },
+    {
       "name": "390: rendered film plays",
       "passed": true
     },
@@ -306,6 +318,10 @@
       "passed": true
     },
     {
+      "name": "768: film preserves full 16:9 composition",
+      "passed": true
+    },
+    {
       "name": "768: rendered film plays",
       "passed": true
     },
@@ -379,6 +395,10 @@
     },
     {
       "name": "1440: irrelevant AL input is hidden",
+      "passed": true
+    },
+    {
+      "name": "1440: film preserves full 16:9 composition",
       "passed": true
     },
     {
