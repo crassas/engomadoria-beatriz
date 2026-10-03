@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-03T14:43:09.467Z",
+  "checkedAt": "2026-10-03T14:48:10.336Z",
   "checks": [
     {
       "name": "390: original logo assembles from 29 pieces",
@@ -111,7 +111,7 @@
     },
     {
       "name": "320: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "320: no JavaScript errors",
@@ -199,7 +199,7 @@
     },
     {
       "name": "360: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "360: no JavaScript errors",
@@ -287,7 +287,7 @@
     },
     {
       "name": "390: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "390: no JavaScript errors",
@@ -367,7 +367,7 @@
     },
     {
       "name": "768: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "768: no JavaScript errors",
@@ -447,7 +447,7 @@
     },
     {
       "name": "1440: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "1440: no JavaScript errors",
@@ -506,16 +506,5 @@
       "passed": true
     }
   ],
-  "errors": [
-    "320: no WCAG A/AA violations",
-    "320: color-contrast: .story-copy > .eyebrow",
-    "360: no WCAG A/AA violations",
-    "360: color-contrast: .story-copy > .eyebrow",
-    "390: no WCAG A/AA violations",
-    "390: color-contrast: .story-copy > .eyebrow",
-    "768: no WCAG A/AA violations",
-    "768: color-contrast: .story-copy > .eyebrow",
-    "1440: no WCAG A/AA violations",
-    "1440: color-contrast: .story-copy > .eyebrow"
-  ]
+  "errors": []
 }
