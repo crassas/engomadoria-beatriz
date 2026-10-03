@@ -179,3 +179,9 @@ main[tabindex="-1"]:focus{outline:none}
 .al-rate{padding:22px 24px;border:1px solid #b66b8970;border-radius:10px;background:linear-gradient(130deg,#fffaf8,#edd3db);box-shadow:inset 0 1px 2px #fff,0 5px 14px #7133490d}.al-rate strong{color:var(--pink-deep)}
 .al-example{margin:0 0 24px}.al-example strong{display:block;font-size:16px;color:var(--blue)}.al-example span{display:block;font-size:12px;line-height:1.65;margin-top:5px}.al-copy .button{max-width:100%;text-align:center}
 @media(max-width:700px){.hero-al-link{margin-top:18px}.hero-inner{padding-bottom:220px}}
+
+/* Diffused rose light follows the delivery scene without covering its controls. */
+.intro-stage:after{content:'';position:absolute;inset:42% -12% 17%;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 48% 55%,#f58eae65 0%,#e96a9625 36%,transparent 70%);mix-blend-mode:screen;opacity:.32;transform:translate3d(-2%,0,0) scale(.98);animation:deliveryRoseLight 9s ease-in-out infinite;}
+.intro-flow .intro-signature,.intro-enter,.intro-enter-hint{z-index:2}
+@keyframes deliveryRoseLight{0%,100%{opacity:.26;transform:translate3d(-2%,1%,0) scale(.98)}50%{opacity:.46;transform:translate3d(2%,-1%,0) scale(1.04)}}
+@media(prefers-reduced-motion:reduce){.intro-stage:after{animation:none;opacity:.32;transform:none}}
