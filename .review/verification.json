@@ -1,6 +1,22 @@
 {
-  "checkedAt": "2026-10-03T13:52:06.378Z",
+  "checkedAt": "2026-10-03T14:20:39.594Z",
   "checks": [
+    {
+      "name": "390: transparent van asset loads",
+      "passed": true
+    },
+    {
+      "name": "390: van crosses from left to right",
+      "passed": true
+    },
+    {
+      "name": "1440: transparent van asset loads",
+      "passed": true
+    },
+    {
+      "name": "1440: van crosses from left to right",
+      "passed": true
+    },
     {
       "name": "320: one visible page heading",
       "passed": true
