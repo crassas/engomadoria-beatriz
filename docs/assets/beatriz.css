@@ -11,3 +11,5 @@
 .film.playing .film-caption>span{opacity:0}
 
 .intro-signature{transform:translateY(-12vh)}.intro-van{position:absolute;left:0;bottom:clamp(24px,8vh,90px);width:clamp(260px,38vw,560px);height:auto;max-width:none;filter:drop-shadow(0 16px 12px #43203218);will-change:transform;animation:vanDrive 2.6s .08s cubic-bezier(.25,.1,.75,.9) both}@keyframes vanDrive{from{transform:translate3d(-110%,0,0)}to{transform:translate3d(110vw,0,0)}}@media(max-width:700px){.intro-signature{transform:translateY(-9vh)}.intro-van{bottom:18vh;width:76vw;min-width:240px}}
+
+.brand{width:218px}.brand img{width:100%;height:auto}.intro-signature{width:min(760px,80vw)}.intro-signature>img{width:100%;height:auto}.footer .brand{background:var(--paper);padding:14px;border-radius:4px;width:230px}@media(max-width:700px){.brand{width:140px}.header-inner{gap:10px}.header-cta{padding-inline:10px;gap:6px}.intro-signature{width:90vw}}@media(max-width:380px){.header-inner .brand{width:108px}.header-cta{font-size:10px;padding-inline:8px}.header-cta .icon{width:16px;height:16px}}
