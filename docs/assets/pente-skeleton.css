@@ -459,3 +459,184 @@ body.ready .hero-copy>.btn{animation-delay:.46s}
     opacity:1!important;transform:none!important;animation:none!important
   }
 }
+
+
+/* =========================================================
+   BRAND REFERENCE PASS — based on current Beatriz artwork
+   Use the visual language, not the conflicting flyer prices.
+   ========================================================= */
+:root{
+  --pink:#ee0d6d;
+  --pink2:#d6005b;
+  --pinkSoft:#ffe2ed;
+  --blue:#075fae;
+  --blue2:#064a8b;
+  --cream:#fffdf9;
+  --line:rgba(6,74,139,.13);
+  --linePink:rgba(238,13,109,.17);
+}
+.wordmark{
+  gap:12px;
+}
+.wordmark-mark{
+  width:44px;height:44px;border-radius:14px;
+  background:#fff;
+  border:2px solid rgba(238,13,109,.22);
+  outline:0;
+  box-shadow:0 10px 26px rgba(6,74,139,.08);
+}
+.wordmark-mark:before{
+  content:"♡";
+  font:700 26px/1 "Caveat",cursive;
+  color:var(--pink);
+}
+.wordmark-mark:after{
+  inset:7px;
+  border-color:rgba(7,95,174,.22);
+  border-radius:10px;
+}
+.wordmark b{
+  font-family:"Lobster Two","Fraunces",serif;
+  font-size:27px;
+  font-weight:700;
+  letter-spacing:-.02em;
+  color:var(--blue2);
+}
+.wordmark span{
+  color:var(--pink);
+  font-size:6.4px;
+  letter-spacing:.34em;
+}
+.hero-title{
+  color:var(--blue2);
+}
+.hero-title em{
+  color:var(--pink);
+}
+.hero-sub,
+.kicker{
+  color:var(--pink2);
+}
+.hero-overlay{
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,250,252,.94) 29%,rgba(255,244,248,.44) 58%,rgba(6,74,139,.14) 100%),
+    linear-gradient(0deg,rgba(6,74,139,.14),transparent 48%);
+}
+.hero-aside{
+  border-radius:18px;
+  background:rgba(255,255,255,.91);
+  box-shadow:0 18px 48px rgba(6,74,139,.13);
+}
+.hero-aside b{
+  color:var(--pink);
+}
+.hero-script{
+  color:#075fae;
+  font-size:25px;
+}
+.brand-ribbon{
+  background:
+    linear-gradient(90deg,#ee0d6d,#f52580 48%,#d8005b);
+}
+.brand-ribbon-track b{
+  font-family:"Lobster Two","Fraunces",serif;
+  font-weight:700;
+  letter-spacing:-.01em;
+}
+.brand-ribbon-track i{
+  color:#fff;
+}
+.about{
+  background:
+    linear-gradient(90deg,#fff8fb,#fff 52%,#fffdf9);
+}
+.about-copy .title{
+  color:var(--blue2);
+}
+.about-copy .stay{
+  color:var(--pink2);
+  background:#fff0f5;
+}
+.about-info .fact i{
+  background:#fff0f5;
+  color:var(--pink);
+  border:1px solid rgba(238,13,109,.14);
+}
+.prices{
+  background:#fff;
+}
+.price-item{
+  background:
+    linear-gradient(145deg,#fff,#fff9fb);
+  border-color:rgba(6,74,139,.12);
+}
+.price-icon{
+  background:#075fae;
+  color:#fff;
+  border-color:#075fae;
+}
+.price-item>b{
+  color:var(--pink2);
+}
+.price-item.popular{
+  background:linear-gradient(180deg,#fff,#fff0f5);
+  border-color:rgba(238,13,109,.65);
+}
+.price-item.popular .price-icon{
+  background:var(--pink);
+}
+.local-info{
+  background:
+    linear-gradient(180deg,#eef8ff,#fff8fb);
+}
+.local-pill{
+  background:#fff;
+  color:var(--blue2);
+}
+.local-card strong{
+  color:var(--pink);
+}
+.gallery{
+  background:#fff;
+}
+.gallery-card figcaption{
+  background:rgba(255,255,255,.9);
+  color:var(--blue2);
+}
+.booking{
+  background:linear-gradient(180deg,#fff8fb,#fff);
+}
+.service i{
+  background:#eef8ff;
+  color:var(--blue);
+}
+.final{
+  background:
+    radial-gradient(circle at 14% 24%,rgba(238,13,109,.24),transparent 27%),
+    linear-gradient(180deg,#075fae,#064a8b);
+}
+.footer-mark{
+  background:radial-gradient(circle,#ff378b,#d9005b);
+}
+.btn.hot{
+  background:linear-gradient(180deg,#ff3188,#e40066);
+}
+.btn.blue{
+  background:linear-gradient(180deg,#0a68ba,#07529a);
+}
+
+/* poster-like service headings, but adult and editorial */
+.price-badge,
+.local-visual span,
+.about-photo figcaption{
+  font-family:"DM Sans",sans-serif;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.title{
+  color:var(--blue2);
+}
+@media(max-width:760px){
+  .wordmark b{font-size:23px}
+  .wordmark-mark{width:39px;height:39px}
+}
