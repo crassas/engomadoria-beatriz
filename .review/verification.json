@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-03T17:50:20.591Z",
+  "checkedAt": "2026-10-03T17:59:12.624Z",
   "checks": [
     {
       "name": "390: full portrait Flow clip plays",
@@ -573,11 +573,13 @@
   "errors": [
     "320: no WCAG A/AA violations",
     "320: aria-prohibited-attr: .announcement-steam",
-    "320: color-contrast: .announcement-steam > span[aria-hidden=\"true\"]:nth-child(2)",
+    "320: color-contrast: .announcement-steam > span[aria-hidden=\"true\"]:nth-child(2), .hero-motion-toggle",
     "360: no WCAG A/AA violations",
     "360: aria-prohibited-attr: .announcement-steam",
+    "360: color-contrast: #hero-title > span[aria-hidden=\"true\"]:nth-child(2), #hero-title > span[aria-hidden=\"true\"]:nth-child(2) > em, .hero-motion-toggle",
     "390: no WCAG A/AA violations",
     "390: aria-prohibited-attr: .announcement-steam",
+    "390: color-contrast: .hero-motion-toggle",
     "768: no WCAG A/AA violations",
     "768: aria-prohibited-attr: .announcement-steam",
     "768: color-contrast: .announcement-steam > span[aria-hidden=\"true\"]:nth-child(2)",
