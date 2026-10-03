@@ -1,0 +1,458 @@
+{
+  "checkedAt": "2026-10-03T13:45:25.347Z",
+  "checks": [
+    {
+      "name": "320: one visible page heading",
+      "passed": true
+    },
+    {
+      "name": "320: no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "320: all images load",
+      "passed": true
+    },
+    {
+      "name": "320: local fonts load",
+      "passed": true
+    },
+    {
+      "name": "320: introduction finishes",
+      "passed": true
+    },
+    {
+      "name": "320: 20-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "320: 40-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "320: 60-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "320: 80-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "320: 100-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "320: AL message includes quantity and note",
+      "passed": true
+    },
+    {
+      "name": "320: textile service message",
+      "passed": true
+    },
+    {
+      "name": "320: irrelevant AL input is hidden",
+      "passed": true
+    },
+    {
+      "name": "320: mobile menu opens",
+      "passed": true
+    },
+    {
+      "name": "320: mobile menu closes after selection",
+      "passed": true
+    },
+    {
+      "name": "320: rendered film plays",
+      "passed": true
+    },
+    {
+      "name": "320: film can pause",
+      "passed": true
+    },
+    {
+      "name": "320: every WhatsApp CTA has correct contact and message",
+      "passed": true
+    },
+    {
+      "name": "320: no WCAG A/AA violations",
+      "passed": true
+    },
+    {
+      "name": "320: no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "320: no failed resources",
+      "passed": true
+    },
+    {
+      "name": "360: one visible page heading",
+      "passed": true
+    },
+    {
+      "name": "360: no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "360: all images load",
+      "passed": true
+    },
+    {
+      "name": "360: local fonts load",
+      "passed": true
+    },
+    {
+      "name": "360: introduction finishes",
+      "passed": true
+    },
+    {
+      "name": "360: 20-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "360: 40-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "360: 60-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "360: 80-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "360: 100-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "360: AL message includes quantity and note",
+      "passed": true
+    },
+    {
+      "name": "360: textile service message",
+      "passed": true
+    },
+    {
+      "name": "360: irrelevant AL input is hidden",
+      "passed": true
+    },
+    {
+      "name": "360: mobile menu opens",
+      "passed": true
+    },
+    {
+      "name": "360: mobile menu closes after selection",
+      "passed": true
+    },
+    {
+      "name": "360: rendered film plays",
+      "passed": true
+    },
+    {
+      "name": "360: film can pause",
+      "passed": true
+    },
+    {
+      "name": "360: every WhatsApp CTA has correct contact and message",
+      "passed": true
+    },
+    {
+      "name": "360: no WCAG A/AA violations",
+      "passed": true
+    },
+    {
+      "name": "360: no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "360: no failed resources",
+      "passed": true
+    },
+    {
+      "name": "390: one visible page heading",
+      "passed": true
+    },
+    {
+      "name": "390: no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390: all images load",
+      "passed": true
+    },
+    {
+      "name": "390: local fonts load",
+      "passed": true
+    },
+    {
+      "name": "390: introduction finishes",
+      "passed": true
+    },
+    {
+      "name": "390: 20-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "390: 40-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "390: 60-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "390: 80-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "390: 100-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "390: AL message includes quantity and note",
+      "passed": true
+    },
+    {
+      "name": "390: textile service message",
+      "passed": true
+    },
+    {
+      "name": "390: irrelevant AL input is hidden",
+      "passed": true
+    },
+    {
+      "name": "390: mobile menu opens",
+      "passed": true
+    },
+    {
+      "name": "390: mobile menu closes after selection",
+      "passed": true
+    },
+    {
+      "name": "390: rendered film plays",
+      "passed": true
+    },
+    {
+      "name": "390: film can pause",
+      "passed": true
+    },
+    {
+      "name": "390: every WhatsApp CTA has correct contact and message",
+      "passed": true
+    },
+    {
+      "name": "390: no WCAG A/AA violations",
+      "passed": true
+    },
+    {
+      "name": "390: no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "390: no failed resources",
+      "passed": true
+    },
+    {
+      "name": "768: one visible page heading",
+      "passed": true
+    },
+    {
+      "name": "768: no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "768: all images load",
+      "passed": true
+    },
+    {
+      "name": "768: local fonts load",
+      "passed": true
+    },
+    {
+      "name": "768: introduction finishes",
+      "passed": true
+    },
+    {
+      "name": "768: 20-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "768: 40-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "768: 60-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "768: 80-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "768: 100-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "768: AL message includes quantity and note",
+      "passed": true
+    },
+    {
+      "name": "768: textile service message",
+      "passed": true
+    },
+    {
+      "name": "768: irrelevant AL input is hidden",
+      "passed": true
+    },
+    {
+      "name": "768: rendered film plays",
+      "passed": true
+    },
+    {
+      "name": "768: film can pause",
+      "passed": true
+    },
+    {
+      "name": "768: every WhatsApp CTA has correct contact and message",
+      "passed": true
+    },
+    {
+      "name": "768: no WCAG A/AA violations",
+      "passed": true
+    },
+    {
+      "name": "768: no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "768: no failed resources",
+      "passed": true
+    },
+    {
+      "name": "1440: one visible page heading",
+      "passed": true
+    },
+    {
+      "name": "1440: no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "1440: all images load",
+      "passed": true
+    },
+    {
+      "name": "1440: local fonts load",
+      "passed": true
+    },
+    {
+      "name": "1440: introduction finishes",
+      "passed": true
+    },
+    {
+      "name": "1440: 20-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "1440: 40-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "1440: 60-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "1440: 80-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "1440: 100-piece WhatsApp message",
+      "passed": true
+    },
+    {
+      "name": "1440: AL message includes quantity and note",
+      "passed": true
+    },
+    {
+      "name": "1440: textile service message",
+      "passed": true
+    },
+    {
+      "name": "1440: irrelevant AL input is hidden",
+      "passed": true
+    },
+    {
+      "name": "1440: rendered film plays",
+      "passed": true
+    },
+    {
+      "name": "1440: film can pause",
+      "passed": true
+    },
+    {
+      "name": "1440: every WhatsApp CTA has correct contact and message",
+      "passed": true
+    },
+    {
+      "name": "1440: no WCAG A/AA violations",
+      "passed": true
+    },
+    {
+      "name": "1440: no JavaScript errors",
+      "passed": true
+    },
+    {
+      "name": "1440: no failed resources",
+      "passed": true
+    },
+    {
+      "name": "reduced motion: no introduction",
+      "passed": true
+    },
+    {
+      "name": "no JavaScript: main content remains visible",
+      "passed": true
+    },
+    {
+      "name": "no JavaScript: every pack has a direct WhatsApp link",
+      "passed": true
+    },
+    {
+      "name": "precos/: loads",
+      "passed": true
+    },
+    {
+      "name": "precos/: heading present",
+      "passed": true
+    },
+    {
+      "name": "precos/: valid structured data",
+      "passed": true
+    },
+    {
+      "name": "contactos/: loads",
+      "passed": true
+    },
+    {
+      "name": "contactos/: heading present",
+      "passed": true
+    },
+    {
+      "name": "contactos/: valid structured data",
+      "passed": true
+    },
+    {
+      "name": "perguntas-frequentes/: loads",
+      "passed": true
+    },
+    {
+      "name": "perguntas-frequentes/: heading present",
+      "passed": true
+    },
+    {
+      "name": "perguntas-frequentes/: valid structured data",
+      "passed": true
+    }
+  ],
+  "errors": []
+}
