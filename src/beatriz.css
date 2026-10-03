@@ -131,3 +131,16 @@ main[tabindex="-1"]:focus{outline:none}
 .button-pink,.header-cta.button-dark,.mobile-dock a:last-child{background-color:#b93463;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.075'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' d='M0 0h128v128H0z'/%3E%3C/svg%3E"),radial-gradient(ellipse at 22% 0%,#d85d8538,transparent 65%),linear-gradient(145deg,#bc3c68,#ae2f5b);border-color:#a12c54;box-shadow:inset 0 1px 2px #f4b6cd38,inset 0 -2px 5px #70203f24,0 4px 10px #71334918}
 .button-pink:hover,.header-cta.button-dark:hover,.mobile-dock a:last-child:hover{background-color:#ae2f5b;filter:brightness(1.035);box-shadow:inset 0 1px 2px #f4b6cd38,inset 0 -2px 5px #70203f24,0 5px 12px #71334922}
 .button-pink:active,.header-cta.button-dark:active,.mobile-dock a:last-child:active{filter:brightness(.97);box-shadow:inset 0 2px 5px #70203f35}
+
+/* Tactile velvet pack cards, finished with clear selection and restrained motion. */
+.pack-option,.pack-option.selected{background-color:#b93463;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.075'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' d='M0 0h128v128H0z'/%3E%3C/svg%3E"),radial-gradient(ellipse at 22% 0%,#d85d8538,transparent 65%),linear-gradient(145deg,#bc3c68,#ae2f5b);border-color:#a12c54;box-shadow:inset 0 1px 2px #f4b6cd38,inset 0 -2px 5px #70203f24,0 4px 10px #71334918}
+.pack-option,.pack-option.selected{color:#fffafc;border:2px solid #a12c54;border-radius:10px;padding:29px 21px 24px;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
+.pack-option .pack-price,.pack-option .pack-unit{color:#fffafc}.pack-option .pack-unit{opacity:.9}
+.pack-option .pack-check{background:#ffffff12;border-color:#f6c6d8;color:#fff}
+.pack-option.selected{border-color:#fff1f6;box-shadow:0 0 0 2px #a12c54,inset 0 1px 2px #f4b6cd38,inset 0 -2px 5px #70203f24,0 8px 18px #71334925;transform:translateY(-3px)}
+.pack-option.selected .pack-check{background:#fff1f6;border-color:#fff1f6;color:#a12c54}
+.pack-tag{background:#fff1f6;color:#922749;border:1px solid #eac0ce;border-radius:4px;font-weight:600}
+@media(hover:hover){.pack-option:hover{background-color:#b93463;border-color:#efb8cd;transform:translateY(-4px);box-shadow:inset 0 1px 2px #f4b6cd38,inset 0 -2px 5px #70203f24,0 9px 20px #71334925}}
+.pack-option:active{transform:translateY(-1px);box-shadow:inset 0 2px 6px #70203f35}
+@media(max-width:700px){.pack-option,.pack-option.selected{padding:22px 14px 17px}}
+@media(prefers-reduced-motion:reduce){.pack-option,.pack-option.selected,.pack-option:hover,.pack-option:active{transition:none;transform:none}}
