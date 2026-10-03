@@ -1,6 +1,14 @@
 {
-  "checkedAt": "2026-10-03T15:18:36.169Z",
+  "checkedAt": "2026-10-03T15:21:21.258Z",
   "checks": [
+    {
+      "name": "delivery: front angle becomes visible during turn",
+      "passed": true
+    },
+    {
+      "name": "delivery: opening completes after curve",
+      "passed": true
+    },
     {
       "name": "390: original logo assembles from 29 pieces",
       "passed": true
