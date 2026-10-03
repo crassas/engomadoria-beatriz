@@ -1,8 +1,16 @@
 {
-  "checkedAt": "2026-10-03T17:08:47.777Z",
+  "checkedAt": "2026-10-03T17:20:31.666Z",
   "checks": [
     {
       "name": "390: full portrait Flow clip plays",
+      "passed": true
+    },
+    {
+      "name": "390: corner entry removed",
+      "passed": true
+    },
+    {
+      "name": "390: logo settles above laundry",
       "passed": true
     },
     {
@@ -31,6 +39,14 @@
     },
     {
       "name": "1440: full portrait Flow clip plays",
+      "passed": true
+    },
+    {
+      "name": "1440: corner entry removed",
+      "passed": true
+    },
+    {
+      "name": "1440: logo settles above laundry",
       "passed": true
     },
     {
