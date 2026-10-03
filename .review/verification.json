@@ -1,6 +1,10 @@
 {
-  "checkedAt": "2026-10-03T14:35:33.071Z",
+  "checkedAt": "2026-10-03T14:43:09.467Z",
   "checks": [
+    {
+      "name": "390: original logo assembles from 29 pieces",
+      "passed": true
+    },
     {
       "name": "390: transparent van asset loads",
       "passed": true
@@ -10,11 +14,23 @@
       "passed": true
     },
     {
+      "name": "390: all logo pieces become visible",
+      "passed": true
+    },
+    {
+      "name": "1440: original logo assembles from 29 pieces",
+      "passed": true
+    },
+    {
       "name": "1440: transparent van asset loads",
       "passed": true
     },
     {
       "name": "1440: van crosses from left to right",
+      "passed": true
+    },
+    {
+      "name": "1440: all logo pieces become visible",
       "passed": true
     },
     {
@@ -95,7 +111,7 @@
     },
     {
       "name": "320: no WCAG A/AA violations",
-      "passed": true
+      "passed": false
     },
     {
       "name": "320: no JavaScript errors",
@@ -183,7 +199,7 @@
     },
     {
       "name": "360: no WCAG A/AA violations",
-      "passed": true
+      "passed": false
     },
     {
       "name": "360: no JavaScript errors",
@@ -271,7 +287,7 @@
     },
     {
       "name": "390: no WCAG A/AA violations",
-      "passed": true
+      "passed": false
     },
     {
       "name": "390: no JavaScript errors",
@@ -351,7 +367,7 @@
     },
     {
       "name": "768: no WCAG A/AA violations",
-      "passed": true
+      "passed": false
     },
     {
       "name": "768: no JavaScript errors",
@@ -431,7 +447,7 @@
     },
     {
       "name": "1440: no WCAG A/AA violations",
-      "passed": true
+      "passed": false
     },
     {
       "name": "1440: no JavaScript errors",
@@ -490,5 +506,16 @@
       "passed": true
     }
   ],
-  "errors": []
+  "errors": [
+    "320: no WCAG A/AA violations",
+    "320: color-contrast: .story-copy > .eyebrow",
+    "360: no WCAG A/AA violations",
+    "360: color-contrast: .story-copy > .eyebrow",
+    "390: no WCAG A/AA violations",
+    "390: color-contrast: .story-copy > .eyebrow",
+    "768: no WCAG A/AA violations",
+    "768: color-contrast: .story-copy > .eyebrow",
+    "1440: no WCAG A/AA violations",
+    "1440: color-contrast: .story-copy > .eyebrow"
+  ]
 }
