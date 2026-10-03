@@ -120,3 +120,9 @@ input,textarea,select{border-color:#b66b8999;background:#fffaf9;box-shadow:inset
 main[tabindex="-1"]:focus{outline:none}
 
 .intro-flow .intro-enter:focus,.intro-flow .intro-enter:focus-visible{outline:none;box-shadow:none}
+
+/* Matte rose actions echo the delivered laundry tag. */
+:root{--action-rose:#bd3866;--action-rose-hover:#a92e59}
+.button-pink,.header-cta.button-dark,.mobile-dock a:last-child{background:var(--action-rose);color:#fff;border:1px solid #a93059;box-shadow:inset 0 1px 0 #ffffff20,0 3px 8px #71334912}
+.button-pink:hover,.header-cta.button-dark:hover,.mobile-dock a:last-child:hover{background:var(--action-rose-hover);box-shadow:inset 0 1px 0 #ffffff16,0 4px 10px #7133491c}
+.button-pink:active,.header-cta.button-dark:active,.mobile-dock a:last-child:active{box-shadow:inset 0 2px 4px #71334922}
