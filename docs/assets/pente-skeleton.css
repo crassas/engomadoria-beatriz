@@ -640,3 +640,37 @@ body.ready .hero-copy>.btn{animation-delay:.46s}
   .wordmark b{font-size:23px}
   .wordmark-mark{width:39px;height:39px}
 }
+
+/* Two-tone Beatriz wordmark */
+.wordmark b{
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+  line-height:.88;
+}
+.wordmark b .brand-eng,
+.wordmark b .brand-beatriz{
+  margin:0!important;
+  font-family:"Lobster Two","Fraunces",serif;
+  font-size:27px;
+  font-weight:700;
+  letter-spacing:-.025em;
+}
+.wordmark b .brand-eng{color:var(--blue2)}
+.wordmark b .brand-beatriz{color:var(--pink)}
+.wordmark .brand-laundry{
+  width:max-content;
+  margin-top:6px!important;
+  padding:3px 10px 4px;
+  border-radius:999px;
+  background:var(--blue);
+  color:#fff!important;
+  font-size:5.8px!important;
+  letter-spacing:.30em!important;
+  line-height:1;
+}
+@media(max-width:760px){
+  .wordmark b{gap:5px}
+  .wordmark b .brand-eng,.wordmark b .brand-beatriz{font-size:22px}
+  .wordmark .brand-laundry{font-size:5.2px!important;padding:3px 8px}
+}
