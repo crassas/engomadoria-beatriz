@@ -170,3 +170,5 @@ main[tabindex="-1"]:focus{outline:none}
 .hero-image:before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 76% 70%,#fff5f044,transparent 30%);animation:linenSteam 12s ease-in-out infinite}
 @keyframes linenSteam{0%,100%{opacity:.25;transform:translateY(8px)}50%{opacity:.65;transform:translateY(-10px)}}
 @media(prefers-reduced-motion:reduce){.hero-steam-title>span{animation:none;filter:none;transform:none}.hero-steam-title>span:not(:first-child){display:none}.hero-image:before{animation:none}.hero-motion-toggle{display:none}}
+
+.hero-motion-toggle{opacity:1;color:#17475e}
