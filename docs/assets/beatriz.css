@@ -111,3 +111,8 @@ input,textarea,select{border-color:#b66b8999;background:#fffaf9;box-shadow:inset
 .intro-enter:focus-visible{outline:3px solid var(--blue);outline-offset:5px}
 .intro-enter-hint{background:transparent;border:0;box-shadow:none;padding:8px 0;font-weight:500;transition:opacity .8s}
 .intro-fallback .intro-enter,.intro-fallback .intro-enter:hover{background:var(--pink);color:#fff;border:1px solid #fff3f1;box-shadow:0 4px 12px #7b234830}
+
+/* Settle the official mark above the delivered laundry as the van departs. */
+.intro-flow .intro-signature{transition:top 1.8s cubic-bezier(.22,.61,.36,1),left 1.8s cubic-bezier(.22,.61,.36,1),width 1.8s cubic-bezier(.22,.61,.36,1)}
+.intro-flow.intro-delivered .intro-signature{top:39%;left:10%;width:80%}
+.intro-flow:focus{outline:none}
