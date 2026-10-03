@@ -116,3 +116,5 @@ input,textarea,select{border-color:#b66b8999;background:#fffaf9;box-shadow:inset
 .intro-flow .intro-signature{transition:top 1.8s cubic-bezier(.22,.61,.36,1),left 1.8s cubic-bezier(.22,.61,.36,1),width 1.8s cubic-bezier(.22,.61,.36,1)}
 .intro-flow.intro-delivered .intro-signature{top:39%;left:10%;width:80%}
 .intro-flow:focus{outline:none}
+
+main[tabindex="-1"]:focus{outline:none}
