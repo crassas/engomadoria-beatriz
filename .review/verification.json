@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-03T16:50:53.773Z",
+  "checkedAt": "2026-10-03T16:58:58.062Z",
   "checks": [
     {
       "name": "390: full portrait Flow clip plays",
@@ -122,15 +122,19 @@
       "passed": true
     },
     {
-      "name": "320: film preserves full 16:9 composition",
+      "name": "320: presentation video removed",
       "passed": true
     },
     {
-      "name": "320: rendered film plays",
+      "name": "320: hours and AL visible",
       "passed": true
     },
     {
-      "name": "320: film can pause",
+      "name": "320: moving text can pause",
+      "passed": true
+    },
+    {
+      "name": "320: moving text can resume",
       "passed": true
     },
     {
@@ -210,15 +214,19 @@
       "passed": true
     },
     {
-      "name": "360: film preserves full 16:9 composition",
+      "name": "360: presentation video removed",
       "passed": true
     },
     {
-      "name": "360: rendered film plays",
+      "name": "360: hours and AL visible",
       "passed": true
     },
     {
-      "name": "360: film can pause",
+      "name": "360: moving text can pause",
+      "passed": true
+    },
+    {
+      "name": "360: moving text can resume",
       "passed": true
     },
     {
@@ -298,15 +306,19 @@
       "passed": true
     },
     {
-      "name": "390: film preserves full 16:9 composition",
+      "name": "390: presentation video removed",
       "passed": true
     },
     {
-      "name": "390: rendered film plays",
+      "name": "390: hours and AL visible",
       "passed": true
     },
     {
-      "name": "390: film can pause",
+      "name": "390: moving text can pause",
+      "passed": true
+    },
+    {
+      "name": "390: moving text can resume",
       "passed": true
     },
     {
@@ -378,15 +390,19 @@
       "passed": true
     },
     {
-      "name": "768: film preserves full 16:9 composition",
+      "name": "768: presentation video removed",
       "passed": true
     },
     {
-      "name": "768: rendered film plays",
+      "name": "768: hours and AL visible",
       "passed": true
     },
     {
-      "name": "768: film can pause",
+      "name": "768: moving text can pause",
+      "passed": true
+    },
+    {
+      "name": "768: moving text can resume",
       "passed": true
     },
     {
@@ -458,15 +474,19 @@
       "passed": true
     },
     {
-      "name": "1440: film preserves full 16:9 composition",
+      "name": "1440: presentation video removed",
       "passed": true
     },
     {
-      "name": "1440: rendered film plays",
+      "name": "1440: hours and AL visible",
       "passed": true
     },
     {
-      "name": "1440: film can pause",
+      "name": "1440: moving text can pause",
+      "passed": true
+    },
+    {
+      "name": "1440: moving text can resume",
       "passed": true
     },
     {
