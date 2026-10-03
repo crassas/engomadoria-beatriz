@@ -162,9 +162,9 @@ main[tabindex="-1"]:focus{outline:none}
 .pack-count{color:#fff6fa;text-shadow:0 1px 0 #efd0df,0 2px 1px #7b234d66,0 4px 5px #64203d38}
 .pack-count small{color:#fff;text-shadow:none}.pack-price{text-shadow:0 2px 2px #69213c38}
 .pack-option.selected{border-color:#fff4f8;box-shadow:0 0 0 2px #9c2854,inset 0 2px 3px #ffdbe955,inset 0 -4px 8px #66233c38,0 6px 0 #86294e,0 12px 22px #71334930}
-.hero-steam-title{display:grid}.hero-steam-title>span{grid-area:1/1;animation:heroSteam 24s infinite;transform-origin:left center}
-.hero-steam-title>span:nth-child(2){animation-delay:-16s}.hero-steam-title>span:nth-child(3){animation-delay:-8s}
-@keyframes heroSteam{0%,25%{opacity:1;filter:blur(0);transform:translateY(0)}31%,94%{opacity:0;filter:blur(5px);transform:translateY(-8px)}95%{opacity:0;filter:blur(5px);transform:translateY(6px)}100%{opacity:1;filter:blur(0);transform:translateY(0)}}
+.hero-steam-title{display:grid}.hero-steam-title>span{grid-area:1/1;animation:heroSteam 16s infinite;transform-origin:left center}
+.hero-steam-title>span:nth-child(2){animation-delay:-8s}
+@keyframes heroSteam{0%,40%{opacity:1;filter:blur(0);transform:translateY(0)}49%,94%{opacity:0;filter:blur(5px);transform:translateY(-8px)}95%{opacity:0;filter:blur(5px);transform:translateY(6px)}100%{opacity:1;filter:blur(0);transform:translateY(0)}}
 .hero-brand-motion{position:relative}.hero-motion-toggle{margin:-16px 0 14px;min-height:44px;opacity:.8}
 .motion-paused .hero-steam-title>span{animation-play-state:paused}
 .hero-image:before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 76% 70%,#fff5f044,transparent 30%);animation:linenSteam 12s ease-in-out infinite}
