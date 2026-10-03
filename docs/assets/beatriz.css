@@ -151,3 +151,22 @@ main[tabindex="-1"]:focus{outline:none}
 .announcement-steam>span:nth-child(2){animation-delay:-7s}
 @keyframes announcementSteam{0%,38%{opacity:1;filter:blur(0);transform:translateY(0) rotateX(0)}48%,88%{opacity:0;filter:blur(3px);transform:translateY(-5px) rotateX(5deg)}89%{opacity:0;filter:blur(3px);transform:translateY(5px) rotateX(-5deg)}100%{opacity:1;filter:blur(0);transform:translateY(0) rotateX(0)}}
 @media(prefers-reduced-motion:reduce){.announcement-steam>span{animation:none;filter:none;transform:none;will-change:auto}.announcement-steam>span:nth-child(2){display:none}}
+
+/* Each velvet pack has its own rose light; raised lettering keeps quantities legible. */
+.pack-option:nth-child(1){--rose-light:#ce6689;--rose-dark:#a92f59}
+.pack-option:nth-child(2){--rose-light:#c95783;--rose-dark:#9f315d}
+.pack-option:nth-child(3){--rose-light:#d2638e;--rose-dark:#a5255b}
+.pack-option:nth-child(4){--rose-light:#be5980;--rose-dark:#963052}
+.pack-option:nth-child(5){--rose-light:#c06391;--rose-dark:#8f345e}
+.pack-option,.pack-option.selected{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='.075'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' d='M0 0h128v128H0z'/%3E%3C/svg%3E"),radial-gradient(ellipse at 15% 0%,#ffe8f044,transparent 62%),linear-gradient(135deg,var(--rose-light),var(--rose-dark));box-shadow:inset 0 2px 3px #ffdbe955,inset 0 -4px 8px #66233c38,0 5px 0 #86294e,0 10px 18px #71334920}
+.pack-count{color:#fff6fa;text-shadow:0 1px 0 #efd0df,0 2px 1px #7b234d66,0 4px 5px #64203d38}
+.pack-count small{color:#fff;text-shadow:none}.pack-price{text-shadow:0 2px 2px #69213c38}
+.pack-option.selected{border-color:#fff4f8;box-shadow:0 0 0 2px #9c2854,inset 0 2px 3px #ffdbe955,inset 0 -4px 8px #66233c38,0 6px 0 #86294e,0 12px 22px #71334930}
+.hero-steam-title{display:grid}.hero-steam-title>span{grid-area:1/1;animation:heroSteam 24s infinite;transform-origin:left center}
+.hero-steam-title>span:nth-child(2){animation-delay:-16s}.hero-steam-title>span:nth-child(3){animation-delay:-8s}
+@keyframes heroSteam{0%,25%{opacity:1;filter:blur(0);transform:translateY(0)}31%,94%{opacity:0;filter:blur(5px);transform:translateY(-8px)}95%{opacity:0;filter:blur(5px);transform:translateY(6px)}100%{opacity:1;filter:blur(0);transform:translateY(0)}}
+.hero-brand-motion{position:relative}.hero-motion-toggle{margin:-16px 0 14px;min-height:44px;opacity:.8}
+.motion-paused .hero-steam-title>span{animation-play-state:paused}
+.hero-image:before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 76% 70%,#fff5f044,transparent 30%);animation:linenSteam 12s ease-in-out infinite}
+@keyframes linenSteam{0%,100%{opacity:.25;transform:translateY(8px)}50%{opacity:.65;transform:translateY(-10px)}}
+@media(prefers-reduced-motion:reduce){.hero-steam-title>span{animation:none;filter:none;transform:none}.hero-steam-title>span:not(:first-child){display:none}.hero-image:before{animation:none}.hero-motion-toggle{display:none}}
