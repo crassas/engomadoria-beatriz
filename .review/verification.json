@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-04T11:42:25.106Z",
+  "checkedAt": "2026-10-04T11:58:00.434Z",
   "checks": [
     {
       "name": "390: full portrait Flow clip plays",
@@ -387,7 +387,7 @@
     },
     {
       "name": "768: all images load",
-      "passed": true
+      "passed": false
     },
     {
       "name": "768: local fonts load",
@@ -479,7 +479,7 @@
     },
     {
       "name": "1440: all images load",
-      "passed": true
+      "passed": false
     },
     {
       "name": "1440: local fonts load",
@@ -613,6 +613,8 @@
   "errors": [
     "320: all images load",
     "360: all images load",
-    "390: all images load"
+    "390: all images load",
+    "768: all images load",
+    "1440: all images load"
   ]
 }
