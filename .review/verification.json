@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-04T16:48:24.137Z",
+  "checkedAt": "2026-10-04T19:58:39.311Z",
   "checks": [
     {
       "name": "390: full portrait Flow clip plays",
@@ -68,86 +68,9 @@
     {
       "name": "1440: accessible intro controls",
       "passed": true
-    },
-    {
-      "name": "1440: Enter reveals usable page",
-      "passed": true
-    },
-    {
-      "name": "intro: immediate entry works",
-      "passed": true
-    },
-    {
-      "name": "320: one visible page heading",
-      "passed": true
-    },
-    {
-      "name": "320: no horizontal overflow",
-      "passed": true
-    },
-    {
-      "name": "320: all images load",
-      "passed": false
-    },
-    {
-      "name": "320: local fonts load",
-      "passed": true
-    },
-    {
-      "name": "320: introduction finishes",
-      "passed": true
-    },
-    {
-      "name": "320: 20-piece WhatsApp message",
-      "passed": true
-    },
-    {
-      "name": "320: 40-piece WhatsApp message",
-      "passed": true
-    },
-    {
-      "name": "320: 60-piece WhatsApp message",
-      "passed": true
-    },
-    {
-      "name": "320: 80-piece WhatsApp message",
-      "passed": true
-    },
-    {
-      "name": "320: 100-piece WhatsApp message",
-      "passed": true
-    },
-    {
-      "name": "320: AL message includes quantity and note",
-      "passed": true
-    },
-    {
-      "name": "320: textile service message",
-      "passed": true
-    },
-    {
-      "name": "320: irrelevant AL input is hidden",
-      "passed": true
-    },
-    {
-      "name": "320: mobile menu opens",
-      "passed": true
-    },
-    {
-      "name": "320: mobile menu closes after selection",
-      "passed": true
-    },
-    {
-      "name": "320: presentation video removed",
-      "passed": true
-    },
-    {
-      "name": "320: hours and AL visible",
-      "passed": true
     }
   ],
   "errors": [
-    "320: all images load",
-    "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('.care-type .motion-toggle')\n\n    at /home/runner/work/engomadoria-beatriz/engomadoria-beatriz/scripts/verify.mjs:39:315"
+    "locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#intro-enter')\n\n    at /home/runner/work/engomadoria-beatriz/engomadoria-beatriz/scripts/verify.mjs:17:420"
   ]
 }
