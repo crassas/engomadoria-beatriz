@@ -23,6 +23,8 @@ for(const width of [320,360,390,768,1440]){
  const context=await browser.newContext({viewport:{width,height:1000},deviceScaleFactor:1});const page=await context.newPage();let consoleErrors=[];let failed=[];
  page.on('pageerror',e=>consoleErrors.push(e.message));page.on('response',r=>{if(r.status()>=400)failed.push(r.url())});
  await page.goto('http://127.0.0.1:4173',{waitUntil:'networkidle'});await page.keyboard.press('Escape');await page.locator('.intro').waitFor({state:'detached'});await page.evaluate(()=>document.fonts.ready);
+ // Trigger native lazy-loaded images after the monthly section increased page length.
+ await page.evaluate(async()=>{for(let y=0;y<document.body.scrollHeight;y+=Math.max(innerHeight*.8,300)){scrollTo(0,y);await new Promise(r=>setTimeout(r,25))}scrollTo(0,0)});
  check(await page.locator('h1').count()===1,`${width}: one visible page heading`);
  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width}: no horizontal overflow`);
  check(await page.evaluate(()=>Array.from(document.images).every(i=>i.complete&&i.naturalWidth>0)),`${width}: all images load`);
