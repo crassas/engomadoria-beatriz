@@ -283,3 +283,98 @@ main[tabindex="-1"]:focus{outline:none}
 .elite-service-grid{grid-template-columns:repeat(3,1fr)}
 @media(max-width:1050px){.elite-service-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.elite-brand .elite-official-logo{width:138px;height:58px}.elite-footer .elite-official-logo{width:150px;height:68px}.elite-service-grid{grid-template-columns:1fr}}
+
+
+/* ELITE SERVICE CARD RESET — fixes inherited legacy layout */
+.elite-service-grid>.elite-service-card{
+  display:block;
+  min-height:0;
+  padding:0;
+  grid-template-columns:none;
+  align-items:stretch;
+  gap:0;
+  background:#fff;
+}
+.elite-service-grid>.elite-service-card:hover{
+  padding:0;
+}
+.elite-service-card .elite-service-photo{
+  display:block;
+  width:100%;
+  height:160px;
+  position:relative;
+  overflow:hidden;
+}
+.elite-service-card .elite-service-photo:before{
+  content:none!important;
+  display:none!important;
+}
+.elite-service-card .elite-service-photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.elite-service-card .elite-service-body{
+  display:block;
+  min-height:170px;
+  padding:20px 20px 56px;
+  position:relative;
+}
+.elite-service-card .elite-service-no{
+  display:block;
+  font-size:10px;
+  line-height:1;
+  letter-spacing:.12em;
+  color:var(--elite-blue);
+  font-weight:800;
+  margin-bottom:10px;
+}
+.elite-service-card .elite-service-body h3{
+  display:block;
+  font-size:20px;
+  line-height:1.15;
+  margin:0 0 9px;
+  max-width:none;
+}
+.elite-service-card .elite-service-body p{
+  display:block;
+  width:auto;
+  max-width:none;
+  margin:0;
+  font-size:12px;
+  line-height:1.55;
+  color:var(--elite-muted);
+}
+.elite-service-card .elite-service-arrow{
+  position:absolute;
+  right:18px;
+  bottom:18px;
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--elite-soft);
+}
+@media(max-width:700px){
+  .elite-service-grid>.elite-service-card{
+    width:100%;
+  }
+  .elite-service-card .elite-service-photo{
+    height:190px;
+  }
+  .elite-service-card .elite-service-body{
+    min-height:0;
+    padding:18px 18px 58px;
+  }
+  .elite-service-card .elite-service-body h3{
+    font-size:24px;
+    line-height:1.08;
+  }
+  .elite-service-card .elite-service-body p{
+    font-size:14px;
+    line-height:1.55;
+    padding-right:38px;
+  }
+}
