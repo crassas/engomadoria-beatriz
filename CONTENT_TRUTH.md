@@ -16,6 +16,14 @@ Packs de engomadoria:
 - 80 peças — 59 €
 - 100 peças — 65 €
 
+Packs mensais com recolha e entrega ao domicílio:
+- 20 peças — 29 €
+- 40 peças — 49 €
+- 60 peças — 69 €
+- 80 peças — 89 €
+- Serviço separado dos packs de engomadoria já publicados
+- Confirmar por WhatsApp a área abrangida e as condições de recolha/entrega
+
 Alojamento Local:
 - Lavandaria para Alojamento Local
 - Roupa branca — 2 €/kg
@@ -41,7 +49,6 @@ Horário:
 
 ## Informação anterior que deixa de ser usada na página
 - Serviço completo a 3,50 €/kg
-- Recolha e entrega ao domicílio
 
 ## Ainda não confirmado
 - Morada exacta
@@ -50,7 +57,6 @@ Horário:
 - Domínio final
 - Condições específicas de cada serviço
 - Prazos de entrega
-- Recolha/entrega ao domicílio
 
 ## Regra
 A informação deste ficheiro substitui os dados comerciais anteriores quando existir conflito.
