@@ -1,6 +1,6 @@
 # Engomadoria Beatriz Lavandaria
 
-> Engomadoria, lavandaria para Alojamento Local e serviços de limpeza têxtil. Pedidos por WhatsApp.
+> Engomadoria, packs mensais com recolha e entrega ao domicílio, lavandaria para Alojamento Local e serviços de limpeza têxtil. Pedidos por WhatsApp.
 
 ## Contacto
 - Telefone: 923 250 845
@@ -12,6 +12,15 @@
 - 60 peças: 49 €
 - 80 peças: 59 €
 - 100 peças: 65 €
+
+## Packs mensais com recolha e entrega ao domicílio
+- 20 peças: 29 €
+- 40 peças: 49 €
+- 60 peças: 69 €
+- 80 peças: 89 €
+- Confirmar por WhatsApp a área abrangida e as condições de recolha/entrega.
+
+## Alojamento Local
 - Roupa branca para Alojamento Local: 2 €/kg
 - Confirmar peças abrangidas, disponibilidade e prazo directamente com a Beatriz.
 
@@ -36,4 +45,4 @@
 - [Contactos](https://crassas.github.io/engomadoria-beatriz/contactos/)
 
 ## Limites da informação
-A morada, a localidade e o domínio próprio não estão confirmados. Não inferir localização, recolha, entrega, avaliações ou prazos. Pedir indicações directamente no WhatsApp. As imagens editoriais não representam as instalações.
+A morada, a localidade e o domínio próprio não estão confirmados. A recolha e entrega ao domicílio é anunciada apenas para os packs mensais acima; confirmar área e condições por WhatsApp. Não inferir localização, avaliações ou outros prazos. As imagens editoriais não representam as instalações.
