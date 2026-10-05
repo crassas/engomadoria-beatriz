@@ -4010,3 +4010,190 @@ pointer-events:none}
   .el9-hero-copy h1{font-size:50px}
   .el9-primary{width:100%}
 }
+
+
+/* =========================================================
+   ELITE V10 — editorial typography and tighter mobile hero
+   ========================================================= */
+.el10-hero-copy{
+  position:relative;
+}
+.el10-kicker{
+  display:grid;
+  grid-template-columns:auto auto 1fr;
+  align-items:center;
+  gap:10px;
+  width:max-content;
+  max-width:100%;
+  margin:0 0 22px;
+  color:#dce8ee;
+}
+.el10-kicker span{
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:50%;
+  font-size:8px;
+  font-weight:850;
+  color:#fff;
+}
+.el10-kicker b{
+  font-size:9px;
+  letter-spacing:.2em;
+  font-weight:850;
+  color:#8fe1f3;
+}
+.el10-kicker i{
+  position:relative;
+  padding-left:20px;
+  font-style:normal;
+  font-size:8px;
+  letter-spacing:.14em;
+  font-weight:750;
+  color:#afc5d0;
+}
+.el10-kicker i:before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:50%;
+  width:12px;
+  height:1px;
+  background:#63c7e2;
+}
+.el10-headline{
+  margin:0 0 24px!important;
+  max-width:760px!important;
+  display:grid;
+  width:max-content;
+  max-width:100%!important;
+  color:#fff;
+}
+.el10-headline span{
+  display:block;
+  font-family:var(--serif);
+  font-size:clamp(54px,5.4vw,78px);
+  line-height:.9;
+  letter-spacing:-.055em;
+  font-weight:500;
+  color:#fff;
+}
+.el10-headline strong{
+  display:block;
+  margin-top:-.04em;
+  font-family:var(--sans);
+  font-size:clamp(88px,9vw,140px);
+  line-height:.78;
+  letter-spacing:-.075em;
+  text-transform:uppercase;
+  font-weight:900;
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(255,255,255,.92);
+}
+.el10-headline em{
+  display:block;
+  margin-top:18px;
+  padding-left:52px;
+  position:relative;
+  font-family:var(--serif);
+  font-size:clamp(30px,3.7vw,52px);
+  line-height:.95;
+  letter-spacing:-.04em;
+  font-style:italic;
+  font-weight:500;
+  color:#9ce6f6!important;
+}
+.el10-headline em:before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:.58em;
+  width:34px;
+  height:2px;
+  background:#70d6ed;
+}
+.el10-lead{
+  max-width:590px!important;
+  margin:0 0 28px!important;
+  color:#d0dfe6!important;
+  font-size:16px!important;
+  line-height:1.65!important;
+}
+.el10-actions{
+  margin-top:2px;
+}
+.el10-proof{
+  padding-top:2px;
+}
+
+@media(max-width:760px){
+  .el9-hero-content{
+    align-items:center;
+    padding-top:72px;
+    padding-bottom:26px;
+  }
+  .el10-hero-copy{
+    width:100%;
+    margin-top:54px;
+  }
+  .el10-kicker{
+    margin-bottom:17px;
+    gap:8px;
+  }
+  .el10-kicker span{
+    width:27px;
+    height:27px;
+    font-size:7px;
+  }
+  .el10-kicker b{
+    font-size:7.5px;
+    letter-spacing:.17em;
+  }
+  .el10-kicker i{
+    display:none;
+  }
+  .el10-headline{
+    margin-bottom:19px!important;
+  }
+  .el10-headline span{
+    font-size:clamp(42px,11.5vw,54px);
+    line-height:.92;
+  }
+  .el10-headline strong{
+    margin-top:.02em;
+    font-size:clamp(74px,20.5vw,98px);
+    line-height:.78;
+    -webkit-text-stroke:1.2px rgba(255,255,255,.94);
+  }
+  .el10-headline em{
+    margin-top:16px;
+    padding-left:38px;
+    font-size:clamp(30px,8.7vw,42px);
+    line-height:.98;
+    max-width:92%;
+  }
+  .el10-headline em:before{
+    width:26px;
+    height:1.5px;
+  }
+  .el10-lead{
+    max-width:94%!important;
+    margin-bottom:18px!important;
+    font-size:13.5px!important;
+    line-height:1.58!important;
+  }
+  .el10-actions{
+    margin-top:0;
+  }
+  .el10-proof{
+    margin-top:16px!important;
+  }
+}
+
+@media(max-width:390px){
+  .el10-hero-copy{margin-top:42px}
+  .el10-headline strong{font-size:76px}
+  .el10-headline em{font-size:31px}
+}
