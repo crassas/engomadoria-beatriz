@@ -75,7 +75,7 @@ const eliteFeatured=eliteServices.slice(0,3);
 const eliteMore=eliteServices.slice(3);
 
 fs.mkdirSync('docs/'+eliteRoute,{recursive:true});
-fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071f34"><title>Grupo Elite Limpeza | Limpeza profissional no Porto</title><meta name="description" content="Grupo Elite Limpeza: alojamento local, espaços comerciais, casas, limpezas gerais e profundas, vidros, pós-obras e check-in/check-out no Porto e arredores."><meta name="robots" content="noindex,follow"><link rel="canonical" href="${eliteUrl}"><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="../assets/beatriz.css?v=${revision}"><script type="application/ld+json">${JSON.stringify(eliteSchema)}</script></head><body class="elite-page el4">${icons}
+fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071f34"><title>Grupo Elite Limpeza | Limpeza profissional no Porto</title><meta name="description" content="Grupo Elite Limpeza: alojamento local, espaços comerciais, casas, limpezas gerais e profundas, vidros, pós-obras e check-in/check-out no Porto e arredores."><meta name="robots" content="noindex,follow"><link rel="canonical" href="${eliteUrl}"><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="../assets/beatriz.css?v=${revision}"><script type="application/ld+json">${JSON.stringify(eliteSchema)}</script></head><body class="elite-page el4 el5">${icons}
 
 <header class="el4-header">
   <div class="el4-shell el4-header-inner">
@@ -91,8 +91,8 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
   <div class="el4-shell el4-hero-grid">
     <div class="el4-hero-copy">
       <p class="el4-overline">GRUPO ELITE LIMPEZA · PORTO E ARREDORES</p>
-      <h1>Limpeza profissional.<br><em>Sem complicar.</em></h1>
-      <p class="el4-lead">Casas, apartamentos, Alojamento Local e espaços comerciais. Um serviço directo, cuidado e ajustado ao espaço.</p>
+      <div class="el5-ghost" aria-hidden="true">ELITE</div>\n      <h1>O espaço muda.<br><em>O cuidado nota-se.</em></h1>
+      <p class="el4-lead">Limpeza profissional para casas, apartamentos, Alojamento Local e espaços comerciais no Porto e arredores. Um contacto directo, sem complicações.</p>
       <div class="el4-actions">
         <a class="el4-btn el4-btn-primary" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Falar no WhatsApp ${icon('wa')}</a>
         <a class="el4-phone" href="tel:${elitePhone}">${icon('phone')} ${eliteDisplayPhone}</a>
@@ -105,8 +105,8 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
       </div>
     </div>
     <figure class="el4-hero-media">
-      <img src="https://images.unsplash.com/photo-1638989795059-f4dba0a3f291?auto=format&fit=crop&fm=jpg&q=84&w=2200" alt="Sala luminosa, organizada e cuidada" fetchpriority="high">
-      <figcaption><span>PORTO</span><strong>Espaços cuidados.<br>Vida mais leve.</strong></figcaption>
+      <img src="https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?auto=format&fit=crop&fm=jpg&q=86&w=2400" alt="Sala luminosa, organizada e cuidada" fetchpriority="high">
+      <figcaption><span>PORTO E ARREDORES</span><strong>Limpeza que se vê.<br>Cuidado que se sente.</strong></figcaption>
     </figure>
   </div>
 </section>
@@ -157,7 +157,7 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
     <div class="el4-contact-card">
       <span>CONTACTO</span>
       <a href="tel:${elitePhone}">${eliteDisplayPhone}</a>
-      <small>Porto e arredores</mall>
+      <small>Porto e arredores</small>
       <a class="el4-btn el4-btn-light" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Abrir WhatsApp ${icon('wa')}</a>
     </div>
   </div>
