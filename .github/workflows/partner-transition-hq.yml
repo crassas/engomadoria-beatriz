@@ -20,14 +20,17 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Instalar FFmpeg
+      - name: Instalar ferramentas de vídeo
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg
+          sudo apt-get install -y ffmpeg imagemagick webp
           ffmpeg -version | head -1
+          convert -version | head -1
+          webpmux -version
       - name: Gerar versão mobile 1080x1920
         run: |
-          ffmpeg -y -v error             -i docs/assets/partner-cleaning-mobile.webp             -vf "fps=24,scale=1080:1920:flags=lanczos,unsharp=5:5:0.55:3:3:0.18"             -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p             -movflags +faststart -an             docs/assets/partner-cleaning-mobile-1080.mp4
+          convert docs/assets/partner-cleaning-mobile.webp -coalesce /tmp/partner-transition.gif
+          ffmpeg -y -v error             -i /tmp/partner-transition.gif             -vf "fps=24,scale=1080:1920:flags=lanczos,unsharp=5:5:0.55:3:3:0.18"             -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p             -movflags +faststart -an             docs/assets/partner-cleaning-mobile-1080.mp4
           ffprobe -v error -show_entries stream=width,height,r_frame_rate -show_entries format=duration,size,bit_rate -of json docs/assets/partner-cleaning-mobile-1080.mp4
       - name: Publicar asset
         run: |
