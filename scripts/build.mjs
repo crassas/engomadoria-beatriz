@@ -117,6 +117,21 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
   </div>
 </section>
 
+<section class="el5-campaign" aria-label="Limpeza profissional Grupo Elite">
+  <div class="el4-shell el5-campaign-grid">
+    <figure class="el5-campaign-media">
+      <img src="https://images.unsplash.com/photo-1686178827149-6d55c72d81df?auto=format&fit=crop&fm=jpg&q=86&w=2000" alt="Limpeza profissional de estofos" loading="lazy">
+      <span>DETALHE</span>
+    </figure>
+    <div class="el5-campaign-copy">
+      <p class="el4-overline">NÃO É SÓ LIMPAR</p>
+      <h2>É deixar<br><em>pronto.</em></h2>
+      <p>Uma casa pronta a receber. Um Alojamento Local pronto para a próxima entrada. Um espaço comercial pronto para funcionar.</p>
+      <a class="el5-text-cta" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de explicar o espaço e pedir um orçamento.')}">Explique o espaço ${icon('arrow')}</a>
+    </div>
+  </div>
+</section>
+
 <section class="el4-services" id="servicos">
   <div class="el4-shell">
     <div class="el4-heading">
