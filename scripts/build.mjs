@@ -79,10 +79,13 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
 
 <header class="el4-header">
   <div class="el4-shell el4-header-inner">
-    <a class="el4-back" href="../?retorno=1#parceiros" aria-label="Voltar à Engomadoria Beatriz">${icon('arrow')}<span>Beatriz</span></a>
-    <a class="el4-brand" href="#inicio" aria-label="Grupo Elite Limpeza — início">${eliteLogo}</a>
-    <nav class="el4-nav" aria-label="Principal"><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contactos">Contacto</a></nav>
-    <a class="el4-header-cta" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Pedir orçamento ${icon('wa')}</a>
+    <a class="el4-back" href="../?retorno=1#parceiros" aria-label="Voltar à Engomadoria Beatriz">${icon('arrow')}<span>Voltar à Beatriz</span></a>
+    <a class="el4-brand" href="#inicio" aria-label="Grupo Elite Limpeza — início">${eliteLogo}<small>Limpeza profissional</small></a>
+    <div class="el6-head-right">
+      <a class="el6-head-phone" href="tel:${elitePhone}"><small>PORTO E ARREDORES</small><strong>${eliteDisplayPhone}</strong></a>
+      <a class="el4-header-cta" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Pedir orçamento ${icon('wa')}</a>
+    </div>
+    <nav class="el4-nav" aria-label="Principal"><a href="#servicos">Serviços</a><span></span><a href="#sobre">Sobre</a><span></span><a href="#contactos">Contacto</a></nav>
   </div>
 </header>
 
