@@ -3275,3 +3275,151 @@ pointer-events:none}
   }
   .partner-elite-v2-footer>span{width:100%;justify-content:center}
 }
+
+
+/* =========================================================
+   ELITE V8 — mobile masthead: photography visible immediately
+   ========================================================= */
+@media(max-width:760px){
+  .el7-header{
+    position:sticky;
+    top:0;
+    background:#061a29;
+    border-bottom:0;
+    box-shadow:0 16px 36px rgba(0,0,0,.22);
+  }
+
+  .el7-utility{
+    position:relative;
+    z-index:8;
+    background:#061a29;
+  }
+
+  .el7-main{
+    position:relative;
+    width:100%;
+    min-height:190px;
+    padding:0;
+    margin:0;
+    display:block;
+    overflow:hidden;
+    background:#061a29;
+  }
+
+  .el7-photo-ribbon{
+    display:grid;
+    position:absolute;
+    inset:0;
+    z-index:1;
+    width:100%;
+    height:100%;
+    grid-template-columns:1.25fr .75fr;
+    gap:0;
+    border-radius:0;
+    background:#061a29;
+    box-shadow:none;
+  }
+
+  .el7-photo-ribbon figure{
+    display:block;
+    position:relative;
+    height:100%;
+    margin:0;
+    overflow:hidden;
+  }
+
+  .el7-photo-ribbon figure:nth-child(3),
+  .el7-photo-ribbon>span{
+    display:none;
+  }
+
+  .el7-photo-ribbon figure:first-child{
+    border-right:1px solid rgba(255,255,255,.22);
+  }
+
+  .el7-photo-ribbon img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+    filter:saturate(.82) contrast(1.06) brightness(.78);
+  }
+
+  .el7-photo-ribbon:after{
+    content:'';
+    position:absolute;
+    inset:0;
+    z-index:3;
+    background:
+      linear-gradient(90deg,rgba(3,20,31,.18) 0%,rgba(3,20,31,.05) 44%,rgba(3,20,31,.42) 100%),
+      linear-gradient(180deg,rgba(4,23,35,.08) 0%,rgba(4,23,35,.15) 50%,rgba(4,23,35,.64) 100%);
+    pointer-events:none;
+  }
+
+  .el7-brand{
+    position:absolute;
+    z-index:6;
+    left:16px;
+    top:16px;
+    width:154px;
+    min-height:72px;
+    padding:7px 13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:rgba(255,255,255,.96);
+    border:1px solid rgba(255,255,255,.92);
+    box-shadow:0 14px 32px rgba(0,0,0,.28);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+  }
+
+  .el7-brand .el4-logo-img{
+    width:128px;
+    height:54px;
+    object-fit:contain;
+    object-position:center;
+  }
+
+  .el7-cta{
+    position:absolute;
+    z-index:6;
+    right:16px;
+    bottom:16px;
+    min-height:42px;
+    padding:10px 14px;
+    border-radius:999px;
+    background:#fff;
+    color:#08283b!important;
+    box-shadow:0 12px 28px rgba(0,0,0,.25);
+    font-size:9px;
+  }
+
+  .el7-cta .icon{
+    width:14px;
+    height:14px;
+  }
+
+  .el7-nav{
+    display:none;
+  }
+
+  .el7-header + main .el4-hero-grid{
+    padding-top:38px;
+  }
+}
+
+@media(max-width:390px){
+  .el7-main{min-height:176px}
+  .el7-brand{
+    left:14px;
+    top:14px;
+    width:142px;
+    min-height:68px;
+    padding:6px 11px;
+  }
+  .el7-brand .el4-logo-img{width:118px;height:50px}
+  .el7-cta{right:14px;bottom:14px}
+}
