@@ -104,7 +104,7 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
       </div>
       <div class="el9-proof">
         <span>${icon('check')} Porto e arredores</span>
-        <span>${icon('check')} Produtos incluídos</span>
+        <span>${icon('check')} Contacto directo</span>
         <span>${icon('check')} Casas · AL · comércio</span>
       </div>
     </div>
@@ -118,7 +118,7 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
 
 <section class="el4-proof-strip" aria-label="Grupo Elite Limpeza">
   <div class="el4-shell">
-    <span>Limpeza profissional</span><i></i><span>Contacto directo</span><i></i><span>Porto e arredores</span><i></i><span>Produtos incluídos</span>
+    <span>Limpeza profissional</span><i></i><span>Contacto directo</span><i></i><span>Porto e arredores</span><i></i><span>Orçamento por WhatsApp</span>
   </div>
 </section>
 
