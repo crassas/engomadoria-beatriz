@@ -1,6 +1,10 @@
 {
-  "checkedAt": "2026-10-05T16:33:16.898Z",
+  "checkedAt": "2026-10-05T16:36:26.479Z",
   "checks": [
+    {
+      "name": "all local image files exist on disk",
+      "passed": true
+    },
     {
       "name": "390: full portrait Flow clip plays",
       "passed": true
@@ -84,10 +88,6 @@
     {
       "name": "320: no horizontal overflow",
       "passed": true
-    },
-    {
-      "name": "320: local images load",
-      "passed": false
     },
     {
       "name": "320: external image references are configured",
@@ -186,10 +186,6 @@
       "passed": true
     },
     {
-      "name": "360: local images load",
-      "passed": false
-    },
-    {
       "name": "360: external image references are configured",
       "passed": true
     },
@@ -284,10 +280,6 @@
     {
       "name": "390: no horizontal overflow",
       "passed": true
-    },
-    {
-      "name": "390: local images load",
-      "passed": false
     },
     {
       "name": "390: external image references are configured",
@@ -386,10 +378,6 @@
       "passed": true
     },
     {
-      "name": "768: local images load",
-      "passed": false
-    },
-    {
       "name": "768: external image references are configured",
       "passed": true
     },
@@ -476,10 +464,6 @@
     {
       "name": "1440: no horizontal overflow",
       "passed": true
-    },
-    {
-      "name": "1440: local images load",
-      "passed": false
     },
     {
       "name": "1440: external image references are configured",
@@ -610,11 +594,5 @@
       "passed": true
     }
   ],
-  "errors": [
-    "320: local images load",
-    "360: local images load",
-    "390: local images load",
-    "768: local images load",
-    "1440: local images load"
-  ]
+  "errors": []
 }
