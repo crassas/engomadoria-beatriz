@@ -4294,3 +4294,189 @@ pointer-events:none}
   .el10-headline strong{font-size:69px}
   .el10-headline em{font-size:28px}
 }
+
+
+/* =========================================================
+   ELITE V12 — commercial funnel: pós-obras > AL > comércio
+   ========================================================= */
+.el12-funnel{
+  padding:26px 0;
+  background:#071c2b;
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.el12-funnel-grid{
+  display:grid;
+  grid-template-columns:1.1fr repeat(3,1fr);
+  gap:10px;
+  align-items:stretch;
+}
+.el12-funnel-intro{
+  padding:20px 22px 20px 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.el12-funnel-intro>span{
+  margin-bottom:8px;
+  color:#67cce6;
+  font-size:8px;
+  letter-spacing:.18em;
+  font-weight:850;
+}
+.el12-funnel-intro>strong{
+  max-width:250px;
+  color:#fff;
+  font-family:var(--serif);
+  font-size:24px;
+  line-height:1.02;
+  font-weight:500;
+  letter-spacing:-.035em;
+}
+.el12-step{
+  min-height:92px;
+  padding:16px 17px;
+  display:grid;
+  grid-template-columns:34px 1fr;
+  align-items:center;
+  gap:12px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:3px 14px 14px 14px;
+  background:rgba(255,255,255,.035);
+  color:#d7e6ed!important;
+  transition:transform .2s ease,background .2s ease,border-color .2s ease;
+}
+.el12-step:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.06);
+  border-color:rgba(111,211,235,.25);
+}
+.el12-step>b{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);
+  color:#82d9ee;
+  font-size:9px;
+  letter-spacing:.08em;
+}
+.el12-step>span{display:grid;gap:4px}
+.el12-step strong{
+  color:#fff;
+  font-size:13px;
+  line-height:1.1;
+}
+.el12-step small{
+  color:#9fb6c2;
+  font-size:9px;
+  line-height:1.3;
+}
+.el12-step-primary{
+  background:linear-gradient(135deg,#0b6f98,#084665);
+  border-color:rgba(128,222,242,.38);
+  box-shadow:0 12px 28px rgba(0,0,0,.16);
+}
+.el12-step-primary>b{
+  background:#fff;
+  color:#0a5677;
+  border-color:#fff;
+}
+.el12-step-primary small{color:#d9edf4}
+
+/* first featured service is now the main commercial target */
+.el9 .el4-feature-card:first-child{
+  position:relative;
+  background:#09283b;
+  color:#fff!important;
+  box-shadow:0 24px 54px rgba(5,35,52,.16);
+}
+.el9 .el4-feature-card:first-child .el4-feature-content{
+  background:linear-gradient(180deg,#0b3148,#071e2e);
+}
+.el9 .el4-feature-card:first-child .el4-feature-content>span{
+  color:#7fdef2;
+}
+.el9 .el4-feature-card:first-child .el4-feature-content h3{
+  color:#fff;
+}
+.el9 .el4-feature-card:first-child .el4-feature-content p{
+  color:#d2e2e9!important;
+}
+.el9 .el4-feature-card:first-child .el4-feature-content b{
+  color:#fff;
+}
+
+/* hero lead: allow the post-construction opening line to read as a hook */
+.el10-lead strong{
+  display:block;
+  margin-bottom:5px;
+  color:#fff;
+  font-family:var(--serif);
+  font-size:20px;
+  line-height:1.05;
+  font-weight:500;
+}
+.el10-lead{
+  max-width:610px!important;
+}
+
+/* campaign becomes the post-construction conversion section */
+.el9 .el5-campaign-copy .el4-overline{
+  color:#0b82b1!important;
+}
+.el9 .el5-campaign-copy h2 em{
+  color:#0a7fae;
+}
+.el9 .el5-campaign-media>span{
+  background:#0a3046;
+}
+
+@media(max-width:980px){
+  .el12-funnel-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .el12-funnel-intro{
+    grid-column:1/3;
+    padding:4px 0 12px;
+  }
+  .el12-step-primary{
+    grid-column:1/2;
+  }
+}
+@media(max-width:760px){
+  .el12-funnel{
+    padding:18px 0 20px;
+  }
+  .el12-funnel-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .el12-funnel-intro{
+    grid-column:auto;
+    padding:0 0 8px;
+  }
+  .el12-funnel-intro>strong{
+    max-width:100%;
+    font-size:22px;
+  }
+  .el12-step,
+  .el12-step-primary{
+    grid-column:auto;
+    min-height:78px;
+    padding:13px 14px;
+  }
+  .el12-step{
+    grid-template-columns:30px 1fr;
+  }
+  .el12-step>b{
+    width:30px;
+    height:30px;
+  }
+
+  .el10-lead strong{
+    margin-bottom:4px;
+    font-size:18px;
+  }
+}
