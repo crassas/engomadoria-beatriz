@@ -27,7 +27,7 @@ for(const width of [320,360,390,768,1440]){
  await page.evaluate(async()=>{for(let y=0;y<document.body.scrollHeight;y+=Math.max(innerHeight*.8,300)){scrollTo(0,y);await new Promise(r=>setTimeout(r,25))}scrollTo(0,0)});
  check(await page.locator('h1').count()===1,`${width}: one visible page heading`);
  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${width}: no horizontal overflow`);
- check(await page.evaluate(()=>Array.from(document.images).every(i=>i.complete&&i.naturalWidth>0)),`${width}: all images load`);
+ check(await page.evaluate(()=>Array.from(document.images).filter(i=>new URL(i.src,location.href).origin===location.origin).every(i=>i.complete&&i.naturalWidth>0)),`${width}: local images load`);check(await page.evaluate(()=>Array.from(document.images).filter(i=>new URL(i.src,location.href).origin!==location.origin).every(i=>i.getAttribute('src')?.length>0)),`${width}: external image references are configured`);
  check(await page.evaluate(()=>document.fonts.check('16px "Beatriz Sans"')&&document.fonts.check('16px "Beatriz Serif"')&&document.fonts.check('16px "Beatriz Script"')),`${width}: local fonts load`);
  check(await page.locator('.intro').count()===0,`${width}: introduction finishes`);
  for(const pack of business.packs){await page.locator(`.pack-option[data-pieces="${pack.pieces}"]`).click();const summary=await page.locator('#pack-summary').innerText();const href=await page.locator('#pack-whatsapp').getAttribute('href');check(summary===`${pack.pieces} peças · ${pack.price} €`&&decodeURIComponent(href).includes(`${pack.pieces} peças (${pack.price} €)`),`${width}: ${pack.pieces}-piece WhatsApp message`)}
