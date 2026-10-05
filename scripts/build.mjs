@@ -110,8 +110,8 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
     </div>
     <div class="el9-sidecard">
       <span>DETALHE</span>
-      <img src="https://images.unsplash.com/photo-1686178827149-6d55c72d81df?auto=format&fit=crop&fm=jpg&q=86&w=1000" alt="Limpeza profissional de estofos" loading="eager">
-      <strong>Serviço cuidado.<br>Espaço pronto.</strong>
+      <img src="https://images.unsplash.com/photo-1769053202058-74062e1f1530?auto=format&fit=crop&fm=jpg&q=86&w=1200" alt="Espaço profissional pronto depois da limpeza" loading="eager">
+      <strong>Obra terminada.<br>Espaço pronto.</strong>
     </div>
   </div>
 </section>
@@ -143,7 +143,7 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
 <section class="el5-campaign" aria-label="Limpezas pós-obras Grupo Elite">
   <div class="el4-shell el5-campaign-grid">
     <figure class="el5-campaign-media">
-      <img src="https://images.unsplash.com/photo-1686178827149-6d55c72d81df?auto=format&fit=crop&fm=jpg&q=86&w=2000" alt="Limpeza profissional de estofos" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1769053202058-74062e1f1530?auto=format&fit=crop&fm=jpg&q=86&w=2000" alt="Espaço limpo e preparado depois de uma obra" loading="lazy">
       <span>DETALHE</span>
     </figure>
     <div class="el5-campaign-copy">
