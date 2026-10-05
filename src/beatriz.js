@@ -42,14 +42,18 @@ const ensurePartnerTransitionStyles=()=>{
     '.partner-transition__page{position:absolute;inset:-2%;width:104%;height:104%;border:0;background:#f7fbfd;opacity:.55;filter:blur(18px) saturate(.78);transform:scale(1.035);transition:filter 1.35s cubic-bezier(.22,.61,.36,1),transform 1.35s cubic-bezier(.22,.61,.36,1),opacity .9s ease}',
     '.partner-transition__fog{position:absolute;inset:-3%;background:radial-gradient(circle at 18% 22%,rgba(255,255,255,.8) 0 1px,transparent 2px),radial-gradient(circle at 72% 36%,rgba(255,255,255,.65) 0 1.5px,transparent 2.5px),linear-gradient(145deg,rgba(232,240,244,.86),rgba(198,211,219,.7));background-size:29px 31px,43px 47px,100% 100%;backdrop-filter:blur(16px) saturate(.8);-webkit-backdrop-filter:blur(16px) saturate(.8);opacity:.96;transform:scale(1.03)}',
     '.partner-transition__fog:after{content:"";position:absolute;inset:0;background:linear-gradient(125deg,transparent 20%,rgba(255,255,255,.44) 45%,transparent 70%);opacity:.55}',
-    '.partner-transition__film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.94;filter:saturate(.78) contrast(.9) brightness(1.03);pointer-events:none}',
+    '.partner-transition__film,.partner-transition__film-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none}',
+    '.partner-transition__film{opacity:.96;filter:saturate(.88) contrast(.94) brightness(1.02)}',
+    '.partner-transition__film-fallback{opacity:.34;filter:saturate(.72) contrast(.88) blur(.15px);transform:scale(1.015)}',
     '.partner-transition.is-running .partner-transition__page{opacity:1;filter:blur(0) saturate(1);transform:scale(1)}',
     '.partner-transition.is-running .partner-transition__fog{animation:partnerFogWipe 1.58s cubic-bezier(.3,.7,.2,1) forwards}',
-    '.partner-transition.is-running .partner-transition__film{animation:partnerFilmFade 1.72s linear forwards}',
+    '.partner-transition.is-running .partner-transition__film,.partner-transition.is-running .partner-transition__film-fallback{animation:partnerFilmFade 1.72s linear forwards}',
+    '.partner-transition__film-fallback{display:none}',
     '.partner-transition.no-film .partner-transition__film{display:none}',
+    '.partner-transition.no-film .partner-transition__film-fallback{display:block}',
     '@keyframes partnerFogWipe{0%{clip-path:polygon(0 0,100% 0,100% 100%,0 100%);opacity:.96}34%{clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%);opacity:.91}72%{clip-path:polygon(0 0,60% 0,0 62%);opacity:.72}100%{clip-path:polygon(0 0,0 0,0 0);opacity:0}}',
     '@keyframes partnerFilmFade{0%,15%{opacity:.94}58%{opacity:.7}82%{opacity:.32}100%{opacity:0}}',
-    '@media (min-width:901px){.partner-transition__film{display:none}.partner-transition__fog{background-size:34px 37px,51px 57px,100% 100%}}'
+    '@media (min-width:901px){.partner-transition__film,.partner-transition__film-fallback{display:none!important}.partner-transition__fog{background-size:34px 37px,51px 57px,100% 100%}}'
   ].join('');
   document.head.append(style);
 };
@@ -62,8 +66,9 @@ if(partnerPanel){
     const overlay=document.createElement('div');overlay.className='partner-transition';overlay.setAttribute('aria-hidden','true');
     const frame=document.createElement('iframe');frame.className='partner-transition__page';frame.src=href;frame.tabIndex=-1;frame.setAttribute('aria-hidden','true');
     const fog=document.createElement('div');fog.className='partner-transition__fog';
-    const film=document.createElement('img');film.className='partner-transition__film';film.src='assets/partner-cleaning-mobile.webp';film.alt='';film.decoding='async';
-    overlay.append(frame,fog,film);document.body.append(overlay);
+    const film=document.createElement('video');film.className='partner-transition__film';film.src='assets/partner-cleaning-mobile-1080.mp4';film.muted=true;film.playsInline=true;film.preload='auto';film.setAttribute('aria-hidden','true');
+    const fallback=document.createElement('img');fallback.className='partner-transition__film-fallback';fallback.src='assets/partner-cleaning-mobile.webp';fallback.alt='';fallback.decoding='async';
+    overlay.append(frame,fog,film,fallback);document.body.append(overlay);
     const previousOverflow=document.body.style.overflow;document.body.style.overflow='hidden';
     let started=false;let finished=false;
     const start=()=>{if(started)return;started=true;requestAnimationFrame(()=>requestAnimationFrame(()=>overlay.classList.add('is-running')))};
@@ -71,6 +76,7 @@ if(partnerPanel){
     const startFallback=setTimeout(start,420);
     frame.addEventListener('load',()=>{clearTimeout(startFallback);setTimeout(start,70)},{once:true});
     film.addEventListener('error',()=>overlay.classList.add('no-film'),{once:true});
+    film.play().catch(()=>overlay.classList.add('no-film'));
     setTimeout(finish,2100);
   });
 }
