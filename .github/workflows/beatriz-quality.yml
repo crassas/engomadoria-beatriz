@@ -27,6 +27,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Preparar transição Elite em alta resolução
+        run: |
+          curl -fL --retry 3 'https://d2ol7oe51mr4n9.cloudfront.net/user_30PO5dvwRcm4D8DO9CAK1SBGTb7/e982d540-6d94-4f20-8152-0e092900249d.mp4' -o /tmp/partner-cleaning-source.mp4
+          ffmpeg -y -i /tmp/partner-cleaning-source.mp4 -an -vf "scale=1080:1920:flags=lanczos,unsharp=5:5:0.35:5:5:0.0" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -movflags +faststart docs/assets/partner-cleaning-mobile-1080.mp4
+          test -s docs/assets/partner-cleaning-mobile-1080.mp4
       - name: Renderizar filme Remotion
         run: npm run video:render
       - name: Instalar navegador de teste
