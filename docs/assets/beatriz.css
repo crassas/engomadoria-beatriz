@@ -1912,3 +1912,56 @@ pointer-events:none}
 @media(prefers-reduced-motion:reduce){
   .partner-elite-panel .icon{transition:none}
 }
+
+/* ELITE BACK TO BEATRIZ — subtle return control */
+.elite-back{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  flex:none;
+  padding:8px 10px 8px 8px;
+  border:1px solid rgba(8,63,119,.12);
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+  color:var(--elite-navy);
+  font-size:11px;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.01em;
+  box-shadow:0 4px 14px rgba(8,63,119,.05);
+  transition:background .2s ease,border-color .2s ease,transform .2s ease;
+}
+.elite-back::before{
+  content:"←";
+  display:grid;
+  place-items:center;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:var(--elite-soft);
+  color:var(--elite-blue);
+  font-size:13px;
+  font-weight:800;
+}
+.elite-back:hover{
+  background:#fff;
+  border-color:rgba(8,63,119,.22);
+  transform:translateX(-2px);
+}
+@media(max-width:700px){
+  .elite-back{
+    gap:5px;
+    padding:6px 8px 6px 6px;
+    font-size:10px;
+  }
+  .elite-back::before{
+    width:18px;
+    height:18px;
+    font-size:12px;
+  }
+  .elite-header-inner{gap:8px}
+}
+@media(max-width:390px){
+  .elite-back span{display:none}
+  .elite-back{padding:6px}
+}
