@@ -39,7 +39,7 @@ const html=head('Engomadoria Beatriz | Packs de engomadoria e recolha ao domicí
 <div class="pack-order"><div><span class="eyebrow">O SEU PACK</span><h3 id="pack-summary">60 peças · 49 €</h3><p>O pedido segue preparado. A Beatriz confirma as condições e o prazo consigo.</p></div><a class="button button-dark" id="pack-whatsapp" href="${wa(packMessage(b.packs[2]))}">Pedir este pack ${icon('wa')}</a></div><p class="pack-disclaimer">Valores por pack. Confirme as peças abrangidas e as condições antes de entregar a roupa.</p><p id="pack-status" class="sr-only" aria-live="polite"></p><noscript><div class="nojs-packs">${b.packs.map(p=>`<a href="${wa(packMessage(p))}">Pedir ${p.pieces} peças — ${p.price} €</a>`).join('')}</div></noscript>
 </section>
 <section class="monthly-pickup section" id="recolha" aria-labelledby="monthly-title"><div class="wrap monthly-grid"><div class="monthly-copy"><p class="eyebrow">RECOLHA & ENTREGA AO DOMICÍLIO</p><h2 id="monthly-title">Packs mensais.<br><em>A roupa vai e volta tratada.</em></h2><p>Um serviço de engomadoria pensado para quem quer tirar esta tarefa da rotina. Escolha o pack mensal e confirme por WhatsApp a área abrangida, a recolha e a entrega.</p><div class="monthly-note">${icon('check')} Recolha e entrega ao domicílio <span>·</span> Packs mensais</div></div><div class="monthly-cards">${b.monthlyPickupPacks.map((p)=>`<a class="monthly-card" href="${wa(`Olá, Beatriz! Gostaria do pack mensal de ${p.pieces} peças por ${p.price} €, com recolha e entrega ao domicílio. Pode confirmar a área abrangida e as condições?`)}"><span class="monthly-count">${p.pieces}<small>peças</small></span><strong>${p.price} €</strong><span class="monthly-cta">Pedir este pack ${icon('wa')}</span></a>`).join('')}</div></div><div class="wrap monthly-van-stage" aria-label="Recolha e entrega ao domicílio"><div class="monthly-van-copy"><span>RECOLHA & ENTREGA</span><strong>Ao domicílio</strong><small>Confirme a área e as condições directamente com a Beatriz.</small></div><div class="monthly-van-lane" aria-hidden="true"><span class="monthly-road-line"></span><svg class="monthly-van" viewBox="0 0 210 110" role="img" aria-hidden="true"><g class="van-body"><path d="M28 34h93c9 0 16 6 18 14l7 24h28c6 0 11 5 11 11v7h-16a22 22 0 0 0-43 0H83a22 22 0 0 0-43 0H17V48c0-8 5-14 11-14Z"/><path d="M141 53h20l14 19h-28Z" class="van-window"/><rect x="18" y="42" width="102" height="39" rx="9"/><rect x="2" y="45" width="34" height="6" rx="3"/><rect x="8" y="58" width="29" height="6" rx="3"/><rect x="0" y="71" width="34" height="6" rx="3"/></g><circle class="van-wheel" cx="62" cy="90" r="15"/><circle class="van-wheel" cx="148" cy="90" r="15"/><circle class="van-hub" cx="62" cy="90" r="6"/><circle class="van-hub" cx="148" cy="90" r="6"/></svg></div></div></section>
-<section class="partners-showcase" id="parceiros" aria-labelledby="partners-title"><div class="wrap partner-stage"><div class="partner-intro"><div class="partner-intro-main"><p class="eyebrow">PARCERIA LOCAL · PORTO E ARREDORES</p><h2 id="partners-title">Roupa tratada.<br><em>Casa impecável.</em></h2><span class="partner-bridge">DOIS CUIDADOS · CADA UM NA SUA ESPECIALIDADE</span></div><p class="partner-intro-copy">Enquanto a Beatriz cuida da sua roupa, o Grupo Elite Limpeza cuida do espaço. Uma parceria pensada para quem quer recuperar tempo sem baixar o nível de cuidado.</p></div><a class="partner-elite-panel partner-elite-v2" href="grupo-elite-limpeza/" aria-label="Conhecer os serviços do Grupo Elite Limpeza"><div class="partner-elite-media"><img src="https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?auto=format&fit=crop&fm=jpg&q=82&w=1600" alt="Serviço de limpeza profissional num espaço cuidado" loading="lazy"><span class="partner-elite-badge">PARCEIRO LOCAL</span><div class="partner-elite-logo-card partner-elite-wordmark"><small>GRUPO</small><strong>ELITE</strong><b>LIMPEZA</b></div></div><div class="partner-elite-v2-copy"><div class="partner-elite-v2-head"><span>GRUPO ELITE LIMPEZA</span><small>01 / PARCEIRO</small></div><h3>Da roupa tratada<br>ao espaço <em>impecável.</em></h3><p>Limpezas pós-obras em destaque, além de Alojamento Local, espaços comerciais, casas e apartamentos no Porto e arredores.</p><div class="partner-elite-v2-services"><span>Pós-obras</span><span>Alojamento Local</span><span>Comércio</span><span>Casas</span></div><div class="partner-elite-v2-footer"><div><small>CONTACTO DIRECTO</small><strong>928 402 547</strong></div><span>Conhecer a Elite ${icon('arrow')}</span></div></div></a></div></section>
+<section class="partners-showcase" id="parceiros" aria-labelledby="partners-title"><div class="wrap partner-stage"><div class="partner-intro"><div class="partner-intro-main"><p class="eyebrow">PARCERIA LOCAL · PORTO E ARREDORES</p><h2 id="partners-title">Roupa tratada.<br><em>Casa impecável.</em></h2><span class="partner-bridge">DOIS CUIDADOS · CADA UM NA SUA ESPECIALIDADE</span></div><p class="partner-intro-copy">Enquanto a Beatriz cuida da sua roupa, o Grupo Elite Limpeza cuida do espaço. Uma parceria pensada para quem quer recuperar tempo sem baixar o nível de cuidado.</p></div><a class="partner-elite-panel partner-elite-v2" href="grupo-elite-limpeza/" aria-label="Conhecer os serviços do Grupo Elite Limpeza"><div class="partner-elite-media"><img src="https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?auto=format&fit=crop&fm=jpg&q=82&w=1600" alt="Serviço de limpeza profissional num espaço cuidado" loading="lazy"><span class="partner-elite-badge">PARCEIRO LOCAL</span><div class="partner-elite-logo-card partner-elite-wordmark"><small>GRUPO</small><strong>ELITE</strong><b>LIMPEZA</b></div></div><div class="partner-elite-v2-copy"><div class="partner-elite-v2-head"><span>GRUPO ELITE LIMPEZA</span><small>01 / PARCEIRO</small></div><h3>Da roupa tratada<br>ao espaço <em>impecável.</em></h3><p>Limpezas pós-obras em destaque, além de Alojamento Local, espaços comerciais, casas e apartamentos no Porto e arredores.</p><p class="partner-elite-v2-line">Pós-obras · Alojamento Local · Comércio · Casas</p><div class="partner-elite-v2-footer"><div><small>CONTACTO DIRECTO</small><strong>928 402 547</strong></div><span>Conhecer a Elite ${icon('arrow')}</span></div></div></a></div></section>
 <section class="story section" id="galeria"><div class="wrap story-grid"><div class="story-copy"><img class="brand-reminder" src="assets/photos/beatriz-logo.webp?v=${revision}" width="1536" height="630" alt="Engomadoria Beatriz Lavandaria" loading="lazy"><p class="eyebrow">O CUIDADO ESTÁ NOS DETALHES</p><h2>Aquela sensação<br>de ter tudo<br><em>em ordem.</em></h2><p>Uma camisa pronta a vestir. A roupa da semana arrumada. Pequenos cuidados que deixam o dia mais leve.</p><a class="text-link" href="${wa(generalMessage)}">Conte-nos o que precisa ${icon('arrow')}</a></div><div class="care-type motion-panel"><p class="eyebrow">ROUPA CUIDADA. DIAS MAIS LEVES.</p><div class="type-window"><div class="type-track"><span>Vapor. Tempo. Cuidado. <em>Um toque Beatriz.</em> </span><span aria-hidden="true">Vapor. Tempo. Cuidado. <em>Um toque Beatriz.</em> </span></div></div><p class="care-type-note">O cuidado de todos os dias.</p></div></div></section>
 <section class="al section" id="al"><div class="wrap al-grid"><div class="al-image"><img src="assets/photos/linen.webp" alt="Toalhas brancas dobradas para acolher hóspedes" width="1000" height="667" loading="lazy"><span>ROUPA BRANCA / ALOJAMENTO LOCAL</span></div><div class="al-copy"><p class="eyebrow">LAVANDARIA PARA ALOJAMENTO LOCAL</p><h2>O cuidado que<br>os seus hóspedes<br><em>também sentem.</em></h2><p>Lençóis, fronhas e toalhas: o cuidado da roupa branca do seu Alojamento Local, com um preço por quilo fácil de planear. Fale directamente com a Beatriz para combinar quantidades, condições e datas.</p><div class="al-rate"><strong>2<span> €/kg</span></strong><span>Roupa branca<br>Alojamento Local</span></div><p class="al-example"><strong>10 kg de roupa branca = 20 €</strong><span>Exemplo de cálculo. Confirme as condições e o tratamento com a Beatriz.</span></p><a class="button button-pink" href="#pedido" data-intent="al">Falar sobre o meu Alojamento Local ${icon('arrow')}</a></div></div></section>
 <section class="services section wrap" id="servicos"><div class="section-heading"><div><p class="eyebrow">MAIS DO QUE ENGOMAR</p><h2>Há mais roupa<br><em>que merece cuidado.</em></h2></div><p>Dos tecidos de casa às peças especiais. Consulte a disponibilidade e peça um orçamento.</p></div><div class="services-list">${b.services.map((name,i)=>`<a href="#pedido" class="service-row" data-intent="${escape(name)}"><h3>${name}</h3><span class="service-action">Consultar ${icon('arrow')}</span></a>`).join('')}</div><p class="service-footnote">Precisa de outro serviço? <a href="${wa('Olá, Beatriz! Gostaria de saber se fazem o seguinte serviço: ')}">Pergunte à Beatriz.</a></p></section>
@@ -102,11 +102,6 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
         <a class="el9-primary" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento para uma limpeza pós-obra.')}">Pedir orçamento pós-obra ${icon('wa')}</a>
         <a class="el9-secondary" href="tel:${elitePhone}">${icon('phone')} ${eliteDisplayPhone}</a>
       </div>
-      <div class="el9-proof el10-proof">
-        <span>${icon('check')} Porto e arredores</span>
-        <span>${icon('check')} Contacto directo</span>
-        <span>${icon('check')} Pós-obras · AL · comércio</span>
-      </div>
     </div>
     <div class="el9-sidecard">
       <span>DETALHE</span>
@@ -116,29 +111,6 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
   </div>
 </section>
 
-<section class="el4-proof-strip" aria-label="Grupo Elite Limpeza">
-  <div class="el4-shell">
-    <span>Limpeza profissional</span><i></i><span>Contacto directo</span><i></i><span>Porto e arredores</span><i></i><span>Orçamento por WhatsApp</span>
-  </div>
-</section>
-
-<section class="el12-funnel" aria-label="Serviços em destaque">
-  <div class="el4-shell el12-funnel-grid">
-    <div class="el12-funnel-intro">
-      <span>ENTRADAS PRINCIPAIS</span>
-      <strong>Começamos pelo que mais pede resposta.</strong>
-    </div>
-    <a href="#servicos" class="el12-step el12-step-primary">
-      <b>01</b><span><strong>Pós-obras</strong><small>Limpeza final do espaço</small></span>
-    </a>
-    <a href="#servicos" class="el12-step">
-      <b>02</b><span><strong>Alojamento Local</strong><small>Preparação entre estadias</small></span>
-    </a>
-    <a href="#servicos" class="el12-step">
-      <b>03</b><span><strong>Comércio</strong><small>Lojas e espaços profissionais</small></span>
-    </a>
-  </div>
-</section>
 
 <section class="el5-campaign" aria-label="Limpezas pós-obras Grupo Elite">
   <div class="el4-shell el5-campaign-grid">
@@ -155,21 +127,34 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
   </div>
 </section>
 
-<section class="el4-services" id="servicos">
+<section class="el13-services" id="servicos">
   <div class="el4-shell">
-    <div class="el4-heading">
-      <div><p class="el4-overline">POR ORDEM DE FOCO</p><h2>Primeiro a obra.<br><em>Depois, o ritmo diário.</em></h2></div>
-      <p>Pós-obras em primeiro lugar. Depois Alojamento Local e espaços comerciais. Casas e restantes serviços continuam disponíveis.</p>
+    <div class="el13-heading">
+      <p class="el4-overline">POR ORDEM DE FOCO</p>
+      <h2>Três frentes.<br><em>Uma prioridade clara.</em></h2>
+      <p>Pós-obras primeiro. Depois Alojamento Local e espaços comerciais. O resto continua disponível, sem encher a página de caixas.</p>
     </div>
-    <div class="el4-featured-grid">
-      ${eliteFeatured.map((s,i)=>`<a class="el4-feature-card" href="${eliteWa(`Olá, Grupo Elite Limpeza! Gostaria de informações sobre ${s.name}.`)}">
-        <div class="el4-feature-image"><img src="${s.img}" alt="" loading="lazy"></div>
-        <div class="el4-feature-content"><span>0${i+1}</span><h3>${s.name}</h3><p>${s.copy}</p><b>Consultar ${icon('arrow')}</b></div>
-      </a>`).join('')}
+
+    <div class="el13-sequence">
+      ${eliteFeatured.map((s,i)=>`<article class="el13-row ${i%2===1?'is-reverse':''}">
+        <figure class="el13-media"><img src="${s.img}" alt="${s.name}" loading="lazy"></figure>
+        <div class="el13-copy">
+          <div class="el13-index">0${i+1}</div>
+          <h3>${s.name}</h3>
+          <p>${s.copy}</p>
+          <a href="${eliteWa(`Olá, Grupo Elite Limpeza! Gostaria de informações sobre ${s.name}.`)}">Pedir informações ${icon('arrow')}</a>
+        </div>
+      </article>`).join('')}
     </div>
-    <div class="el4-more">
-      <div><p class="el4-overline">TAMBÉM FAZEMOS</p><h3>Outros serviços.</h3></div>
-      <div class="el4-more-list">${eliteMore.map(s=>`<a href="${eliteWa(`Olá, Grupo Elite Limpeza! Gostaria de informações sobre ${s.name}.`)}"><span>${s.name}</span>${icon('arrow')}</a>`).join('')}</div>
+
+    <div class="el13-more">
+      <div>
+        <p class="el4-overline">OUTROS SERVIÇOS</p>
+        <h3>Também tratamos do resto.</h3>
+      </div>
+      <div class="el13-more-list">
+        ${eliteMore.map(s=>`<a href="${eliteWa(`Olá, Grupo Elite Limpeza! Gostaria de informações sobre ${s.name}.`)}">${s.name}${icon('arrow')}</a>`).join('')}
+      </div>
     </div>
   </div>
 </section>
@@ -184,7 +169,7 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
       <p class="el4-overline">PARCEIRO LOCAL</p>
       <h2>Da roupa tratada<br>ao espaço <em>cuidado.</em></h2>
       <p>O Grupo Elite Limpeza é o parceiro de limpeza apresentado pela Engomadoria Beatriz. Cada negócio mantém a sua especialidade e o contacto é feito directamente com a equipa certa.</p>
-      <div class="el4-about-services">${eliteServices.map(s=>`<span>${icon('check')} ${s.name}</span>`).join('')}</div>
+      <div class="el13-about-list">${eliteServices.map(s=>`<span>${s.name}</span>`).join('')}</div>
     </div>
   </div>
 </section>
