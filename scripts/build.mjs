@@ -61,37 +61,118 @@ const elitePhone='+351928402547';
 const eliteDisplayPhone='928 402 547';
 const eliteWa=(message)=>`https://wa.me/351928402547?text=${encodeURIComponent(message)}`;
 const eliteServices=[
-  {name:'Alojamento Local & Airbnb',copy:'Limpeza e preparação de estadias.',img:'https://images.unsplash.com/photo-1631015108968-ba3b87f89005?auto=format&fit=crop&fm=jpg&q=76&w=900'},
-  {name:'Estabelecimentos comerciais',copy:'Limpeza profissional para espaços comerciais.',img:'https://images.unsplash.com/photo-1758630737900-a28682c5aa69?auto=format&fit=crop&fm=jpg&q=76&w=900'},
-  {name:'Casas e apartamentos',copy:'Limpeza regular ou pontual para a sua casa.',img:'https://images.unsplash.com/photo-1630699295509-a199b5370538?auto=format&fit=crop&fm=jpg&q=76&w=900'},
-  {name:'Limpezas gerais e profundas',copy:'Mais higiene, cuidado e atenção aos detalhes.',img:'https://images.unsplash.com/photo-1610389473058-fd68ad1d8bac?auto=format&fit=crop&fm=jpg&q=76&w=900'},
-  {name:'Vidros e persianas',copy:'Limpeza cuidada de vidros e persianas.',img:'https://images.unsplash.com/photo-1763026227930-ec2c91d4e7f2?auto=format&fit=crop&fm=jpg&q=76&w=900'},
-  {name:'Limpezas pós-obras',copy:'Preparação do espaço depois da obra.',img:'https://images.unsplash.com/photo-1768321917047-6029570b9ea0?auto=format&fit=crop&fm=jpg&q=76&w=900'},
-  {name:'Check-in & Check-out',copy:'Apoio de limpeza para Alojamento Local.',img:'https://images.unsplash.com/photo-1631015108968-ba3b87f89005?auto=format&fit=crop&fm=jpg&q=76&w=900'}
+  {name:'Alojamento Local & Airbnb',copy:'Limpeza e preparação de estadias.',img:'https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&fm=jpg&q=82&w=1800'},
+  {name:'Estabelecimentos comerciais',copy:'Limpeza profissional para espaços comerciais.',img:'https://images.unsplash.com/photo-1758630737900-a28682c5aa69?auto=format&fit=crop&fm=jpg&q=82&w=1800'},
+  {name:'Casas e apartamentos',copy:'Limpeza regular ou pontual para a sua casa.',img:'https://images.unsplash.com/photo-1638989795059-f4dba0a3f291?auto=format&fit=crop&fm=jpg&q=82&w=1800'},
+  {name:'Limpezas gerais e profundas',copy:'Mais higiene, cuidado e atenção aos detalhes.'},
+  {name:'Vidros e persianas',copy:'Limpeza cuidada de vidros e persianas.'},
+  {name:'Limpezas pós-obras',copy:'Preparação do espaço depois da obra.'},
+  {name:'Check-in & Check-out',copy:'Apoio de limpeza para Alojamento Local.'}
 ];
-const eliteLogo=`<img class="elite-official-logo" src="../assets/photos/elite-logo.webp?v=${revision}" width="1536" height="1024" alt="Grupo Elite Limpeza">`;
-const eliteHeaderLogo=`<span class="elite-header-logo-mark" aria-hidden="true"><svg viewBox="0 0 92 76"><defs><linearGradient id="eliteHeaderGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16b8ef"/><stop offset=".55" stop-color="#0875ba"/><stop offset="1" stop-color="#083f77"/></linearGradient></defs><path d="M10 35 42 7l35 29" fill="none" stroke="#083f77" stroke-width="7" stroke-linejoin="miter"/><path d="M24 31v28h40V31" fill="none" stroke="#083f77" stroke-width="5"/><path d="M36 39h9v9h-9zm12 0h9v9h-9zM36 51h9v9h-9zm12 0h9v9h-9z" fill="#083f77"/><path d="M5 49c12 20 45 27 74 5-10 18-31 26-49 23C16 73 5 64 5 49Z" fill="url(#eliteHeaderGrad)"/><path d="M57 66c7-12 15-15 25-19-5 12-13 19-25 19Z" fill="#0a5a96"/><path d="m13 5 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z" fill="#18baf0"/><path d="m27 2 2 4.2L33 8l-4 1.8-2 4.2-2-4.2L21 8l4-1.8Z" fill="#18baf0"/></svg></span><span class="elite-header-logo-type"><small>GRUPO</small><strong>ELITE</strong><b>LIMPEZA</b></span>`;
-
+const eliteLogo=`<img class="el4-logo-img" src="../assets/photos/elite-logo.webp?v=${revision}" width="1536" height="1024" alt="Grupo Elite Limpeza">`;
 const eliteSchema={'@context':'https://schema.org','@type':'ProfessionalService','@id':eliteUrl+'#negocio',name:'Grupo Elite Limpeza',url:eliteUrl,telephone:elitePhone,areaServed:'Porto e arredores',slogan:'Limpeza profissional',hasOfferCatalog:{'@type':'OfferCatalog',name:'Serviços de limpeza profissional',itemListElement:eliteServices.map(s=>({'@type':'Offer',itemOffered:{'@type':'Service',name:s.name}}))}};
+const eliteFeatured=eliteServices.slice(0,3);
+const eliteMore=eliteServices.slice(3);
+
 fs.mkdirSync('docs/'+eliteRoute,{recursive:true});
-fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#083f77"><title>Grupo Elite Limpeza | Limpeza profissional no Porto</title><meta name="description" content="Grupo Elite Limpeza: alojamento local, espaços comerciais, casas, limpezas gerais e profundas, vidros, pós-obras e check-in/check-out no Porto e arredores."><meta name="robots" content="noindex,follow"><link rel="canonical" href="${eliteUrl}"><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="../assets/beatriz.css?v=${revision}"><script type="application/ld+json">${JSON.stringify(eliteSchema)}</script></head><body class="elite-page">${icons}
-<header class="elite-header"><div class="elite-wrap elite-header-inner"><a class="elite-back" href="../?retorno=1#parceiros" aria-label="Voltar à Engomadoria Beatriz"><span>Voltar</span></a><a class="elite-brand elite-brand-header" href="#inicio" aria-label="Grupo Elite Limpeza — início">${eliteHeaderLogo}</a><nav class="elite-nav" aria-label="Principal"><a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#parceiro">Sobre nós</a><a href="#contactos">Contactos</a></nav><div class="elite-header-contact"><a class="elite-header-phone" href="tel:${elitePhone}"><span>${icon('phone')}</span><b>${eliteDisplayPhone}</b><small>Porto e arredores</small></a><a class="elite-button elite-button-small" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Pedir orçamento ${icon('wa')}</a></div></div></header>
+fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071f34"><title>Grupo Elite Limpeza | Limpeza profissional no Porto</title><meta name="description" content="Grupo Elite Limpeza: alojamento local, espaços comerciais, casas, limpezas gerais e profundas, vidros, pós-obras e check-in/check-out no Porto e arredores."><meta name="robots" content="noindex,follow"><link rel="canonical" href="${eliteUrl}"><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="../assets/beatriz.css?v=${revision}"><script type="application/ld+json">${JSON.stringify(eliteSchema)}</script></head><body class="elite-page el4">${icons}
+
+<header class="el4-header">
+  <div class="el4-shell el4-header-inner">
+    <a class="el4-back" href="../?retorno=1#parceiros" aria-label="Voltar à Engomadoria Beatriz">${icon('arrow')}<span>Beatriz</span></a>
+    <a class="el4-brand" href="#inicio" aria-label="Grupo Elite Limpeza — início">${eliteLogo}</a>
+    <nav class="el4-nav" aria-label="Principal"><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contactos">Contacto</a></nav>
+    <a class="el4-header-cta" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Pedir orçamento ${icon('wa')}</a>
+  </div>
+</header>
+
 <main id="inicio">
-<section class="elite-hero"><div class="elite-wrap elite-hero-grid"><div class="elite-hero-copy"><p class="elite-kicker">LIMPEZA PROFISSIONAL · PORTO E ARREDORES</p><h1>Limpeza profissional<br><em>com atenção aos detalhes.</em></h1><p class="elite-lead">Para casas, apartamentos, Alojamento Local e estabelecimentos comerciais. Um contacto directo para pedir informações e orçamento.</p><div class="elite-hero-categories"><span>Casas e apartamentos</span><span>Estabelecimentos comerciais</span><span>Alojamento Local & Airbnb</span></div><div class="elite-actions"><a class="elite-button" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Falar no WhatsApp ${icon('wa')}</a><a class="elite-phone-pill" href="tel:${elitePhone}">${icon('phone')} ${eliteDisplayPhone}</a></div><div class="elite-trust-inline"><span>${icon('check')} Qualidade e confiança</span><span>${icon('check')} Somos uma equipa de profissionais</span><span>${icon('check')} Produtos incluídos</span><span>${icon('check')} Porto e arredores</span></div></div><div class="elite-hero-visual"><img class="elite-room-photo" src="https://images.unsplash.com/photo-1630699295509-a199b5370538?auto=format&fit=crop&fm=jpg&q=78&w=1200" alt="Sala limpa e cuidada" fetchpriority="high"><div class="elite-product-card"><img src="https://images.unsplash.com/photo-1610389473058-fd68ad1d8bac?auto=format&fit=crop&fm=jpg&q=78&w=700" alt="Material de limpeza" fetchpriority="high"><span class="elite-product-mark">${eliteLogo}</span></div><div class="elite-hero-badge"><strong>Porto</strong><span>e arredores</span></div></div></div></section>
+<section class="el4-hero">
+  <div class="el4-shell el4-hero-grid">
+    <div class="el4-hero-copy">
+      <p class="el4-overline">GRUPO ELITE LIMPEZA · PORTO E ARREDORES</p>
+      <h1>Limpeza profissional.<br><em>Sem complicar.</em></h1>
+      <p class="el4-lead">Casas, apartamentos, Alojamento Local e espaços comerciais. Um serviço directo, cuidado e ajustado ao espaço.</p>
+      <div class="el4-actions">
+        <a class="el4-btn el4-btn-primary" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Falar no WhatsApp ${icon('wa')}</a>
+        <a class="el4-phone" href="tel:${elitePhone}">${icon('phone')} ${eliteDisplayPhone}</a>
+      </div>
+      <div class="el4-facts" aria-label="Informação confirmada">
+        <span>${icon('check')} Porto e arredores</span>
+        <span>${icon('check')} Produtos incluídos</span>
+        <span>${icon('check')} Equipa de profissionais</span>
+        <span>${icon('check')} Casas · AL · comércio</span>
+      </div>
+    </div>
+    <figure class="el4-hero-media">
+      <img src="https://images.unsplash.com/photo-1638989795059-f4dba0a3f291?auto=format&fit=crop&fm=jpg&q=84&w=2200" alt="Sala luminosa, organizada e cuidada" fetchpriority="high">
+      <figcaption><span>PORTO</span><strong>Espaços cuidados.<br>Vida mais leve.</strong></figcaption>
+    </figure>
+  </div>
+</section>
 
-<section class="elite-brand-break" aria-label="Grupo Elite Limpeza"><div class="elite-wrap elite-brand-break-inner"><div><span>GRUPO</span><strong>ELITE</strong><b>LIMPEZA</b></div><p>Limpeza profissional<br>Porto e arredores</p><a href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir informações sobre os vossos serviços.')}">Falar connosco ${icon('arrow')}</a></div></section>
+<section class="el4-proof-strip" aria-label="Grupo Elite Limpeza">
+  <div class="el4-shell">
+    <span>Limpeza profissional</span><i></i><span>Contacto directo</span><i></i><span>Porto e arredores</span><i></i><span>Produtos incluídos</span>
+  </div>
+</section>
 
-<section class="elite-services" id="servicos"><div class="elite-wrap"><div class="elite-section-head"><div><p class="elite-kicker">OS NOSSOS SERVIÇOS</p><h2>Soluções de limpeza<br><em>para cada necessidade.</em></h2></div><p>Do seu lar ao seu negócio, a página apresenta exactamente os serviços comunicados pelo Grupo Elite Limpeza.</p></div><div class="elite-service-grid">${eliteServices.map((s,i)=>`<a class="elite-service-card" href="${eliteWa(`Olá, Grupo Elite Limpeza! Gostaria de pedir informações sobre: ${s.name}.`)}"><div class="elite-service-photo"><img src="${s.img}" alt="" loading="lazy"></div><div class="elite-service-body"><span class="elite-service-no">0${i+1}</span><h3>${s.name}</h3><p>${s.copy}</p><span class="elite-service-arrow">${icon('arrow')}</span></div></a>`).join('')}</div></div></section>
+<section class="el4-services" id="servicos">
+  <div class="el4-shell">
+    <div class="el4-heading">
+      <div><p class="el4-overline">SERVIÇOS PRINCIPAIS</p><h2>O espaço certo,<br><em>com o cuidado certo.</em></h2></div>
+      <p>Em vez de uma página cheia de promessas, mostramos de forma directa onde o Grupo Elite Limpeza actua.</p>
+    </div>
+    <div class="el4-featured-grid">
+      ${eliteFeatured.map((s,i)=>`<a class="el4-feature-card" href="${eliteWa(`Olá, Grupo Elite Limpeza! Gostaria de informações sobre ${s.name}.`)}">
+        <div class="el4-feature-image"><img src="${s.img}" alt="" loading="lazy"></div>
+        <div class="el4-feature-content"><span>0${i+1}</span><h3>${s.name}</h3><p>${s.copy}</p><b>Consultar ${icon('arrow')}</b></div>
+      </a>`).join('')}
+    </div>
+    <div class="el4-more">
+      <div><p class="el4-overline">TAMBÉM FAZEMOS</p><h3>Outros serviços.</h3></div>
+      <div class="el4-more-list">${eliteMore.map(s=>`<a href="${eliteWa(`Olá, Grupo Elite Limpeza! Gostaria de informações sobre ${s.name}.`)}"><span>${s.name}</span>${icon('arrow')}</a>`).join('')}</div>
+    </div>
+  </div>
+</section>
 
-<section class="elite-proof"><div class="elite-wrap"><p>PORQUÊ ESCOLHER O GRUPO ELITE LIMPEZA?</p><div class="elite-proof-grid"><div><span class="elite-proof-icon">${icon('check')}</span><strong>Qualidade e confiança</strong><small>Serviço profissional e cuidado.</small></div><div><span class="elite-proof-icon">${icon('spark')}</span><strong>Equipa de profissionais</strong><small>Informação comunicada pelo negócio.</small></div><div><span class="elite-proof-icon">${icon('spark')}</span><strong>Produtos incluídos</strong><small>Indicado no material comercial.</small></div><div><span class="elite-proof-icon">${icon('arrow')}</span><strong>Porto e arredores</strong><small>Área apresentada pelo negócio.</small></div></div></div></section>
+<section class="el4-about" id="sobre">
+  <div class="el4-shell el4-about-grid">
+    <div class="el4-about-mark">
+      <span>GRUPO</span><strong>ELITE</strong><b>LIMPEZA</b>
+      <small>PORTO E ARREDORES</small>
+    </div>
+    <div class="el4-about-copy">
+      <p class="el4-overline">PARCEIRO LOCAL</p>
+      <h2>Da roupa tratada<br>ao espaço <em>cuidado.</em></h2>
+      <p>O Grupo Elite Limpeza é o parceiro de limpeza apresentado pela Engomadoria Beatriz. Cada negócio mantém a sua especialidade e o contacto é feito directamente com a equipa certa.</p>
+      <div class="el4-about-services">${eliteServices.map(s=>`<span>${icon('check')} ${s.name}</span>`).join('')}</div>
+    </div>
+  </div>
+</section>
 
-<section class="elite-partner" id="parceiro"><div class="elite-wrap elite-partner-grid"><div class="elite-partner-copy"><p class="elite-kicker">O SEU PARCEIRO EM LIMPEZA</p><h2>Espaços mais limpos.<br><em>Um contacto simples.</em></h2><p>O Grupo Elite Limpeza presta serviços para casas e apartamentos, estabelecimentos comerciais e Alojamento Local. Para cada pedido, confirme directamente a disponibilidade, as condições e o orçamento.</p><div class="elite-actions"><a class="elite-button" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento e explicar o espaço que preciso de limpar.')}">Pedir orçamento ${icon('wa')}</a><a class="elite-phone-pill" href="tel:${elitePhone}">${eliteDisplayPhone}</a></div></div><div class="elite-partner-photo"><img src="https://images.unsplash.com/photo-1763026227930-ec2c91d4e7f2?auto=format&fit=crop&fm=jpg&q=78&w=1100" alt="Profissional de limpeza a trabalhar num vidro" loading="lazy"><div class="elite-partner-label"><span>GRUPO ELITE LIMPEZA</span><b>Limpeza profissional</b><small>Porto e arredores</small></div></div><div class="elite-partner-list">${['Casas e apartamentos','Estabelecimentos comerciais','Alojamento Local & Airbnb','Limpezas gerais e profundas','Vidros e persianas','Limpezas pós-obras','Check-in & Check-out'].map(x=>`<span>${icon('check')} ${x}</span>`).join('')}</div></div></section>
-
-<section class="elite-service-rail"><div class="elite-wrap"><div class="elite-service-rail-head"><span>SERVIÇOS</span><strong>Do lar ao espaço profissional.</strong></div><div class="elite-service-rail-track"><span>Casas e apartamentos</span><span>Estabelecimentos comerciais</span><span>Alojamento Local & Airbnb</span><span>Limpezas gerais e profundas</span><span>Vidros e persianas</span><span>Limpezas pós-obras</span><span>Check-in & Check-out</span></div></div></section>
-
-<section class="elite-cta" id="contactos"><div class="elite-wrap elite-cta-inner"><div><p class="elite-kicker">ORÇAMENTO DIRECTO</p><h2>Pronto para um espaço<br><em>mais limpo?</em></h2><p>Envie uma mensagem com o tipo de espaço e o serviço de que precisa.</p></div><div class="elite-cta-actions"><a class="elite-button elite-button-light" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">WhatsApp · ${eliteDisplayPhone} ${icon('arrow')}</a><a class="elite-big-phone" href="tel:${elitePhone}">${eliteDisplayPhone}</a><span>Porto e arredores</span></div></div></section>
+<section class="el4-cta" id="contactos">
+  <div class="el4-shell el4-cta-grid">
+    <div><p class="el4-overline">ORÇAMENTO DIRECTO</p><h2>Explique o espaço.<br><em>Fale com a Elite.</em></h2><p>Envie uma mensagem com o serviço de que precisa e confirme directamente a disponibilidade e o orçamento.</p></div>
+    <div class="el4-contact-card">
+      <span>CONTACTO</span>
+      <a href="tel:${elitePhone}">${eliteDisplayPhone}</a>
+      <small>Porto e arredores</mall>
+      <a class="el4-btn el4-btn-light" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Abrir WhatsApp ${icon('wa')}</a>
+    </div>
+  </div>
+</section>
 </main>
-<footer class="elite-footer"><div class="elite-wrap elite-footer-top"><a class="elite-brand elite-brand-footer" href="#inicio">${eliteLogo}</a><p>Limpeza profissional<br>em Porto e arredores.</p><nav><a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#parceiro">Sobre nós</a><a href="#contactos">Contactos</a></nav><a class="elite-footer-phone" href="tel:${elitePhone}">${icon('phone')} <span><b>${eliteDisplayPhone}</b><small>Porto e arredores</small></span></a></div><div class="elite-wrap elite-footer-bottom"><span>© ${new Date().getFullYear()} Grupo Elite Limpeza</span><span>Limpeza profissional · Porto e arredores</span></div></footer>
+
+<footer class="el4-footer">
+  <div class="el4-shell el4-footer-grid">
+    <a class="el4-brand" href="#inicio">${eliteLogo}</a>
+    <p>Limpeza profissional<br>Porto e arredores.</p>
+    <nav><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contactos">Contacto</a></nav>
+    <a class="el4-footer-phone" href="tel:${elitePhone}">${eliteDisplayPhone}</a>
+  </div>
+</footer>
+
 </body></html>`);
 
 fs.copyFileSync('src/beatriz.css','docs/assets/beatriz.css');
