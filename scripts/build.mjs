@@ -94,15 +94,15 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
   </figure>
   <div class="el9-hero-shade" aria-hidden="true"></div>
   <div class="el4-shell el9-hero-content">
-    <div class="el9-hero-copy">
-      <p class="el9-kicker">GRUPO ELITE LIMPEZA · PORTO E ARREDORES</p>
-      <h1>O espaço muda.<br><em>O cuidado nota-se.</em></h1>
-      <p>Limpeza profissional para casas, apartamentos, Alojamento Local e espaços comerciais. Contacto directo e orçamento ajustado ao serviço.</p>
-      <div class="el9-actions">
+    <div class="el9-hero-copy el10-hero-copy">
+      <div class="el10-kicker"><span>01</span><b>LIMPEZA PROFISSIONAL</b><i>PORTO E ARREDORES</i></div>
+      <h1 class="el10-headline"><span>Limpo é o</span><strong>mínimo.</strong><em>O cuidado é o que fica.</em></h1>
+      <p class="el10-lead">Casas, apartamentos, Alojamento Local e espaços comerciais. Diga-nos o que precisa e peça o orçamento directamente.</p>
+      <div class="el9-actions el10-actions">
         <a class="el9-primary" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Pedir orçamento ${icon('wa')}</a>
         <a class="el9-secondary" href="tel:${elitePhone}">${icon('phone')} ${eliteDisplayPhone}</a>
       </div>
-      <div class="el9-proof">
+      <div class="el9-proof el10-proof">
         <span>${icon('check')} Porto e arredores</span>
         <span>${icon('check')} Contacto directo</span>
         <span>${icon('check')} Casas · AL · comércio</span>
