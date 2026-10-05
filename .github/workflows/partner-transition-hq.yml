@@ -1,0 +1,37 @@
+name: Partner transition HQ asset
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/partner-transition-hq.yml'
+      - 'docs/assets/partner-cleaning-mobile.webp'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: partner-transition-hq
+  cancel-in-progress: true
+
+jobs:
+  upscale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirmar FFmpeg
+        run: ffmpeg -version | head -1
+      - name: Gerar versão mobile 1080x1920
+        run: |
+          ffmpeg -y -v error             -i docs/assets/partner-cleaning-mobile.webp             -vf "fps=24,scale=1080:1920:flags=lanczos,unsharp=5:5:0.55:3:3:0.18"             -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p             -movflags +faststart -an             docs/assets/partner-cleaning-mobile-1080.mp4
+          ffprobe -v error -show_entries stream=width,height,r_frame_rate -show_entries format=duration,size,bit_rate -of json docs/assets/partner-cleaning-mobile-1080.mp4
+      - name: Publicar asset
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/assets/partner-cleaning-mobile-1080.mp4
+          if ! git diff --cached --quiet; then
+            git commit -m "build: add HQ partner cleaning transition"
+            git push
+          fi
