@@ -62,7 +62,7 @@ const eliteDisplayPhone='928 402 547';
 const eliteWa=(message)=>`https://wa.me/351928402547?text=${encodeURIComponent(message)}`;
 const eliteServices=[
   {name:'Alojamento Local & Airbnb',copy:'Limpeza e preparação de estadias.',img:'https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&fm=jpg&q=82&w=1800'},
-  {name:'Estabelecimentos comerciais',copy:'Limpeza profissional para espaços comerciais.',img:'https://images.unsplash.com/photo-1758630737900-a28682c5aa69?auto=format&fit=crop&fm=jpg&q=82&w=1800'},
+  {name:'Estabelecimentos comerciais',copy:'Limpeza profissional para espaços comerciais.',img:'https://images.unsplash.com/photo-1769053202058-74062e1f1530?auto=format&fit=crop&fm=jpg&q=82&w=1800'},
   {name:'Casas e apartamentos',copy:'Limpeza regular ou pontual para a sua casa.',img:'https://images.unsplash.com/photo-1638989795059-f4dba0a3f291?auto=format&fit=crop&fm=jpg&q=82&w=1800'},
   {name:'Limpezas gerais e profundas',copy:'Mais higiene, cuidado e atenção aos detalhes.'},
   {name:'Vidros e persianas',copy:'Limpeza cuidada de vidros e persianas.'},
