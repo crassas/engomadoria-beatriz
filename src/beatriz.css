@@ -4197,3 +4197,100 @@ pointer-events:none}
   .el10-headline strong{font-size:76px}
   .el10-headline em{font-size:31px}
 }
+
+
+/* =========================================================
+   ELITE V11 — compact mobile hero, tighter art direction
+   ========================================================= */
+@media(max-width:760px){
+  .el9-hero{
+    min-height:min(690px,calc(100svh - 66px));
+  }
+
+  .el9-hero-content{
+    min-height:min(690px,calc(100svh - 66px));
+    align-items:center;
+    padding-top:34px;
+    padding-bottom:28px;
+  }
+
+  .el10-hero-copy{
+    margin-top:0;
+    align-self:center;
+  }
+
+  .el9-hero-photo img{
+    object-position:56% 38%;
+    transform:scale(1.035);
+  }
+
+  .el9-hero-shade{
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3,16,25,.12) 0%,
+        rgba(3,16,25,.24) 18%,
+        rgba(3,16,25,.60) 48%,
+        rgba(3,16,25,.91) 100%
+      );
+  }
+
+  .el10-kicker{
+    margin-bottom:13px;
+  }
+
+  .el10-headline{
+    margin-bottom:15px!important;
+  }
+
+  .el10-headline span{
+    font-size:clamp(38px,10.5vw,48px);
+  }
+
+  .el10-headline strong{
+    font-size:clamp(66px,18vw,86px);
+    line-height:.80;
+  }
+
+  .el10-headline em{
+    margin-top:12px;
+    padding-left:34px;
+    font-size:clamp(27px,7.8vw,37px);
+  }
+
+  .el10-lead{
+    max-width:92%!important;
+    margin-bottom:14px!important;
+    font-size:13px!important;
+    line-height:1.5!important;
+  }
+
+  .el9-primary{
+    min-height:44px;
+    padding:10px 14px;
+  }
+
+  .el10-proof{
+    margin-top:12px!important;
+    gap:6px 11px!important;
+  }
+
+  .el10-proof span{
+    font-size:7.5px!important;
+  }
+}
+
+@media(max-width:390px){
+  .el9-hero,
+  .el9-hero-content{
+    min-height:min(640px,calc(100svh - 66px));
+  }
+
+  .el9-hero-content{
+    padding-top:28px;
+    padding-bottom:24px;
+  }
+
+  .el10-headline strong{font-size:69px}
+  .el10-headline em{font-size:28px}
+}
