@@ -4900,3 +4900,278 @@ pointer-events:none}
     padding-top:30px;
   }
 }
+
+
+/* =========================================================
+   ELITE V15 — conversion hierarchy, contrast and clear CTAs
+   ========================================================= */
+.elite-page .el10-kicker{
+  display:flex!important;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px 16px;
+  margin:0 0 22px!important;
+  color:#f4f9fb;
+  font-size:10px;
+  line-height:1.2;
+  letter-spacing:.12em;
+  font-weight:850;
+}
+.elite-page .el10-kicker span,
+.elite-page .el10-kicker b,
+.elite-page .el10-kicker i{
+  display:inline!important;
+  color:inherit;
+  font-style:normal;
+}
+.elite-page .el10-kicker b{color:#ffffff}
+.elite-page .el10-kicker i{color:#d9e8ee}
+
+.elite-page .el10-headline span,
+.elite-page .el10-headline strong{
+  color:#ffffff!important;
+}
+.elite-page .el10-headline em{
+  color:#e8f2f5!important;
+}
+.elite-page .el10-lead{
+  max-width:720px;
+  color:#eef5f7!important;
+  font-size:clamp(16px,1.55vw,20px);
+  line-height:1.62;
+}
+.elite-page .el10-lead strong{color:#ffffff}
+.elite-page .el9-primary{
+  min-height:52px;
+  padding:0 22px;
+  background:#ffffff!important;
+  color:#082a3e!important;
+  border-color:#ffffff!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.18);
+}
+.elite-page .el9-primary:hover{transform:translateY(-2px)}
+.elite-page .el9-secondary{
+  min-height:52px;
+  color:#ffffff!important;
+  border-color:rgba(255,255,255,.52)!important;
+  background:rgba(6,31,49,.36)!important;
+}
+
+.el15-intent{
+  position:relative;
+  z-index:8;
+  background:#ffffff;
+  padding:0 0 54px;
+}
+.el15-intent-grid{
+  display:grid;
+  grid-template-columns:1.14fr 1fr 1fr;
+  margin-top:-30px;
+  background:#ffffff;
+  border:1px solid #cfdae0;
+  box-shadow:0 20px 55px rgba(5,40,58,.12);
+}
+.el15-intent-grid>a{
+  min-height:168px;
+  padding:28px 30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:9px;
+  color:#10364a!important;
+  border-right:1px solid #d8e2e7;
+  text-decoration:none;
+}
+.el15-intent-grid>a:last-child{border-right:0}
+.el15-intent-grid>a:hover{background:#f3f7f9}
+.el15-intent-grid>a.el15-intent-main{
+  background:#082f45;
+  color:#ffffff!important;
+}
+.el15-intent-grid>a.el15-intent-main:hover{background:#0a3a54}
+.el15-intent-grid small{
+  color:#53707f;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.12em;
+}
+.el15-intent-grid .el15-intent-main small{color:#b9d4df}
+.el15-intent-grid strong{
+  max-width:310px;
+  font-family:var(--serif);
+  font-size:clamp(24px,2.1vw,32px);
+  line-height:1.02;
+  letter-spacing:-.035em;
+  font-weight:600;
+}
+.el15-intent-grid span{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:5px;
+  color:#0b6e96;
+  font-size:12px;
+  font-weight:800;
+}
+.el15-intent-grid .el15-intent-main span{color:#ffffff}
+.el15-intent-grid .icon{width:15px;height:15px}
+
+.elite-page .el5-campaign-copy>p:not(.el4-overline){
+  color:#355563;
+  font-size:16px;
+  line-height:1.72;
+}
+.elite-page .el5-text-cta{
+  font-size:13px;
+  font-weight:850;
+}
+
+.elite-page .el13-services{background:#ffffff}
+.elite-page .el13-heading>p:not(.el4-overline){
+  color:#3f5d6c;
+  font-size:16px;
+}
+.elite-page .el13-copy p{
+  color:#3e5d6b;
+  font-size:16px;
+}
+.elite-page .el13-copy a{
+  min-height:46px;
+  padding:0 17px!important;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  border:0!important;
+  background:#0b668c;
+  color:#ffffff!important;
+  font-size:12px!important;
+  font-weight:850;
+  letter-spacing:.01em!important;
+  text-transform:none!important;
+}
+.elite-page .el13-copy a:hover{
+  background:#084e6d;
+  transform:translateY(-1px);
+}
+.elite-page .el13-more-list a{
+  color:#173d52!important;
+  font-weight:650;
+}
+.elite-page .el13-more-list a:hover{color:#0b668c!important}
+
+.partner-elite-v2-copy h3{
+  color:#0b3044;
+  line-height:.98;
+}
+.partner-elite-adline{
+  max-width:610px;
+  margin:0 0 18px!important;
+  color:#385868!important;
+  font-size:16px!important;
+  line-height:1.66!important;
+}
+.partner-elite-adline strong{color:#0b668c}
+.partner-elite-v2-footer>span{
+  min-height:46px;
+  padding:0 16px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#0b3044;
+  color:#ffffff!important;
+  font-size:12px;
+  font-weight:850;
+}
+.partner-elite-v2:hover .partner-elite-v2-footer>span{background:#0b668c}
+
+.elite-page .el4-cta p{
+  color:#d9e7ed;
+  font-size:16px;
+  line-height:1.7;
+}
+.elite-page .el4-btn-light{
+  min-height:50px;
+  font-weight:850;
+}
+
+.el15-mobile-cta{display:none}
+
+@media(max-width:900px){
+  .el15-intent-grid{grid-template-columns:1fr}
+  .el15-intent-grid>a{
+    min-height:0;
+    padding:22px 24px;
+    border-right:0;
+    border-bottom:1px solid #d8e2e7;
+  }
+  .el15-intent-grid>a:last-child{border-bottom:0}
+  .el15-intent-grid strong{font-size:27px}
+}
+
+@media(max-width:760px){
+  .elite-page{padding-bottom:82px}
+  .elite-page .el10-kicker{
+    margin-bottom:16px!important;
+    gap:8px 12px;
+    font-size:9px;
+  }
+  .elite-page .el10-lead{
+    font-size:15px;
+    line-height:1.55;
+  }
+  .elite-page .el9-actions{
+    align-items:stretch;
+  }
+  .elite-page .el9-primary,
+  .elite-page .el9-secondary{
+    width:100%;
+    justify-content:center;
+  }
+  .el15-intent{
+    padding:0 0 34px;
+  }
+  .el15-intent-grid{
+    margin-top:0;
+    border-left:0;
+    border-right:0;
+    box-shadow:none;
+  }
+  .el15-intent-grid>a{
+    padding:20px 18px;
+  }
+  .el15-intent-grid strong{font-size:25px}
+  .elite-page .el13-heading>p:not(.el4-overline),
+  .elite-page .el13-copy p{
+    font-size:14.5px;
+  }
+  .elite-page .el13-copy a{
+    width:100%;
+    justify-content:center;
+  }
+  .partner-elite-adline{
+    font-size:14.5px!important;
+  }
+  .partner-elite-v2-footer>span{
+    width:100%;
+    justify-content:center;
+  }
+  .el15-mobile-cta{
+    position:fixed;
+    z-index:80;
+    left:12px;
+    right:12px;
+    bottom:12px;
+    min-height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    background:#082f45;
+    color:#ffffff!important;
+    box-shadow:0 16px 40px rgba(0,0,0,.28);
+    font-size:13px;
+    font-weight:900;
+    text-decoration:none;
+  }
+  .el15-mobile-cta .icon{width:18px;height:18px}
+}
