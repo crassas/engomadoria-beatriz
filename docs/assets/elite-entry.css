@@ -57,3 +57,15 @@
  .elite-page .el9-footer{padding-bottom:92px}
 }
 @media(prefers-reduced-motion:reduce){.elite-page a{transition:none!important}.elite-page .el9-primary:hover{transform:none}}
+
+/* Confirmed Elite bio and submitted AL photographs. */
+.elite-page .el4-contact-card .el16-email{font:400 14px/1.6 var(--sans);letter-spacing:0;overflow-wrap:anywhere;color:#e2ecef;text-decoration:underline;text-underline-offset:4px}
+.el16-al-gallery{margin-top:80px;padding-top:40px;border-top:1px solid #c7d7df}
+.el16-al-gallery h3{margin:0 0 28px;color:#092b40;font:400 clamp(30px,3.5vw,48px)/1.1 var(--serif);letter-spacing:-.04em}
+.el16-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.el16-photo-grid figure{margin:0}
+.el16-photo-grid img{display:block;width:100%;height:auto;aspect-ratio:688/388;object-fit:cover;border-radius:3px}
+.el16-photo-grid figcaption{padding:12px 0;color:#365869;font:400 13px/1.5 var(--sans)}
+.elite-page #servico-al .el13-media,.elite-page #servico-al .el13-media img{min-height:0}
+.elite-page #servico-al .el13-media img{height:auto;aspect-ratio:688/388;object-fit:cover}
+@media(max-width:760px){.el16-al-gallery{margin-top:48px;padding-top:28px}.el16-photo-grid{grid-template-columns:1fr;gap:22px}.elite-page .el4-contact-card .el16-email{font-size:13px}}

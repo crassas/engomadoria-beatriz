@@ -80,20 +80,25 @@ const eliteDisplayPhone='928 402 547';
 const eliteWa=(message)=>`https://wa.me/351928402547?text=${encodeURIComponent(message)}`;
 const eliteServices=[
   {name:'Limpezas pós-obras',copy:'Limpeza final para retirar pó, resíduos e marcas da obra e deixar o espaço pronto a usar.',img:'https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?auto=format&fit=crop&fm=jpg&q=84&w=1800'},
-  {name:'Alojamento Local & Airbnb',copy:'Limpeza e preparação do espaço entre estadias, para receber os próximos hóspedes com o espaço cuidado.',img:'https://images.unsplash.com/photo-1750271334785-4f6008035021?auto=format&fit=crop&fm=jpg&q=82&w=1800'},
+  {name:'Alojamento Local & Airbnb',copy:'Limpeza e preparação do espaço entre estadias, para receber os próximos hóspedes com o espaço cuidado.',img:'../assets/photos/elite-al-quarto-duplo.webp'},
   {name:'Estabelecimentos comerciais',copy:'Limpeza profissional para lojas, escritórios e outros espaços comerciais.',img:'https://images.unsplash.com/photo-1769053202058-74062e1f1530?auto=format&fit=crop&fm=jpg&q=82&w=1800'},
   {name:'Casas e apartamentos',copy:'Limpeza regular ou pontual para a sua casa.'},
   {name:'Limpezas gerais e profundas',copy:'Mais higiene, cuidado e atenção aos detalhes.'},
   {name:'Vidros e persianas',copy:'Limpeza cuidada de vidros e persianas.'},
-  {name:'Check-in & Check-out',copy:'Apoio de limpeza para Alojamento Local.'}
+  {name:'Check-in & Check-out',copy:'Apoio de limpeza para Alojamento Local.'},
+  {"name":"Condomínios, garagens e escadas","copy":"Limpeza de áreas comuns e espaços de condomínio."},
+  {"name":"Ginásios e empresas","copy":"Limpeza de instalações e espaços de trabalho."},
+  {"name":"Remodelações e restauros","copy":"Remodelações em propriedades, canalização e electricidade."},
+  {"name":"Jardins e jardinagem","copy":"Limpeza de jardins e serviços de jardinagem."}
 ];
+const eliteEmail='grupoelitelimpeza@gmail.com';
 const eliteLogo=`<img class="el4-logo-img" src="../assets/photos/elite-logo.webp?v=${revision}" width="1536" height="1024" alt="Grupo Elite Limpeza">`;
-const eliteSchema={'@context':'https://schema.org','@type':'ProfessionalService','@id':eliteUrl+'#negocio',name:'Grupo Elite Limpeza',url:eliteUrl,telephone:elitePhone,areaServed:'Porto e arredores',slogan:'Limpeza profissional',hasOfferCatalog:{'@type':'OfferCatalog',name:'Serviços de limpeza profissional',itemListElement:eliteServices.map(s=>({'@type':'Offer',itemOffered:{'@type':'Service',name:s.name}}))}};
+const eliteSchema={'@context':'https://schema.org','@type':'ProfessionalService','@id':eliteUrl+'#negocio',name:'Grupo Elite Limpeza',url:eliteUrl,telephone:elitePhone,email:eliteEmail,areaServed:'Porto e arredores',slogan:'Limpeza profissional',hasOfferCatalog:{'@type':'OfferCatalog',name:'Serviços de limpeza profissional',itemListElement:eliteServices.map(s=>({'@type':'Offer',itemOffered:{'@type':'Service',name:s.name}}))}};
 const eliteFeatured=eliteServices.slice(0,3);
 const eliteMore=eliteServices.slice(3);
 
 fs.mkdirSync('docs/'+eliteRoute,{recursive:true});
-fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071f34"><title>Limpezas pós-obras e Alojamento Local | Grupo Elite Limpeza</title><meta name="description" content="Peça orçamento ao Grupo Elite Limpeza para limpezas pós-obras, Alojamento Local, comércio, casas e apartamentos no Porto e arredores."><meta name="robots" content="noindex,follow"><link rel="canonical" href="${eliteUrl}"><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="../assets/beatriz.css?v=${revision}"><link rel="stylesheet" href="../assets/elite-entry.css?v=20261006a"><script type="application/ld+json">${JSON.stringify(eliteSchema)}</script></head><body class="elite-page el4 el5 el9">${icons}
+fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071f34"><title>Limpezas pós-obras e Alojamento Local | Grupo Elite Limpeza</title><meta name="description" content="Peça orçamento ao Grupo Elite Limpeza para limpezas pós-obras, Alojamento Local, comércio, casas e apartamentos no Porto e arredores."><meta name="robots" content="noindex,follow"><link rel="canonical" href="${eliteUrl}"><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="../assets/beatriz.css?v=${revision}"><link rel="stylesheet" href="../assets/elite-entry.css?v=20261006b"><script type="application/ld+json">${JSON.stringify(eliteSchema)}</script></head><body class="elite-page el4 el5 el9">${icons}
 
 <header class="el9-header">
   <div class="el4-shell el9-header-inner">
@@ -173,6 +178,16 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
       </article>`).join('')}
     </div>
 
+    <section class="el16-al-gallery" aria-labelledby="el16-gallery-title">
+      <p class="el4-overline">ALOJAMENTO LOCAL</p>
+      <h3 id="el16-gallery-title">O cuidado vê-se no espaço.</h3>
+      <div class="el16-photo-grid">
+        <figure><img src="../assets/photos/elite-al-quarto-duplo.webp" width="688" height="388" alt="Quarto de Alojamento Local com duas camas preparadas e toalhas" loading="lazy"><figcaption>Quartos preparados</figcaption></figure>
+        <figure><img src="../assets/photos/elite-al-quarto-casal.webp" width="688" height="388" alt="Quarto de Alojamento Local com cama de casal e toalhas" loading="lazy"><figcaption>Atenção aos detalhes</figcaption></figure>
+        <figure><img src="../assets/photos/elite-al-exterior.webp" width="688" height="388" alt="Espaço exterior de Alojamento Local com piscina e espreguiçadeiras" loading="lazy"><figcaption>Espaços exteriores</figcaption></figure>
+      </div>
+    </section>
+
     <div class="el13-more" id="outros-servicos">
       <div>
         <p class="el4-overline">OUTROS SERVIÇOS</p>
@@ -192,9 +207,9 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
       <small>PORTO E ARREDORES</small>
     </div>
     <div class="el4-about-copy">
-      <p class="el4-overline">PARCEIRO LOCAL</p>
-      <h2>Da roupa tratada<br>ao espaço <em>cuidado.</em></h2>
-      <p>O Grupo Elite Limpeza é o parceiro de limpeza apresentado pela Engomadoria Beatriz. Cada negócio mantém a sua especialidade e o contacto é feito directamente com a equipa certa.</p>
+      <p class="el4-overline">GRUPO ELITE LIMPEZA · PORTO</p>
+      <h2>Uma equipa.<br>Vários <em>cuidados.</em></h2>
+      <p>Somos uma equipa de profissionais de limpeza no Porto. Cuidamos de alojamentos locais, condomínios, escritórios, apartamentos, moradias, garagens, escadas, espaços comerciais, ginásios e empresas.</p><p>Também fazemos remodelações e restauros, canalização, electricidade, limpeza de jardins e jardinagem. A engomadoria e a lavandaria ficam a cargo da nossa parceira, a Engomadoria Beatriz.</p>
       <div class="el13-about-list">${eliteServices.map(s=>`<span>${s.name}</span>`).join('')}</div>
     </div>
   </div>
@@ -207,6 +222,7 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
       <span>CONTACTO</span>
       <a href="tel:${elitePhone}">${eliteDisplayPhone}</a>
       <small>Porto e arredores</small>
+      <a class="el16-email" href="mailto:grupoelitelimpeza@gmail.com">grupoelitelimpeza@gmail.com</a>
       <a class="el4-btn el4-btn-light" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Pedir orçamento no WhatsApp ${icon('wa')}</a>
     </div>
   </div>
