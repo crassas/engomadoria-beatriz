@@ -53,7 +53,25 @@ const subpages=[
  ['perguntas-frequentes/','Perguntas frequentes | Engomadoria Beatriz','Respostas sobre packs de engomadoria, roupa branca para Alojamento Local, limpeza têxtil, horário e pedidos por WhatsApp.',`<p class="eyebrow">INFORMAÇÃO DIRECTA</p><h1>As suas dúvidas.<br><em>Sem rodeios.</em></h1><div class="faq-list">${faqs}</div>`],
  ['contactos/','Contacto e horário | Engomadoria Beatriz','Contacte a Engomadoria Beatriz pelo 923 250 845, por telefone ou WhatsApp. Consulte o horário e peça indicações para entregar a roupa.',`<p class="eyebrow">ENGOMADORIA BEATRIZ</p><h1>Fale com<br><em>a Beatriz.</em></h1><p class="contact-phone"><a href="tel:${b.phone}">${b.displayPhone}</a></p><a class="button button-pink" href="${wa(generalMessage)}">Abrir WhatsApp ${icon('wa')}</a><div class="hours"><h2>Horário</h2><div><span>Segunda a sexta-feira</span><b>10:00–12:30 e 14:00–19:00</b></div><div><span>Sábado</span><b>10:00–15:00</b></div><div><span>Domingos e feriados</span><b>Encerrado</b></div></div><h2>Como chegar</h2><p>Peça a morada e as indicações directamente à Beatriz antes da sua visita.</p><a class="text-link" href="${wa('Olá, Beatriz! Pode indicar-me a morada e como chegar para entregar a roupa?')}">Pedir indicações de chegada ${icon('arrow')}</a>`]
 ];
-for(const [route,title,desc,body] of subpages){fs.mkdirSync('docs/'+route,{recursive:true});fs.writeFileSync('docs/'+route+'index.html',head(title,desc,route)+`<body class="subpage">${icons}<header class="header"><div class="wrap header-inner">${brand('../')}<a class="text-link" href="../">Voltar ao início ${icon('arrow')}</a><a class="button button-dark header-cta" href="${wa(generalMessage)}">WhatsApp ${icon('wa')}</a></div></header><main class="wrap sub-content">${body}</main>${footer('../')}</body></html>`);}
+for(const [route,title,desc,body] of subpages){fs.mkdirSync('docs/'+route,{recursive:true});fs.writeFileSync('docs/'+route+'index.html',head(title,desc,route)+`<body class="subpage">${icons}<header class="header"><div class="wrap header-inner">${brand('../')}<a class="text-link" href="../">Voltar ao início ${icon('arrow')}</a><a class="button button-dark header-cta" href="${wa(generalMessage)}">WhatsApp ${icon('wa')}</a></div></header><main class="wrap sub-content">${body}</main>${footer('../')}<script>
+(function(){
+  var bar=document.querySelector('.el15-mobile-cta');
+  var hero=document.querySelector('.el9-hero');
+  var contact=document.querySelector('#contactos');
+  if(!bar||!hero||!contact||!('IntersectionObserver' in window))return;
+  var pastHero=false,contactVisible=false;
+  function update(){bar.hidden=!pastHero||contactVisible;}
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.target===hero)pastHero=!entry.isIntersecting&&entry.boundingClientRect.bottom<=68;
+      if(entry.target===contact)contactVisible=entry.isIntersecting;
+    });
+    update();
+  },{rootMargin:'-68px 0px 0px 0px'});
+  observer.observe(hero);observer.observe(contact);
+})();
+</script>
+</body></html>`);}
 
 const eliteRoute='grupo-elite-limpeza/';
 const eliteUrl=b.url+eliteRoute;
@@ -75,7 +93,7 @@ const eliteFeatured=eliteServices.slice(0,3);
 const eliteMore=eliteServices.slice(3);
 
 fs.mkdirSync('docs/'+eliteRoute,{recursive:true});
-fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071f34"><title>Limpezas pós-obras e Alojamento Local | Grupo Elite Limpeza</title><meta name="description" content="Peça orçamento ao Grupo Elite Limpeza para limpezas pós-obras, Alojamento Local, comércio, casas e apartamentos no Porto e arredores."><meta name="robots" content="noindex,follow"><link rel="canonical" href="${eliteUrl}"><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="../assets/beatriz.css?v=${revision}"><script type="application/ld+json">${JSON.stringify(eliteSchema)}</script></head><body class="elite-page el4 el5 el9">${icons}
+fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071f34"><title>Limpezas pós-obras e Alojamento Local | Grupo Elite Limpeza</title><meta name="description" content="Peça orçamento ao Grupo Elite Limpeza para limpezas pós-obras, Alojamento Local, comércio, casas e apartamentos no Porto e arredores."><meta name="robots" content="noindex,follow"><link rel="canonical" href="${eliteUrl}"><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="../assets/beatriz.css?v=${revision}"><link rel="stylesheet" href="../assets/elite-entry.css?v=20261006a"><script type="application/ld+json">${JSON.stringify(eliteSchema)}</script></head><body class="elite-page el4 el5 el9">${icons}
 
 <header class="el9-header">
   <div class="el4-shell el9-header-inner">
@@ -83,7 +101,7 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
     <a class="el9-wordmark" href="#inicio" aria-label="Grupo Elite Limpeza — início"><small>GRUPO</small><strong>ELITE</strong><b>LIMPEZA</b></a>
     <nav class="el9-nav" aria-label="Principal"><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contactos">Contacto</a></nav>
     <a class="el9-phone" href="tel:${elitePhone}"><small>PORTO E ARREDORES</small><strong>${eliteDisplayPhone}</strong></a>
-    <a class="el9-cta" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Orçamento ${icon('arrow')}</a>
+    <a class="el9-cta" href="#contactos">Contacto ${icon('arrow')}</a>
   </div>
 </header>
 
@@ -95,13 +113,14 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
   <div class="el9-hero-shade" aria-hidden="true"></div>
   <div class="el4-shell el9-hero-content">
     <div class="el9-hero-copy el10-hero-copy">
-      <div class="el10-kicker"><span>PORTO</span><b>LIMPEZA PÓS-OBRA</b><i>ALOJAMENTO LOCAL · COMÉRCIO</i></div>
-      <h1 class="el10-headline"><span>Terminou a</span><strong>obra?</strong><em>Nós tratamos da limpeza final.</em></h1>
-      <p class="el10-lead">Peça orçamento para <strong>limpeza pós-obra no Porto e arredores</strong>. Também fazemos Alojamento Local, comércio, casas e apartamentos.</p>
+      <p class="el16-location">Porto e arredores · Limpeza pós-obra</p>
+      <h1 class="el16-title"><span>Obra terminada.</span><em>Espaço pronto.</em></h1>
+      <p class="el16-lead">Do pó aos últimos detalhes, tratamos da limpeza final da sua obra.</p>
       <div class="el9-actions el10-actions">
-        <a class="el9-primary" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento para uma limpeza pós-obra.')}">Pedir orçamento agora ${icon('wa')}</a>
+        <a class="el9-primary" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento para uma limpeza pós-obra.')}">Pedir orçamento ${icon('wa')}</a>
         <a class="el9-secondary" href="tel:${elitePhone}">${icon('phone')} ${eliteDisplayPhone}</a>
       </div>
+      <div class="el16-other"><span>Também cuidamos do seu espaço:</span><a href="#servico-al">Alojamento Local</a><a href="#servico-comercio">Comércio</a><a href="#outros-servicos">Casas</a></div>
     </div>
     <div class="el9-sidecard">
       <span>DETALHE</span>
@@ -143,7 +162,7 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
     </div>
 
     <div class="el13-sequence">
-      ${eliteFeatured.map((s,i)=>`<article class="el13-row ${i%2===1?'is-reverse':''}">
+      ${eliteFeatured.map((s,i)=>`<article class="el13-row ${i%2===1?'is-reverse':''}" id="${['servico-obra','servico-al','servico-comercio'][i]}">
         <figure class="el13-media"><img src="${s.img}" alt="${s.name}" loading="lazy"></figure>
         <div class="el13-copy">
           <div class="el13-index">0${i+1}</div>
@@ -154,7 +173,7 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
       </article>`).join('')}
     </div>
 
-    <div class="el13-more">
+    <div class="el13-more" id="outros-servicos">
       <div>
         <p class="el4-overline">OUTROS SERVIÇOS</p>
         <h3>Também tratamos do resto.</h3>
@@ -202,7 +221,7 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
     <a class="el9-footer-phone" href="tel:${elitePhone}">${eliteDisplayPhone}</a>
   </div>
 </footer>
-<a class="el15-mobile-cta" href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Pedir orçamento ${icon('wa')}</a>
+<a class="el15-mobile-cta" hidden href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Pedir orçamento ${icon('wa')}</a>
 
 </body></html>`);
 
