@@ -15,7 +15,7 @@ Packs mensais com recolha e entrega ao domicílio:
 - 60 peças — 69 €
 - 80 peças — 89 €
 - Estes são os preços oficiais dos packs apresentados no site.
-- A antiga tabela de 19 €, 39 €, 49 €, 59 € e 65 € deixou de ser usada.
+- A antiga tabela de preços deixou de ser usada.
 - Confirmar por WhatsApp a área abrangida e as condições de recolha/entrega
 
 Alojamento Local:
