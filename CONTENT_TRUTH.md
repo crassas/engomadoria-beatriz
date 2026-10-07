@@ -9,19 +9,13 @@ Mensagem:
 - Qualidade, confiança e higiene
 - Roupas bem cuidadas, sempre com um toque especial
 
-Packs de engomadoria:
-- 20 peças — 19 €
-- 40 peças — 39 €
-- 60 peças — 49 €
-- 80 peças — 59 €
-- 100 peças — 65 €
-
 Packs mensais com recolha e entrega ao domicílio:
 - 20 peças — 29 €
 - 40 peças — 49 €
 - 60 peças — 69 €
 - 80 peças — 89 €
-- Serviço separado dos packs de engomadoria já publicados
+- Estes são os preços oficiais dos packs apresentados no site.
+- A antiga tabela de 19 €, 39 €, 49 €, 59 € e 65 € deixou de ser usada.
 - Confirmar por WhatsApp a área abrangida e as condições de recolha/entrega
 
 Alojamento Local:
