@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://crassas.github.io/engomadoria-beatriz/sitemap.xml
+Sitemap: https://engomadoriabeatriz.pt/sitemap.xml
