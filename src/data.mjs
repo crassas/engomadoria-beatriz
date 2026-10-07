@@ -1,6 +1,6 @@
 export const business = {
   name: 'Engomadoria Beatriz', fullName: 'Engomadoria Beatriz Lavandaria',
-  url: 'https://crassas.github.io/engomadoria-beatriz/',
+  url: 'https://engomadoriabeatriz.pt/',
   phone: '+351923250845', displayPhone: '923 250 845',
   packs: [{pieces:20,price:19},{pieces:40,price:39},{pieces:60,price:49},{pieces:80,price:59},{pieces:100,price:65}],
   monthlyPickupPacks: [{pieces:20,price:29},{pieces:40,price:49},{pieces:60,price:69},{pieces:80,price:89}],
