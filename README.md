@@ -5,7 +5,7 @@ Site público: https://crassas.github.io/engomadoria-beatriz/
 Montra digital responsiva, com selector de packs, pedidos por WhatsApp, roupa branca para Alojamento Local, consultas de limpeza têxtil, horário, perguntas frequentes e filme de apresentação.
 
 ## Fonte comercial
-`CONTENT_TRUTH.md` é a referência comercial mais recente. Os preços actuais usados no site são 19 €, 39 €, 49 €, 59 € e 65 € para 20, 40, 60, 80 e 100 peças. O serviço de roupa branca de AL é 2 €/kg. Telefone: 923 250 845.
+`CONTENT_TRUTH.md` é a referência comercial mais recente. Os preços actuais dos packs mensais são 29 €, 49 €, 69 € e 89 € para 20, 40, 60 e 80 peças, com recolha e entrega ao domicílio sujeitas à área e condições confirmadas pela Beatriz. O serviço de roupa branca de AL é 2 €/kg. Telefone: 923 250 845.
 
 Os dados são definidos uma vez em `src/data.mjs` e usados para construir a página principal, preços, perguntas frequentes, contactos, JSON-LD e llms.txt.
 
