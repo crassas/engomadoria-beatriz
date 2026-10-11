@@ -18,7 +18,7 @@ const icons = `<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg"><defs
 </defs></svg>`;
 const brand=(prefix='')=>`<a class="brand" href="${prefix||'#inicio'}" aria-label="Engomadoria Beatriz — início"><img src="${prefix}assets/photos/beatriz-logo.webp?v=${revision}" width="1536" height="630" alt="Engomadoria Beatriz Lavandaria"></a>`;
 const schema={ '@context':'https://schema.org','@graph':[
- {'@type':'LocalBusiness','@id':b.url+'#negocio',name:b.fullName,url:b.url,telephone:b.phone,image:b.url+'assets/photos/beatriz-editorial.webp',openingHoursSpecification:[{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday'],opens:'10:00',closes:'12:30'},{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday'],opens:'14:00',closes:'19:00'},{'@type':'OpeningHoursSpecification',dayOfWeek:'Saturday',opens:'10:00',closes:'15:00'}],hasOfferCatalog:{'@type':'OfferCatalog',name:'Packs mensais de engomadoria e limpeza têxtil',itemListElement:[...b.packs.map(p=>({'@type':'Offer',price:String(p.price),priceCurrency:'EUR',itemOffered:{'@type':'Service',name:`Pack mensal de engomadoria com recolha e entrega ao domicílio — ${p.pieces} peças`}})),{'@type':'Offer',price:'2',priceCurrency:'EUR',itemOffered:{'@type':'Service',name:'Lavandaria para Alojamento Local — roupa branca, por kg'}}]}},
+ {'@type':'LocalBusiness','@id':b.url+'#negocio',name:b.fullName,url:b.url,telephone:b.phone,image:b.url+'assets/photos/beatriz-editorial.webp',areaServed:'Grande Porto',paymentAccepted:'Dinheiro, MB WAY',openingHoursSpecification:[{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday'],opens:'10:00',closes:'12:30'},{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday'],opens:'14:00',closes:'19:00'},{'@type':'OpeningHoursSpecification',dayOfWeek:'Saturday',opens:'10:00',closes:'15:00'}],hasOfferCatalog:{'@type':'OfferCatalog',name:'Packs mensais de engomadoria e limpeza têxtil',itemListElement:[...b.packs.map(p=>({'@type':'Offer',price:String(p.price),priceCurrency:'EUR',itemOffered:{'@type':'Service',name:`Pack mensal de engomadoria — ${p.pieces} peças`}})),{'@type':'Offer',price:'2',priceCurrency:'EUR',itemOffered:{'@type':'Service',name:'Lavandaria para Alojamento Local — serviço completo por kg'}}]}},
  {'@type':'WebSite','@id':b.url+'#website',url:b.url,name:b.name,inLanguage:'pt-PT'},
  {'@type':'FAQPage','@id':b.url+'#faq',mainEntity:b.faq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))}
 ]};
@@ -27,7 +27,7 @@ const footer=(prefix='')=>`<footer class="footer"><div class="wrap footer-top">$
 const faqs=b.faq.map(([q,a])=>`<details><summary>${q}${icon('plus')}</summary><p>${a}</p></details>`).join('');
 const logoPieces=[{x:0,y:0,w:460,h:630},...[[460,0,1076,220,11],[460,220,1076,236,7],[460,456,1076,174,10]].flatMap(([x,y,w,h,n])=>Array.from({length:n},(_,i)=>({x:x+i*w/n,y,w:w/n,h})))];
 const assembledLogo=`<svg class="logo-assembly" viewBox="0 0 1536 630" aria-hidden="true"><defs>${logoPieces.map((p,i)=>`<clipPath id="logo-piece-${i}"><rect x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}"/></clipPath>`).join('')}</defs>${logoPieces.map((p,i)=>`<g class="logo-piece" style="--delay:${(i===0?0:i*.025).toFixed(3)}s;--dx:${(i%2?1:-1)*(8+(i%5)*2)}px;--dy:${(i%3-1)*8}px;--turn:${(i%2?1:-1)*0}deg;transform-origin:${p.x+p.w/2}px ${p.y+p.h/2}px"><image href="assets/photos/beatriz-logo.webp?v=${revision}" width="1536" height="630" clip-path="url(#logo-piece-${i})"/></g>`).join('')}</svg>`;
-const html=head('Engomadoria Beatriz | Packs mensais de engomadoria','Conheça os packs mensais da Engomadoria Beatriz, com recolha e entrega ao domicílio. Pedidos por WhatsApp.')+`<body>${icons}<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+const html=head('Engomadoria Beatriz | Engomadoria, recolha e lavandaria','Packs de engomadoria, recolha e entrega no Grande Porto a partir de 25 peças e lavandaria para Alojamento Local a 2 €/kg.')+`<body>${icons}<a class="skip" href="#conteudo">Saltar para o conteúdo</a>
 <div class="intro intro-flow" tabindex="-1" role="dialog" aria-modal="true" aria-label="Bem-vindo à Engomadoria Beatriz"><div class="intro-stage"><video id="intro-video" muted playsinline preload="auto" poster="assets/photos/beatriz-flow-poster.webp" aria-hidden="true"><source src="assets/beatriz-intro-flow.mp4" type="video/mp4"></video><div class="intro-signature">${assembledLogo}</div><button class="intro-enter" id="intro-enter" type="button" aria-describedby="intro-enter-hint" hidden>ENTRAR</button><p class="intro-enter-hint" id="intro-enter-hint" hidden>A entrar automaticamente · toque para entrar já ↗</p></div></div>
 <script>(function(){try{var p=new URLSearchParams(location.search);if(p.get('retorno')==='1'){document.querySelector('.intro')?.remove();history.replaceState(null,'',location.pathname+location.hash)}}catch(e){}})();</script>
 <div class="announcement"><span class="announcement-steam" role="img" aria-label="Engomadoria até 72 horas. Recolha e entrega no Grande Porto."><span aria-hidden="true">Engomadoria até 72 horas.</span><span aria-hidden="true">Recolha e entrega · Grande Porto.</span></span><a href="${wa(generalMessage)}">Fale directamente com a Beatriz ${icon('wa')}</a></div>
@@ -256,7 +256,7 @@ fs.writeFileSync('docs/llms.txt',`# Engomadoria Beatriz Lavandaria
 - Para chamadas e novos pedidos: preferencialmente dias úteis até às 18:00.
 
 ## Packs mensais
-${b.packs.map(p=>`- ${p.pieces} peças: ${p.price} €`).join('\\n')}
+${b.packs.map(p=>`- ${p.pieces} peças: ${p.price} €`).join('\n')}
 - Preços fixos.
 - Peças de maior dimensão contam como duas peças.
 - Engomadoria: prazo habitual até 72 horas.
@@ -275,7 +275,7 @@ ${b.packs.map(p=>`- ${p.pieces} peças: ${p.price} €`).join('\\n')}
 
 ## Serviços adicionais
 - Tratamento de manchas disponível com preço próprio e possível aumento de prazo.
-- ${b.services.join('\\n- ')}
+- ${b.services.join('\n- ')}
 - Alguns serviços recorrem a parceiro especializado; prazo e orçamento são confirmados antes de avançar.
 - O cliente pode indicar preferências de preparação, como cabides, roupa dobrada e cuidados específicos.
 
