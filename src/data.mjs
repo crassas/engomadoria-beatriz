@@ -28,7 +28,7 @@ export const business = {
     ['Usam produtos específicos para diferentes tipos de roupa?', 'Sim. São usados produtos adequados ao tipo de roupa, incluindo roupa branca e necessidades específicas. Indique previamente alergias ou cuidados especiais.'],
     ['O que acontece se tiver um problema com o serviço?', 'Fale directamente com a D. Beatriz. Reclamações ou situações com uma peça são analisadas directamente consigo para encontrar uma solução.'],
     ['Que outros serviços posso consultar?', 'Limpeza a seco, carpetes, cortinados, peles, edredões e cobertores, entre outros serviços de limpeza têxtil. Alguns serviços são realizados com parceiro especializado e a disponibilidade, o prazo e o orçamento são confirmados antes de avançar.'],
-    ['Qual é o horário?', 'A loja funciona de segunda a sexta-feira, das 10:00 às 12:30 e das 14:00 às 19:00, e sábado das 10:00 às 15:00. Para chamadas e novos pedidos, prefira dias úteis até às 18:00.']
+    ['Qual é o horário?', 'A loja funciona de segunda a sexta-feira, das 10:00 às 12:30 e das 14:00 às 19:00, e sábado das 10:00 às 15:00. Chamadas e novos pedidos: dias úteis até às 18:00.']
   ]
 };
 export const wa = (message) => `https://wa.me/351923250845?text=${encodeURIComponent(message)}`;
