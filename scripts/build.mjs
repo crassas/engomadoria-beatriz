@@ -246,5 +246,48 @@ await build({entryPoints:['src/beatriz.js'],bundle:true,minify:true,format:'iife
 fs.writeFileSync('docs/assets/favicon.svg','<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#cf2465"/><text x="32" y="47" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="48" fill="white">B</text></svg>');
 fs.writeFileSync('docs/robots.txt',`User-agent: *\nAllow: /\nSitemap: ${b.url}sitemap.xml\n`);
 fs.writeFileSync('docs/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['',...subpages.map(p=>p[0])].map(route=>`<url><loc>${b.url+route}</loc></url>`).join('')}</urlset>`);
-fs.writeFileSync('docs/llms.txt',`# Engomadoria Beatriz Lavandaria\n\n> Engomadoria, packs mensais com recolha e entrega ao domicílio, lavandaria para Alojamento Local e serviços de limpeza têxtil. Pedidos por WhatsApp.\n\n## Contacto\n- Telefone: ${b.displayPhone}\n- WhatsApp: https://wa.me/351923250845\n\n## Packs mensais com recolha e entrega ao domicílio\n${b.packs.map(p=>`- ${p.pieces} peças: ${p.price} €`).join('\n')}\n- Confirmar por WhatsApp a área abrangida e as condições de recolha/entrega.\n\n## Alojamento Local\n- Roupa branca para Alojamento Local: 2 €/kg\n- Confirmar peças abrangidas, disponibilidade e prazo directamente com a Beatriz.\n\n## Horário\n- Segunda a sexta-feira: 10:00–12:30 e 14:00–19:00\n- Sábado: 10:00–15:00\n- Domingos e feriados: encerrado\n\n## Serviços\n- ${b.services.join('\n- ')}\n- Entre outros serviços de limpeza têxtil.\n\n## Páginas\n- [Packs e serviços](${b.url})\n- [Preços](${b.url}precos/)\n- [Perguntas frequentes](${b.url}perguntas-frequentes/)\n- [Contactos](${b.url}contactos/)\n\n## Limites da informação\nPara morada e indicações de chegada, confirme directamente com a Beatriz. A recolha e entrega ao domicílio é anunciada apenas para os packs mensais acima; confirmar área e condições por WhatsApp. Não inferir localização, avaliações ou outros prazos. As imagens editoriais não representam as instalações.\n`);
+fs.writeFileSync('docs/llms.txt',`# Engomadoria Beatriz Lavandaria
+
+> Engomadoria com cerca de 20 anos de experiência, packs mensais, recolha e entrega no Grande Porto a partir de 25 peças, lavandaria para Alojamento Local e serviços de limpeza têxtil. Pedidos por WhatsApp.
+
+## Contacto
+- Telefone: ${b.displayPhone}
+- WhatsApp: https://wa.me/351923250845
+- Para chamadas e novos pedidos: preferencialmente dias úteis até às 18:00.
+
+## Packs mensais
+${b.packs.map(p=>`- ${p.pieces} peças: ${p.price} €`).join('\\n')}
+- Preços fixos.
+- Peças de maior dimensão contam como duas peças.
+- Engomadoria: prazo habitual até 72 horas.
+- Pagamento: pré-pagamento em dinheiro ou MB WAY.
+
+## Recolha e entrega
+- Área: Grande Porto.
+- Mínimo: 25 peças por serviço de recolha/entrega.
+- Alterações ou cancelamentos: mínimo 24 horas de antecedência.
+
+## Alojamento Local
+- Serviço completo: 2 €/kg.
+- Inclui lavar, secar, dobrar e engomar.
+- Serviço recorrente disponível.
+- O prazo é confirmado conforme o volume e o serviço.
+
+## Serviços adicionais
+- Tratamento de manchas disponível com preço próprio e possível aumento de prazo.
+- ${b.services.join('\\n- ')}
+- Alguns serviços recorrem a parceiro especializado; prazo e orçamento são confirmados antes de avançar.
+- O cliente pode indicar preferências de preparação, como cabides, roupa dobrada e cuidados específicos.
+
+## Horário da loja
+- Segunda a sexta-feira: 10:00–12:30 e 14:00–19:00
+- Sábado: 10:00–15:00
+- Domingos e feriados: encerrado
+
+## Páginas
+- [Packs e serviços](${b.url})
+- [Preços](${b.url}precos/)
+- [Perguntas frequentes](${b.url}perguntas-frequentes/)
+- [Contactos](${b.url}contactos/)
+`);
 console.log('Built 4 static pages, bundled Motion, sitemap and llms.txt.');
