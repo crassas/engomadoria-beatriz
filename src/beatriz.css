@@ -5175,3 +5175,182 @@ pointer-events:none}
   }
   .el15-mobile-cta .icon{width:18px;height:18px}
 }
+
+
+/* =========================================================
+   BEATRIZ V16 — confirmed service information + trust system
+   ========================================================= */
+.pack-rules{
+  margin-top:28px;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  border-top:1px solid rgba(11,48,68,.16);
+  border-bottom:1px solid rgba(11,48,68,.16);
+}
+.pack-rules span{
+  min-height:116px;
+  padding:22px 24px 20px 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:7px;
+  color:#58717e;
+  font-size:12px;
+  line-height:1.5;
+  border-right:1px solid rgba(11,48,68,.12);
+}
+.pack-rules span+span{padding-left:24px}
+.pack-rules span:last-child{border-right:0}
+.pack-rules strong{
+  color:#143e53;
+  font-family:var(--serif);
+  font-size:24px;
+  line-height:1;
+  font-weight:600;
+  letter-spacing:-.035em;
+}
+
+.beatriz-facts{
+  background:#102f42;
+  color:#fff;
+}
+.beatriz-facts-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.beatriz-facts-grid>div{
+  min-height:180px;
+  padding:34px 28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-right:1px solid rgba(255,255,255,.12);
+}
+.beatriz-facts-grid>div:last-child{border-right:0}
+.beatriz-facts-grid small{
+  margin-bottom:10px;
+  color:#9eb9c6;
+  font-size:9px;
+  font-weight:850;
+  letter-spacing:.14em;
+}
+.beatriz-facts-grid strong{
+  color:#fff;
+  font-family:var(--serif);
+  font-size:clamp(28px,2.7vw,38px);
+  line-height:1;
+  letter-spacing:-.045em;
+  font-weight:600;
+}
+.beatriz-facts-grid span{
+  margin-top:10px;
+  color:#d3e0e6;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.story-experience{
+  position:relative;
+  min-height:360px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  overflow:hidden;
+}
+.experience-number{
+  display:block;
+  margin:-8px 0 -14px;
+  color:#cf2465;
+  font-family:var(--serif);
+  font-size:clamp(116px,16vw,210px);
+  line-height:.82;
+  letter-spacing:-.09em;
+  font-weight:600;
+}
+.experience-years{
+  margin-left:8px;
+  color:#173e52;
+  font-family:var(--serif);
+  font-size:32px;
+  font-style:italic;
+}
+
+.al-includes{
+  margin:24px 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-top:1px solid rgba(11,48,68,.14);
+  border-bottom:1px solid rgba(11,48,68,.14);
+}
+.al-includes span{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#173e52;
+  font-size:12px;
+  font-weight:750;
+}
+.al-includes span:nth-child(odd){border-right:1px solid rgba(11,48,68,.12)}
+.al-includes .icon{
+  width:15px;
+  height:15px;
+  color:#cf2465;
+}
+
+.contact-preference{
+  max-width:420px;
+  margin:14px 0 22px;
+  color:#55717f;
+  font-size:13px;
+  line-height:1.6;
+}
+
+@media(max-width:900px){
+  .pack-rules,
+  .beatriz-facts-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .pack-rules span:nth-child(2),
+  .beatriz-facts-grid>div:nth-child(2){border-right:0}
+  .pack-rules span:nth-child(-n+2),
+  .beatriz-facts-grid>div:nth-child(-n+2){border-bottom:1px solid rgba(11,48,68,.12)}
+  .beatriz-facts-grid>div:nth-child(-n+2){border-bottom-color:rgba(255,255,255,.12)}
+}
+
+@media(max-width:600px){
+  .pack-rules{
+    grid-template-columns:1fr;
+  }
+  .pack-rules span,
+  .pack-rules span+span{
+    min-height:0;
+    padding:18px 0;
+    border-right:0;
+    border-bottom:1px solid rgba(11,48,68,.12);
+  }
+  .pack-rules span:last-child{border-bottom:0}
+  .pack-rules strong{font-size:22px}
+
+  .beatriz-facts-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .beatriz-facts-grid>div{
+    min-height:145px;
+    padding:24px 18px;
+  }
+  .beatriz-facts-grid strong{font-size:27px}
+  .beatriz-facts-grid span{font-size:12px}
+
+  .story-experience{min-height:280px}
+  .experience-number{font-size:130px}
+  .experience-years{font-size:27px}
+
+  .al-includes{
+    grid-template-columns:1fr;
+  }
+  .al-includes span:nth-child(odd){border-right:0}
+  .al-includes span+span{border-top:1px solid rgba(11,48,68,.10)}
+}
