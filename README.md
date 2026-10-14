@@ -19,6 +19,6 @@ Os dados são definidos uma vez em `src/data.mjs` e usados para construir a pág
 O GitHub Actions renderiza o filme Remotion e verifica os percursos num navegador real. Guarda o vídeo e as provas em `.review/`.
 
 ## Informação por confirmar
-Morada exacta, localidade/bairro e domínio próprio. A página não inventa localização, avaliações, disponibilidade, recolha, entrega ou prazos. A estratégia local deve ser completada com a morada confirmada. O site é indexável sem Google Business; não existe garantia de posição ou de citação por sistemas de IA.
+Morada confirmada: Praça das Flores 42, Porto. O código postal permanece por confirmar. A página não inventa avaliações, disponibilidade, recolha, entrega ou prazos. A estratégia local deve usar a morada real, de forma consistente. O site é indexável sem Google Business; não existe garantia de posição ou de citação por sistemas de IA.
 
 Publicação: GitHub Pages, pasta `docs` da branch `main`.

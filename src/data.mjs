@@ -2,6 +2,8 @@ export const business = {
   name: 'Engomadoria Beatriz',
   fullName: 'Engomadoria Beatriz Lavandaria',
   url: 'https://engomadoriabeatriz.pt/',
+  streetAddress: 'Praça das Flores 42',
+  city: 'Porto',
   phone: '+351923250845',
   displayPhone: '923 250 845',
   packs: [{pieces:20,price:29},{pieces:40,price:49},{pieces:60,price:69},{pieces:80,price:89}],

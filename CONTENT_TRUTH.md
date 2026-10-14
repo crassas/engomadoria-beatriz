@@ -32,7 +32,8 @@ Outros serviços:
 - Entre outros serviços
 - Limpeza têxtil
 
-Contacto:
+Contacto e morada:
+- Praça das Flores 42, Porto (morada confirmada a 11-10-2026)
 - 923 250 845
 - Telefone ou WhatsApp
 
@@ -45,8 +46,7 @@ Horário:
 - Serviço completo a 3,50 €/kg
 
 ## Ainda não confirmado
-- Morada exacta
-- Bairro/localidade
+- Código postal por confirmar
 - Email
 - Domínio final
 - Condições específicas de cada serviço
