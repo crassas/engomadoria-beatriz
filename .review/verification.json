@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-14T16:04:40.598Z",
+  "checkedAt": "2026-10-14T16:10:21.451Z",
   "checks": [
     {
       "name": "all local image files exist on disk",
@@ -155,7 +155,7 @@
     },
     {
       "name": "320: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "320: rotating message 2 is accessible",
@@ -247,7 +247,7 @@
     },
     {
       "name": "360: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "360: rotating message 2 is accessible",
@@ -339,7 +339,7 @@
     },
     {
       "name": "390: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "390: rotating message 2 is accessible",
@@ -574,12 +574,5 @@
       "passed": true
     }
   ],
-  "errors": [
-    "320: no WCAG A/AA violations",
-    "320: scrollable-region-focusable: .care-strip > .wrap",
-    "360: no WCAG A/AA violations",
-    "360: scrollable-region-focusable: .care-strip > .wrap",
-    "390: no WCAG A/AA violations",
-    "390: scrollable-region-focusable: .care-strip > .wrap"
-  ]
+  "errors": []
 }
