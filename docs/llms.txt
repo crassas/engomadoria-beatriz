@@ -46,7 +46,7 @@
 - Domingos e feriados: encerrado
 
 ## Páginas
-- https://engomadoriabeatriz.pt/
-- https://engomadoriabeatriz.pt/precos/
-- https://engomadoriabeatriz.pt/perguntas-frequentes/
-- https://engomadoriabeatriz.pt/contactos/
+- [Packs e serviços](https://engomadoriabeatriz.pt/)
+- [Preços](https://engomadoriabeatriz.pt/precos/)
+- [Perguntas frequentes](https://engomadoriabeatriz.pt/perguntas-frequentes/)
+- [Contactos](https://engomadoriabeatriz.pt/contactos/)

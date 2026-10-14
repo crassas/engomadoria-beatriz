@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-06T14:19:12.096Z",
+  "checkedAt": "2026-10-14T16:04:40.598Z",
   "checks": [
     {
       "name": "all local image files exist on disk",
@@ -118,10 +118,6 @@
       "passed": true
     },
     {
-      "name": "320: 100-piece WhatsApp message",
-      "passed": true
-    },
-    {
       "name": "320: AL message includes quantity and note",
       "passed": true
     },
@@ -159,7 +155,7 @@
     },
     {
       "name": "320: no WCAG A/AA violations",
-      "passed": true
+      "passed": false
     },
     {
       "name": "320: rotating message 2 is accessible",
@@ -214,10 +210,6 @@
       "passed": true
     },
     {
-      "name": "360: 100-piece WhatsApp message",
-      "passed": true
-    },
-    {
       "name": "360: AL message includes quantity and note",
       "passed": true
     },
@@ -255,7 +247,7 @@
     },
     {
       "name": "360: no WCAG A/AA violations",
-      "passed": true
+      "passed": false
     },
     {
       "name": "360: rotating message 2 is accessible",
@@ -310,10 +302,6 @@
       "passed": true
     },
     {
-      "name": "390: 100-piece WhatsApp message",
-      "passed": true
-    },
-    {
       "name": "390: AL message includes quantity and note",
       "passed": true
     },
@@ -351,7 +339,7 @@
     },
     {
       "name": "390: no WCAG A/AA violations",
-      "passed": true
+      "passed": false
     },
     {
       "name": "390: rotating message 2 is accessible",
@@ -403,10 +391,6 @@
     },
     {
       "name": "768: 80-piece WhatsApp message",
-      "passed": true
-    },
-    {
-      "name": "768: 100-piece WhatsApp message",
       "passed": true
     },
     {
@@ -491,10 +475,6 @@
     },
     {
       "name": "1440: 80-piece WhatsApp message",
-      "passed": true
-    },
-    {
-      "name": "1440: 100-piece WhatsApp message",
       "passed": true
     },
     {
@@ -594,5 +574,12 @@
       "passed": true
     }
   ],
-  "errors": []
+  "errors": [
+    "320: no WCAG A/AA violations",
+    "320: scrollable-region-focusable: .care-strip > .wrap",
+    "360: no WCAG A/AA violations",
+    "360: scrollable-region-focusable: .care-strip > .wrap",
+    "390: no WCAG A/AA violations",
+    "390: scrollable-region-focusable: .care-strip > .wrap"
+  ]
 }
