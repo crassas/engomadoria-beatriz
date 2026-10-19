@@ -20,10 +20,29 @@ const mapsUrl='https://www.google.com/maps/search/?api=1&query='+encodeURICompon
 const brand=(prefix='')=>`<a class="brand" href="${prefix||'#inicio'}" aria-label="Engomadoria Beatriz — início"><img src="${prefix}assets/photos/beatriz-logo.webp?v=${revision}" width="1536" height="630" alt="Engomadoria Beatriz Lavandaria"></a>`;
 const schema={ '@context':'https://schema.org','@graph':[
  {'@type':'LocalBusiness','@id':b.url+'#negocio',name:b.fullName,url:b.url,telephone:b.phone,image:b.url+'assets/photos/beatriz-editorial.webp',address:{'@type':'PostalAddress',streetAddress:b.streetAddress,addressLocality:b.city,addressRegion:'Porto',addressCountry:'PT'},areaServed:'Grande Porto',paymentAccepted:'Dinheiro, MB WAY',openingHoursSpecification:[{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday'],opens:'10:00',closes:'12:30'},{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday'],opens:'14:00',closes:'19:00'},{'@type':'OpeningHoursSpecification',dayOfWeek:'Saturday',opens:'10:00',closes:'15:00'}],hasOfferCatalog:{'@type':'OfferCatalog',name:'Packs mensais de engomadoria e limpeza têxtil',itemListElement:[...b.packs.map(p=>({'@type':'Offer',price:String(p.price),priceCurrency:'EUR',itemOffered:{'@type':'Service',name:`Pack mensal de engomadoria — ${p.pieces} peças`}})),{'@type':'Offer',price:'2',priceCurrency:'EUR',itemOffered:{'@type':'Service',name:'Lavandaria para Alojamento Local — serviço completo por kg'}}]}},
- {'@type':'WebSite','@id':b.url+'#website',url:b.url,name:b.name,inLanguage:'pt-PT'},
+ {'@type':'WebSite','@id':b.url+'#website',url:b.url,name:b.name,inLanguage:'pt-PT',publisher:{'@id':b.url+'#negocio'}},
  {'@type':'FAQPage','@id':b.url+'#faq',mainEntity:b.faq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))}
 ]};
-const head=(title,description,route='')=>`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fff4f7"><title>${escape(title)}</title><meta name="description" content="${escape(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${b.url+route}"><meta property="og:type" content="website"><meta property="og:locale" content="pt_PT"><meta property="og:site_name" content="${b.name}"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${b.url+route}"><meta property="og:image" content="${b.url}assets/photos/beatriz-editorial.webp"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="${route?'../':''}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${route?'../':''}assets/beatriz.css?v=${revision}"><script type="application/ld+json">${JSON.stringify(schema)}</script>${route?'':`<link rel="preload" href="assets/photos/beatriz-editorial.webp" as="image" fetchpriority="high"><script src="assets/beatriz.js?v=${revision}" defer></script>`}</head>`;
+// Describe only content that is visible on this particular page.
+const schemaForPage=(title,description,route='')=>{
+  const pageUrl=b.url+route;
+  const hasFaq=route===''||route==='perguntas-frequentes/';
+  const graph=schema['@graph'].filter(node=>hasFaq||node['@type']!=='FAQPage').map(node=>{
+    if(node['@type']==='FAQPage')return {...node,'@id':pageUrl+'#faq'};
+    if(node['@type']==='LocalBusiness'&&route!==''&&route!=='precos/'){
+      const {hasOfferCatalog,...entity}=node;
+      return entity;
+    }
+    return node;
+  });
+  graph.push({'@type':'WebPage','@id':pageUrl+'#webpage',url:pageUrl,name:title,description,
+    inLanguage:'pt-PT',isPartOf:{'@id':b.url+'#website'},about:{'@id':b.url+'#negocio'},
+    mainEntity:{'@id':pageUrl+(hasFaq?'#faq':'#negocio')}});
+  // Service and contact pages refer to the one canonical business entity.
+  if(!hasFaq)graph.at(-1).mainEntity={'@id':b.url+'#negocio'};
+  return {'@context':'https://schema.org','@graph':graph};
+};
+const head=(title,description,route='')=>`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fff4f7"><title>${escape(title)}</title><meta name="description" content="${escape(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${b.url+route}"><meta property="og:type" content="website"><meta property="og:locale" content="pt_PT"><meta property="og:site_name" content="${b.name}"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${b.url+route}"><meta property="og:image" content="${b.url}assets/photos/beatriz-editorial.webp"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="${route?'../':''}assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="${route?'../':''}assets/beatriz.css?v=${revision}"><script type="application/ld+json">${JSON.stringify(schemaForPage(title,description,route))}</script>${route?'':`<link rel="preload" href="assets/photos/beatriz-editorial.webp" as="image" fetchpriority="high"><script src="assets/beatriz.js?v=${revision}" defer></script>`}</head>`;
 const footer=(prefix='')=>`<footer class="footer"><div class="wrap footer-top">${brand(prefix)}<p>Roupa cuidada.<br>Mais tempo para si.</p><a class="footer-phone" href="tel:${b.phone}">${b.displayPhone}</a></div><div class="wrap footer-bottom"><span>© ${new Date().getFullYear()} Engomadoria Beatriz Lavandaria</span><nav aria-label="Informação"><a href="${prefix}precos/">Preços</a><a href="${prefix}perguntas-frequentes/">Perguntas frequentes</a><a href="${prefix}contactos/">Contactos</a></nav></div></footer>`;
 const faqs=b.faq.map(([q,a])=>`<details><summary>${q}${icon('plus')}</summary><p>${a}</p></details>`).join('');
 const logoPieces=[{x:0,y:0,w:460,h:630},...[[460,0,1076,220,11],[460,220,1076,236,7],[460,456,1076,174,10]].flatMap(([x,y,w,h,n])=>Array.from({length:n},(_,i)=>({x:x+i*w/n,y,w:w/n,h})))];
@@ -99,7 +118,7 @@ const eliteFeatured=eliteServices.slice(0,3);
 const eliteMore=eliteServices.slice(3);
 
 fs.mkdirSync('docs/'+eliteRoute,{recursive:true});
-fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071f34"><title>Limpezas pós-obras e Alojamento Local | Grupo Elite Limpeza</title><meta name="description" content="Peça orçamento ao Grupo Elite Limpeza para limpezas pós-obras, Alojamento Local, comércio, casas e apartamentos no Porto e arredores."><meta name="robots" content="noindex,follow"><link rel="canonical" href="${eliteUrl}"><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="../assets/beatriz.css?v=${revision}"><link rel="stylesheet" href="../assets/elite-entry.css?v=20261006b"><script type="application/ld+json">${JSON.stringify(eliteSchema)}</script></head><body class="elite-page el4 el5 el9">${icons}
+fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071f34"><title>Limpezas pós-obras e Alojamento Local | Grupo Elite Limpeza</title><meta name="description" content="Peça orçamento ao Grupo Elite Limpeza para limpezas pós-obras, Alojamento Local, comércio, casas e apartamentos no Porto e arredores."><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${eliteUrl}"><link rel="preconnect" href="https://images.unsplash.com"><link rel="stylesheet" href="../assets/beatriz.css?v=${revision}"><link rel="stylesheet" href="../assets/elite-entry.css?v=20261006b"><script type="application/ld+json">${JSON.stringify(eliteSchema)}</script></head><body class="elite-page el4 el5 el9">${icons}
 
 <header class="el9-header">
   <div class="el4-shell el9-header-inner">
@@ -246,7 +265,7 @@ fs.copyFileSync('src/beatriz.css','docs/assets/beatriz.css');
 await build({entryPoints:['src/beatriz.js'],bundle:true,minify:true,format:'iife',target:['safari15','chrome100','firefox100'],outfile:'docs/assets/beatriz.js'});
 fs.writeFileSync('docs/assets/favicon.svg','<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#cf2465"/><text x="32" y="47" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="48" fill="white">B</text></svg>');
 fs.writeFileSync('docs/robots.txt',`User-agent: *\nAllow: /\nSitemap: ${b.url}sitemap.xml\n`);
-fs.writeFileSync('docs/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['',...subpages.map(p=>p[0])].map(route=>`<url><loc>${b.url+route}</loc></url>`).join('')}</urlset>`);
+fs.writeFileSync('docs/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['',...subpages.map(p=>p[0]),eliteRoute].map(route=>`<url><loc>${b.url+route}</loc></url>`).join('')}</urlset>`);
 fs.writeFileSync('docs/llms.txt',`# Engomadoria Beatriz Lavandaria
 
 > Engomadoria com cerca de 20 anos de experiência, packs mensais, recolha e entrega no Grande Porto a partir de 25 peças, lavandaria para Alojamento Local e serviços de limpeza têxtil. Pedidos por WhatsApp.
