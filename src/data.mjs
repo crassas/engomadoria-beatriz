@@ -30,7 +30,10 @@ export const business = {
     ['Usam produtos específicos para diferentes tipos de roupa?', 'Sim. São usados produtos adequados ao tipo de roupa, incluindo roupa branca e necessidades específicas. Indique previamente alergias ou cuidados especiais.'],
     ['O que acontece se tiver um problema com o serviço?', 'Fale directamente com a D. Beatriz. Reclamações ou situações com uma peça são analisadas directamente consigo para encontrar uma solução.'],
     ['Que outros serviços posso consultar?', 'Limpeza a seco, carpetes, cortinados, peles, edredões e cobertores, entre outros serviços de limpeza têxtil. Alguns serviços são realizados com parceiro especializado e a disponibilidade, o prazo e o orçamento são confirmados antes de avançar.'],
-    ['Qual é o horário?', 'A loja funciona de segunda a sexta-feira, das 10:00 às 12:30 e das 14:00 às 19:00, e sábado das 10:00 às 15:00. Chamadas e novos pedidos: dias úteis até às 18:00.']
+    ['Qual é o horário?', 'A loja funciona de segunda a sexta-feira, das 10:00 às 12:30 e das 14:00 às 19:00, e sábado das 10:00 às 15:00. Chamadas e novos pedidos: dias úteis até às 18:00.'],
+    ['Onde fica a loja?', 'A Engomadoria Beatriz fica na Praça das Flores 42, no Porto. Pode deixar e levantar a roupa directamente na loja, dentro do horário: segunda a sexta-feira das 10:00 às 12:30 e das 14:00 às 19:00, e sábado das 10:00 às 15:00.'],
+    ['Quanto custa engomar uma camisa?', 'Nos packs mensais, cada peça fica entre 1,11 € (pack de 80 peças, 89 €) e 1,45 € (pack de 20 peças, 29 €). Camisas e peças semelhantes contam como uma peça. Para peças fora de pack, confirme o preço por WhatsApp.'],
+    ['Fazem limpeza a seco?', 'Sim. A limpeza a seco faz parte dos serviços de limpeza têxtil da Beatriz, tal como carpetes, cortinados, peles, edredões e cobertores. Alguns destes serviços são realizados com parceiro especializado; a disponibilidade, o prazo e o orçamento são confirmados antes de avançar.']
   ]
 };
 export const wa = (message) => `https://wa.me/351923250845?text=${encodeURIComponent(message)}`;

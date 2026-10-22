@@ -19,7 +19,7 @@ const icons = `<svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg"><defs
 const mapsUrl='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(b.streetAddress+', '+b.city);
 const brand=(prefix='')=>`<a class="brand" href="${prefix||'#inicio'}" aria-label="Engomadoria Beatriz — início"><img src="${prefix}assets/photos/beatriz-logo.webp?v=${revision}" width="1536" height="630" alt="Engomadoria Beatriz Lavandaria"></a>`;
 const schema={ '@context':'https://schema.org','@graph':[
- {'@type':'LocalBusiness','@id':b.url+'#negocio',name:b.fullName,url:b.url,telephone:b.phone,image:b.url+'assets/photos/beatriz-editorial.webp',address:{'@type':'PostalAddress',streetAddress:b.streetAddress,addressLocality:b.city,addressRegion:'Porto',addressCountry:'PT'},areaServed:'Grande Porto',paymentAccepted:'Dinheiro, MB WAY',openingHoursSpecification:[{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday'],opens:'10:00',closes:'12:30'},{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday'],opens:'14:00',closes:'19:00'},{'@type':'OpeningHoursSpecification',dayOfWeek:'Saturday',opens:'10:00',closes:'15:00'}],hasOfferCatalog:{'@type':'OfferCatalog',name:'Packs mensais de engomadoria e limpeza têxtil',itemListElement:[...b.packs.map(p=>({'@type':'Offer',price:String(p.price),priceCurrency:'EUR',itemOffered:{'@type':'Service',name:`Pack mensal de engomadoria — ${p.pieces} peças`}})),{'@type':'Offer',price:'2',priceCurrency:'EUR',itemOffered:{'@type':'Service',name:'Lavandaria para Alojamento Local — serviço completo por kg'}}]}},
+ {'@type':'DryCleaningOrLaundry','@id':b.url+'#negocio',name:b.fullName,description:'Engomadoria e lavandaria na Praça das Flores, Porto, com cerca de 20 anos de experiência. Packs mensais de engomadoria, recolha e entrega no Grande Porto a partir de 25 peças e lavandaria para Alojamento Local a 2 €/kg.',url:b.url,telephone:b.phone,priceRange:'€29–€89',image:b.url+'assets/photos/beatriz-editorial.webp',address:{'@type':'PostalAddress',streetAddress:b.streetAddress,addressLocality:b.city,addressRegion:'Porto',addressCountry:'PT'},areaServed:'Grande Porto',paymentAccepted:'Dinheiro, MB WAY',openingHoursSpecification:[{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday'],opens:'10:00',closes:'12:30'},{'@type':'OpeningHoursSpecification',dayOfWeek:['Monday','Tuesday','Wednesday','Thursday','Friday'],opens:'14:00',closes:'19:00'},{'@type':'OpeningHoursSpecification',dayOfWeek:'Saturday',opens:'10:00',closes:'15:00'}],hasOfferCatalog:{'@type':'OfferCatalog',name:'Packs mensais de engomadoria e limpeza têxtil',itemListElement:[...b.packs.map(p=>({'@type':'Offer',price:String(p.price),priceCurrency:'EUR',itemOffered:{'@type':'Service',name:`Pack mensal de engomadoria — ${p.pieces} peças`}})),{'@type':'Offer',price:'2',priceCurrency:'EUR',itemOffered:{'@type':'Service',name:'Lavandaria para Alojamento Local — serviço completo por kg'}},...b.services.map(name=>({'@type':'Offer',itemOffered:{'@type':'Service',name}}))]}},
  {'@type':'WebSite','@id':b.url+'#website',url:b.url,name:b.name,inLanguage:'pt-PT',publisher:{'@id':b.url+'#negocio'}},
  {'@type':'FAQPage','@id':b.url+'#faq',mainEntity:b.faq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))}
 ]};
@@ -29,7 +29,7 @@ const schemaForPage=(title,description,route='')=>{
   const hasFaq=route===''||route==='perguntas-frequentes/';
   const graph=schema['@graph'].filter(node=>hasFaq||node['@type']!=='FAQPage').map(node=>{
     if(node['@type']==='FAQPage')return {...node,'@id':pageUrl+'#faq'};
-    if(node['@type']==='LocalBusiness'&&route!==''&&route!=='precos/'){
+    if(node['@type']==='DryCleaningOrLaundry'&&route!==''&&route!=='precos/'){
       const {hasOfferCatalog,...entity}=node;
       return entity;
     }
@@ -279,6 +279,7 @@ fs.writeFileSync('docs/llms.txt',`# Engomadoria Beatriz Lavandaria
 ## Packs mensais
 ${b.packs.map(p=>`- ${p.pieces} peças: ${p.price} €`).join('\n')}
 - Preços fixos.
+- Cada peça fica entre 1,11 € e 1,45 €, conforme o pack.
 - Peças de maior dimensão contam como duas peças.
 - Engomadoria: prazo habitual até 72 horas.
 - Pagamento: pré-pagamento em dinheiro ou MB WAY.
