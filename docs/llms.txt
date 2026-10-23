@@ -49,5 +49,6 @@
 ## Páginas
 - [Packs e serviços](https://engomadoriabeatriz.pt/)
 - [Preços](https://engomadoriabeatriz.pt/precos/)
+- [Recolha e entrega no Grande Porto](https://engomadoriabeatriz.pt/recolha-entrega-engomadoria-porto/)
 - [Perguntas frequentes](https://engomadoriabeatriz.pt/perguntas-frequentes/)
 - [Contactos](https://engomadoriabeatriz.pt/contactos/)
