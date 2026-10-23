@@ -334,4 +334,4 @@ ${b.packs.map(p=>`- ${p.pieces} peças: ${p.price} €`).join('\n')}
 - [Perguntas frequentes](${b.url}perguntas-frequentes/)
 - [Contactos](${b.url}contactos/)
 `);
-console.log('Built 4 static pages, bundled Motion, sitemap and llms.txt.');
+console.log(`Built ${subpages.length+2} static pages, bundled Motion, sitemap and llms.txt.`);
