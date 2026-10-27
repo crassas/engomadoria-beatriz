@@ -6295,3 +6295,171 @@ body:not(.elite-page) .banner-round{border-radius:50%!important}
   .banner-process li{opacity:1;transform:none;transition:none}
   .js .banner-slide.is-active .banner-media img{animation:none!important}
 }
+
+/* =========================================================
+   HARMONIZAÇÃO 27/10 — a página inicial como UM só fluxo.
+   Diagnóstico: o fundo saltava de secção para secção (faixa
+   azul-marinho escura → packs claros → factos escuros →
+   painel Elite azul-ciano → história escura → rosa claro →
+   branco → rosa → rodapé escuro), e o texto ficava muitas
+   vezes diretamente sobre a seda, sem painel. Correção: UM
+   campo contínuo creme (a seda continua por baixo, a 10-12%
+   de transparência, como textura, não como fundo de texto),
+   a mesma hierarquia, os mesmos raios e as mesmas margens
+   em todo o lado, e o painel Elite/Parceiros dentro do mesmo
+   sistema creme/azul-marinho/rosa veludo da Beatriz — sem
+   apagar o nome Elite nem o seu conteúdo. A página
+   Grupo Elite separada (.elite-page) NÃO é tocada por este
+   bloco: isto é só a secção Parceiros/Elite da página inicial.
+   ========================================================= */
+body:not(.elite-page) .announcement{
+  background:rgba(255,246,247,.96)!important;
+  color:#35515f!important;
+  border-bottom:1px solid rgba(198,47,112,.14);
+}
+body:not(.elite-page) .announcement a{color:#35515f!important}
+/* Um só campo: todas as secções da página inicial partilham
+   o mesmo fundo creme translúcido, com uma risca rosa suave
+   a marcar a passagem — sem saltos de cor nem de escala. */
+body:not(.elite-page) main .section,
+body:not(.elite-page) .partners-showcase,
+body:not(.elite-page) .beatriz-facts,
+body:not(.elite-page) .story,
+body:not(.elite-page) .al,
+body:not(.elite-page) .services,
+body:not(.elite-page) .request,
+body:not(.elite-page) .contact,
+body:not(.elite-page) .footer{
+  background:linear-gradient(180deg,rgba(255,250,249,.90),rgba(255,246,247,.90))!important;
+  color:#24353f!important;
+  border-top:1px solid rgba(198,47,112,.14)!important;
+  box-shadow:none!important;
+}
+body:not(.elite-page) .packs:before{background:linear-gradient(180deg,rgba(255,250,249,.90),rgba(255,246,247,.90))!important}
+body:not(.elite-page) .care-strip{
+  background:linear-gradient(180deg,rgba(255,250,249,.90),rgba(255,246,247,.90))!important;
+  color:#24353f!important;
+  border-top:1px solid rgba(198,47,112,.14)!important;
+  border-bottom:1px solid rgba(198,47,112,.14)!important;
+  box-shadow:none!important;
+}
+body:not(.elite-page) .care-strip span{color:#173e52!important}
+body:not(.elite-page) .care-strip .icon{color:#c06a92!important}
+/* Uma só hierarquia tipográfica, texto sempre sobre creme. */
+body:not(.elite-page) main h2,
+body:not(.elite-page) .partners-showcase h2,
+body:not(.elite-page) .story h2,
+body:not(.elite-page) .footer-phone{color:#173e52!important}
+body:not(.elite-page) main h2 em,
+body:not(.elite-page) .partners-showcase h2 em,
+body:not(.elite-page) .story h2 em{color:#c06a92!important}
+body:not(.elite-page) .eyebrow,
+body:not(.elite-page) .section-heading .eyebrow{color:#98405f!important}
+body:not(.elite-page) main p,
+body:not(.elite-page) .section-heading>p,
+body:not(.elite-page) .pack-order p,
+body:not(.elite-page) .pack-disclaimer,
+body:not(.elite-page) .contact-preference,
+body:not(.elite-page) .al-copy>p,
+body:not(.elite-page) .faq-list details p,
+body:not(.elite-page) .story p{color:#35515f!important}
+body:not(.elite-page) .section{padding-block:84px}
+body:not(.elite-page) .partners-showcase{padding-block:84px}
+body:not(.elite-page) .beatriz-facts{padding-block:64px}
+/* Um só raio e uma só sombra suave nos cartões. */
+body:not(.elite-page) .pack-option,
+body:not(.elite-page) .pack-order,
+body:not(.elite-page) .service-row,
+body:not(.elite-page) .faq-list details,
+body:not(.elite-page) .request-card,
+body:not(.elite-page) .al-rate,
+body:not(.elite-page) .story-experience,
+body:not(.elite-page) .al-image,
+body:not(.elite-page) .partner-elite-panel.partner-elite-v2{border-radius:18px!important}
+/* Faixa de factos: era azul-marinho escura, passa ao mesmo campo claro. */
+body:not(.elite-page) .beatriz-facts-grid small{color:#98405f!important}
+body:not(.elite-page) .beatriz-facts-grid strong{color:#173e52!important}
+body:not(.elite-page) .beatriz-facts-grid span{color:#35515f!important}
+/* História: era azul-marinho escura, passa ao mesmo campo claro. */
+body:not(.elite-page) .story:before{color:rgba(198,47,112,.07)!important}
+body:not(.elite-page) .story .eyebrow{color:#98405f!important}
+body:not(.elite-page) .story .text-link{color:#173e52!important;border-bottom-color:rgba(192,106,146,.55)!important}
+body:not(.elite-page) .story-experience{
+  background:rgba(255,255,255,.88)!important;
+  border:1px solid rgba(198,47,112,.22)!important;
+  box-shadow:0 16px 34px rgba(62,39,48,.10)!important;
+}
+body:not(.elite-page) .story-experience .eyebrow{color:#98405f!important}
+body:not(.elite-page) .experience-number{
+  background:none!important;
+  -webkit-background-clip:initial!important;
+  background-clip:initial!important;
+  -webkit-text-fill-color:#a42460!important;
+  color:#a42460!important;
+  filter:none!important;
+  text-shadow:none!important;
+}
+body:not(.elite-page) .experience-years{color:#173e52!important;text-shadow:none!important}
+body:not(.elite-page) .story-experience .care-type-note{color:#35515f!important;border-top-color:rgba(198,47,112,.22)!important}
+/* Parceiros / Elite: o painel deixa de ser azul-ciano e entra
+   no sistema da Beatriz — nome, logótipo, foto e conteúdo intactos. */
+body:not(.elite-page) .partner-intro-copy{color:#35515f!important}
+body:not(.elite-page) .partner-elite-panel.partner-elite-v2{
+  border:1px solid rgba(198,47,112,.28)!important;
+  box-shadow:0 20px 42px rgba(75,42,53,.10)!important;
+  background:#fff9f8!important;
+}
+body:not(.elite-page) .partner-elite-v2:before{color:rgba(198,47,112,.05)!important}
+body:not(.elite-page) .partner-elite-media:after{background:linear-gradient(180deg,rgba(67,32,50,.02) 25%,rgba(67,32,50,.45) 100%)!important}
+body:not(.elite-page) .partner-elite-badge{
+  background:linear-gradient(180deg,#f0c3d2 0%,#d98cab 55%,#c06a92 100%)!important;
+  color:#fff!important;
+}
+body:not(.elite-page) .partner-elite-v2-copy{
+  background:linear-gradient(180deg,#fff9f8,#f8edef)!important;
+}
+body:not(.elite-page) .partner-elite-v2-head{border-bottom-color:rgba(198,47,112,.22)!important}
+body:not(.elite-page) .partner-elite-v2-head span{color:#98405f!important}
+body:not(.elite-page) .partner-elite-v2-head small{color:#506671!important}
+body:not(.elite-page) .partner-elite-v2-copy h3{color:#173e52!important}
+body:not(.elite-page) .partner-elite-v2-copy h3 em{color:#c06a92!important}
+body:not(.elite-page) .partner-elite-v2-copy>p{color:#35515f!important}
+body:not(.elite-page) .partner-elite-v2-services span{
+  border-color:rgba(198,47,112,.28)!important;
+  background:#fff!important;
+  color:#35515f!important;
+}
+body:not(.elite-page) .partner-elite-v2-footer{border-top-color:rgba(198,47,112,.22)!important}
+body:not(.elite-page) .partner-elite-v2-footer small{color:#506671!important}
+body:not(.elite-page) .partner-elite-v2-footer strong{color:#173e52!important}
+body:not(.elite-page) .partner-elite-v2-footer>span{
+  background:linear-gradient(180deg,#f0c3d2 0%,#d98cab 55%,#c06a92 100%)!important;
+  border:1px solid rgba(255,255,255,.35)!important;
+  border-bottom:4px solid #a85a7e!important;
+  border-radius:14px!important;
+  color:#fff!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 24px rgba(160,60,100,.22)!important;
+}
+body:not(.elite-page) .partner-elite-adline{color:#35515f!important}
+/* Rodapé: fecha a página no mesmo campo, não num terceiro mundo. */
+body:not(.elite-page) .footer-top>p{
+  background:none!important;
+  -webkit-background-clip:initial!important;
+  background-clip:initial!important;
+  -webkit-text-fill-color:#173e52!important;
+  color:#173e52!important;
+  filter:none!important;
+}
+body:not(.elite-page) .footer .brand-small,
+body:not(.elite-page) .footer-bottom,
+body:not(.elite-page) .footer-bottom a{color:#35515f!important}
+body:not(.elite-page) .footer-bottom{border-top-color:rgba(198,47,112,.22)!important}
+body:not(.elite-page) .footer-phone{color:#173e52!important;text-shadow:none!important}
+@media(max-width:760px){
+  body:not(.elite-page) .section,
+  body:not(.elite-page) .partners-showcase{padding-block:64px}
+  body:not(.elite-page) .footer-phone{font-size:44px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  body:not(.elite-page) .partner-elite-v2:hover .partner-elite-media>img{transform:none!important}
+}
