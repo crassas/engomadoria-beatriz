@@ -5,7 +5,7 @@ document.documentElement.classList.add('js');
 const intro=document.querySelector('.intro');
 const introVideo=document.querySelector('#intro-video');const introEnter=document.querySelector('#intro-enter');const pageParts=Array.from(document.body.children).filter(e=>e!==intro);
 let leaving=false;let introAutoTimer=null;
-const finishIntro=()=>{if(leaving)return;leaving=true;if(introAutoTimer)clearTimeout(introAutoTimer);introVideo?.pause();intro?.classList.add('intro-leaving');const reveal=()=>{document.body.classList.add('intro-done');document.body.classList.remove('intro-active');pageParts.forEach(e=>e.inert=false);intro?.remove();if(!reduced){animate('.hero-copy',{opacity:[.9,1],y:[4,0]},{duration:.3,ease:[.22,.61,.36,1]});document.querySelector('main')?.setAttribute('tabindex','-1');document.querySelector('main')?.focus({preventScroll:true})}};if(reduced)reveal();else setTimeout(reveal,550)};
+const finishIntro=()=>{if(leaving)return;leaving=true;if(introAutoTimer)clearTimeout(introAutoTimer);introVideo?.pause();intro?.classList.add('intro-leaving');const reveal=()=>{document.body.classList.add('intro-done');document.body.classList.remove('intro-active');pageParts.forEach(e=>e.inert=false);intro?.remove();const bannerEl=document.querySelector('.banner');if(bannerEl&&!reduced){bannerEl.classList.add('banner-hook');setTimeout(()=>bannerEl.classList.remove('banner-hook'),1000)};if(!reduced){animate('.hero-copy',{opacity:[.9,1],y:[4,0]},{duration:.3,ease:[.22,.61,.36,1]});document.querySelector('main')?.setAttribute('tabindex','-1');document.querySelector('main')?.focus({preventScroll:true})}};if(reduced)reveal();else setTimeout(reveal,550)};
 const readyIntro=(fallback=false)=>{if(leaving||!intro)return;intro.classList.add('intro-ready');if(fallback)intro.classList.add('intro-fallback');introEnter.hidden=false;intro.querySelector('.intro-enter-hint').hidden=false;if(introAutoTimer)clearTimeout(introAutoTimer);introAutoTimer=setTimeout(finishIntro,fallback?700:1400)};
 introEnter?.addEventListener('click',finishIntro);
 intro?.addEventListener('keydown',event=>{if(event.key==='Escape'){finishIntro();return}if(event.key==='Tab'){const controls=[introEnter].filter(e=>e&&!e.hidden);const current=controls.indexOf(document.activeElement);event.preventDefault();controls[(current+(event.shiftKey?-1:1)+controls.length)%controls.length]?.focus()}});
@@ -97,23 +97,40 @@ if(bannerShell){
   let current=0;let playing=!reduced;let timer=null;
   const stopTimer=()=>{if(timer){clearInterval(timer);timer=null}};
   const startTimer=()=>{stopTimer();if(playing&&!reduced)timer=setInterval(()=>show((current+1)%slides.length,false),7000)};
+  // Faixa «Como funciona» (explainer passo-a-passo, ror-fly-880547, só com dados reais do site):
+  // Recolha → Engomar → Entrega. Sem fotos, sem áudio, sem partículas. Acesa um passo de cada vez,
+  // em ciclo de ~7s como a rotação; pára com o banner e fica toda visível sem movimento reduzido.
+  const shell=bannerShell.querySelector('.banner-shell');
+  const controls=bannerShell.querySelector('.banner-controls');
+  const processEl=document.createElement('div');
+  processEl.className='banner-process';
+  processEl.innerHTML='<ol aria-label="Como funciona: recolha, engomar, entrega"><li><span class="banner-process__num" aria-hidden="true">1</span><span class="banner-process__text"><b>Recolha</b><span>A partir de 25 peças · Grande Porto</span></span></li><li><span class="banner-process__num" aria-hidden="true">2</span><span class="banner-process__text"><b>Engomar</b><span>Roupa tratada caso a caso</span></span></li><li><span class="banner-process__num" aria-hidden="true">3</span><span class="banner-process__text"><b>Entrega</b><span>Até 72h</span></span></li></ol>';
+  if(shell&&controls)controls.insertAdjacentElement('afterend',processEl);
+  const processSteps=Array.from(processEl.querySelectorAll('li'));
+  let processTimer=null;let processStep=0;
+  const showAllSteps=()=>processSteps.forEach(s=>s.classList.add('is-on'));
+  const stopProcess=(showAll=true)=>{if(processTimer){clearInterval(processTimer);processTimer=null}if(showAll)showAllSteps()};
+  const startProcess=()=>{if(reduced){showAllSteps();return}stopProcess(false);processStep=0;processSteps.forEach((s,i)=>s.classList.toggle('is-on',i===0));processTimer=setInterval(()=>{processStep=(processStep+1)%processSteps.length;processSteps.forEach((s,i)=>s.classList.toggle('is-on',i===processStep))},2300)};
+  if(reduced)showAllSteps();
   const show=(index,manual)=>{
     current=((index%slides.length)+slides.length)%slides.length;
     slides.forEach((s,i)=>s.classList.toggle('is-active',i===current));
     dots.forEach((d,i)=>{d.classList.toggle('is-active',i===current);if(i===current)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')});
     if(counter)counter.textContent=String(current+1);
     if(status)status.textContent=`Publicidade ${current+1} de 4: ${titles[current]}`;
-    if(manual){playing=false;if(pauseBtn)pauseBtn.textContent='Retomar';stopTimer()}
+    if(manual){playing=false;if(pauseBtn)pauseBtn.textContent='Retomar';stopTimer();stopProcess()}
   };
   prevBtn?.addEventListener('click',()=>show(current-1,true));
   nextBtn?.addEventListener('click',()=>show(current+1,true));
   dots.forEach((d,i)=>d.addEventListener('click',()=>show(i,true)));
-  pauseBtn?.addEventListener('click',()=>{playing=!playing;pauseBtn.textContent=playing?'Pausar':'Retomar';if(playing)startTimer();else stopTimer()});
+  pauseBtn?.addEventListener('click',()=>{playing=!playing;pauseBtn.textContent=playing?'Pausar':'Retomar';if(playing){startTimer();startProcess()}else{stopTimer();stopProcess()}});
   const viewport=bannerShell.querySelector('.banner-viewport');
-  viewport?.addEventListener('mouseenter',stopTimer);
-  viewport?.addEventListener('mouseleave',()=>{if(playing)startTimer()});
-  viewport?.addEventListener('focusin',stopTimer);
-  viewport?.addEventListener('focusout',()=>{if(playing)startTimer()});
+  viewport?.addEventListener('mouseenter',()=>{stopTimer();stopProcess(false)});
+  viewport?.addEventListener('mouseleave',()=>{if(playing){startTimer();startProcess()}});
+  viewport?.addEventListener('focusin',()=>{stopTimer();stopProcess(false)});
+  viewport?.addEventListener('focusout',()=>{if(playing){startTimer();startProcess()}});
   if(pauseBtn)pauseBtn.textContent=playing?'Pausar':'Retomar';
-  show(0,false);if(playing)startTimer();
+  show(0,false);if(playing){startTimer();startProcess()}
+  // Hook de 1s (ishaaqahamed-107563): se não há intro a tapar o banner, o título entra já nítido.
+  if(!intro||document.body.classList.contains('intro-done')){bannerShell.classList.add('banner-hook');setTimeout(()=>bannerShell.classList.remove('banner-hook'),1000)}
 }
