@@ -6463,3 +6463,136 @@ body:not(.elite-page) .footer-phone{color:#173e52!important;text-shadow:none!imp
 @media(prefers-reduced-motion:reduce){
   body:not(.elite-page) .partner-elite-v2:hover .partner-elite-media>img{transform:none!important}
 }
+
+/* =========================================================
+   TRATAMENTO 27/10 — packs em veludo, cartão do horário
+   integrado e FIM DO EFEITO ROLO DE PAPEL.
+   Causa do rolo: o body tinha a seda em imagem de fundo
+   (fixed/cover) e as secções eram translúcidas a 75-90%,
+   por isso a seda azul-rosa espreitava dos lados das
+   secções .wrap, como uma coluna de papel no meio.
+   Correção: fundo SÓLIDO creme de bordo a bordo, igual
+   no body e em todas as secções — sem seda lateral.
+   A seda fica só como textura muito discreta dentro de
+   cartões, nunca como faixa lateral. Só CSS, sem tocar
+   em textos, preços, horários ou destinos.
+   ========================================================= */
+html:not(.elite-page),
+body:not(.elite-page){
+  background:#fffaf9!important;
+  background-image:none!important;
+  background-attachment:scroll!important;
+}
+body:not(.elite-page) .header{
+  background:#fffaf9!important;
+}
+body:not(.elite-page) main,
+body:not(.elite-page) .banner,
+body:not(.elite-page) main .section,
+body:not(.elite-page) .packs,
+body:not(.elite-page) .services,
+body:not(.elite-page) .contact,
+body:not(.elite-page) .request,
+body:not(.elite-page) .al,
+body:not(.elite-page) .partners-showcase,
+body:not(.elite-page) .beatriz-facts,
+body:not(.elite-page) .story,
+body:not(.elite-page) .care-strip,
+body:not(.elite-page) .footer{
+  background:#fffaf9!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+body:not(.elite-page) .packs:before,
+body:not(.elite-page) .packs:after{display:none!important}
+body:not(.elite-page) .packs{
+  border:0!important;
+  border-radius:0!important;
+}
+/* Cartões de packs: são botões de seleção, logo levam o
+   MESMO veludo dos outros botões. Base mais escura para
+   os números brancos continuarem legíveis (texto grande,
+   3:1) — veludo, não o magenta antigo. */
+body:not(.elite-page) .pack-option,
+body:not(.elite-page) .pack-option.selected{
+  background:linear-gradient(180deg,#d98cab 0%,#c06a92 55%,#a85a7e 100%)!important;
+  background-image:linear-gradient(180deg,#d98cab 0%,#c06a92 55%,#a85a7e 100%)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.35)!important;
+  border-bottom:4px solid #a85a7e!important;
+  border-radius:18px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 24px rgba(160,60,100,.22),0 0 18px rgba(217,140,171,.30)!important;
+  transition:transform .15s ease,box-shadow .15s ease,border-bottom-width .15s ease;
+}
+body:not(.elite-page) .pack-option:hover{
+  filter:brightness(1.03);
+}
+body:not(.elite-page) .pack-option:active{
+  transform:translateY(4px)!important;
+  border-bottom-width:1px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.30),0 4px 12px rgba(160,60,100,.20),0 0 26px rgba(217,140,171,.35)!important;
+}
+body:not(.elite-page) .pack-option .pack-count,
+body:not(.elite-page) .pack-option .pack-price,
+body:not(.elite-page) .pack-option .pack-count small,
+body:not(.elite-page) .pack-option .pack-price small,
+body:not(.elite-page) .pack-option .pack-unit{
+  color:#fff!important;
+  text-shadow:0 1px 0 rgba(105,30,65,.35),0 2px 4px rgba(105,30,65,.25);
+}
+body:not(.elite-page) .pack-option .pack-check{
+  background:rgba(255,255,255,.12)!important;
+  border-color:rgba(255,255,255,.65)!important;
+  color:#fff!important;
+}
+body:not(.elite-page) .pack-option.selected{
+  border-color:#fff1f6!important;
+  box-shadow:0 0 0 2px #a85a7e,inset 0 1px 0 rgba(255,255,255,.35),0 10px 24px rgba(160,60,100,.22)!important;
+  transform:translateY(-3px);
+}
+body:not(.elite-page) .pack-option.selected .pack-check{
+  background:#fff1f6!important;
+  border-color:#fff1f6!important;
+  color:#a85a7e!important;
+}
+body:not(.elite-page) .pack-tag{
+  background:#fff1f6!important;
+  color:#922749!important;
+  border:1px solid #eac0ce!important;
+}
+/* Cartão «O seu dia, com mais tempo.» — mesmo sistema:
+   mesma tipografia, mesmo raio 18, mesma sombra, mesmo
+   campo creme/branco das outras secções. Conteúdo intacto. */
+body:not(.elite-page) .banner-hours{
+  max-width:none!important;
+  width:100%;
+  margin:18px 0 0!important;
+  padding:24px 28px!important;
+  background:#ffffff!important;
+  border:1px solid rgba(198,47,112,.22)!important;
+  border-radius:18px!important;
+  box-shadow:0 16px 34px rgba(62,39,48,.10)!important;
+  text-align:center;
+}
+body:not(.elite-page) .banner-hours .hero-hours-title{
+  font-family:'Beatriz Script',Georgia,serif;
+  font-size:clamp(30px,5vw,44px);
+  line-height:1.15;
+  color:#173e52!important;
+  margin:0 0 10px;
+}
+body:not(.elite-page) .banner-hours p{
+  color:#35515f!important;
+  font-size:16px;
+  line-height:1.7;
+}
+body:not(.elite-page) .banner-hours p b{color:#c06a92!important}
+@media(max-width:700px){
+  body:not(.elite-page) .banner-hours{padding:22px 20px!important}
+  body:not(.elite-page) .banner-hours p{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){
+  body:not(.elite-page) .pack-option,
+  body:not(.elite-page) .pack-option:hover,
+  body:not(.elite-page) .pack-option:active{transition:none!important;transform:none!important}
+}
