@@ -5966,11 +5966,13 @@ body:not(.elite-page) .header-cta,
 body:not(.elite-page) .mobile-dock a:last-child,
 body:not(.elite-page) .hero .button-pink,
 body:not(.elite-page) .pack-order .button-dark{
-  background:linear-gradient(135deg,var(--v18-pink) 0%,var(--v18-lilac) 48%,var(--v18-bluebaby) 100%);
+  background:linear-gradient(180deg,#f0c3d2 0%,#d98cab 55%,#c06a92 100%);
   color:#fff!important;
   border:1px solid rgba(255,255,255,.35);
-  box-shadow:0 8px 0 rgba(126,35,82,.11),0 18px 36px rgba(95,43,74,.24),inset 0 1px 0 rgba(255,255,255,.42);
-  text-shadow:0 1px 0 rgba(69,20,45,.28);
+  border-bottom:4px solid #a85a7e;
+  border-radius:14px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 24px rgba(160,60,100,.22),0 0 18px rgba(217,140,171,.30);
+  text-shadow:0 1px 0 rgba(105,30,65,.35);
 }
 
 body:not(.elite-page) .button:hover,
@@ -5978,16 +5980,32 @@ body:not(.elite-page) .header-cta:hover,
 body:not(.elite-page) .mobile-dock a:last-child:hover,
 body:not(.elite-page) .hero .button-pink:hover,
 body:not(.elite-page) .pack-order .button-dark:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 0 rgba(126,35,82,.10),0 24px 46px rgba(95,43,74,.30),inset 0 1px 0 rgba(255,255,255,.45);
+  filter:brightness(1.03);
+}
+body:not(.elite-page) .button:active,
+body:not(.elite-page) .header-cta:active,
+body:not(.elite-page) .mobile-dock a:last-child:active,
+body:not(.elite-page) .hero .button-pink:active,
+body:not(.elite-page) .pack-order .button-dark:active{
+  transform:translateY(4px);
+  border-bottom-width:1px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.30),0 4px 12px rgba(160,60,100,.20),0 0 26px rgba(217,140,171,.35);
 }
 
 body:not(.elite-page) .button-outline,
 body:not(.elite-page) .mobile-dock a:first-child{
-  background:linear-gradient(135deg,#fffdfd 0%,#fdf6fb 52%,#effaff 100%);
-  color:var(--v18-navy)!important;
-  border:1px solid rgba(139,84,112,.22);
-  box-shadow:0 10px 24px rgba(21,44,57,.12),inset 0 1px 0 rgba(255,255,255,.80);
+  background:linear-gradient(180deg,#f0c3d2 0%,#d98cab 55%,#c06a92 100%);
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.35);
+  border-bottom:4px solid #a85a7e;
+  border-radius:14px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 24px rgba(160,60,100,.22),0 0 18px rgba(217,140,171,.30);
+  text-shadow:0 1px 0 rgba(105,30,65,.35);
+}
+body:not(.elite-page) .button-outline:active,
+body:not(.elite-page) .mobile-dock a:first-child:active{
+  transform:translateY(4px);
+  border-bottom-width:1px;
 }
 
 body:not(.elite-page) .beatriz-facts-grid strong,
@@ -6187,3 +6205,63 @@ body:not(.elite-page) .header-cta:active{transform:translateY(3px);border-bottom
 @media (max-width:1150px){.header-phone{display:none}}
 @media (max-width:800px){.banner{padding:16px 0 4px}.banner-shell{border-radius:18px}.banner-slide{grid-template-columns:1fr;min-height:auto}.banner-media{order:-1;max-height:260px;min-height:200px}.banner-copy{padding:28px 22px 32px}.banner-copy h1{font-size:clamp(44px,11vw,60px)}.banner-title{font-size:clamp(40px,10.5vw,56px)}.banner-text{font-size:16px}.banner-round{width:44px;height:44px;font-size:24px}.banner-controls{flex-wrap:nowrap;gap:8px;padding:12px 10px}.banner-dots{gap:8px}.banner-dot{width:13px;height:13px}.banner-counter{font-size:13px}.velvet-btn--small{min-height:44px;padding:9px 12px;font-size:12px}}@media (max-width:400px){.banner-round{width:40px;height:40px}.banner-counter{display:none}.velvet-btn--small{font-size:11px;padding:9px 10px}}
 @media (prefers-reduced-motion:reduce){.banner-slide img{animation:none!important}.velvet-btn,.banner-round,.header-phone{transition:none}.velvet-btn:active,.banner-round:active,.header-phone:active{transform:none;border-bottom-width:4px}}
+
+/* Uniformização 27/10: TODOS os CTA da Beatriz no mesmo veludo do banner.
+   Só ícone + texto distinguem os botões. Cartões de packs, pontos do banner,
+   menu, vídeo e páginas Elite ficam de fora, por não serem CTA. */
+body:not(.elite-page) .button,
+body:not(.elite-page) .button-pink,
+body:not(.elite-page) .button-dark,
+body:not(.elite-page) .button-outline,
+body:not(.elite-page) .header-cta,
+body:not(.elite-page) .header-phone,
+body:not(.elite-page) .velvet-btn,
+body:not(.elite-page) .banner-round,
+body:not(.elite-page) .mobile-dock a,
+body:not(.elite-page) .pack-order .button,
+body:not(.elite-page) .hero .button,
+body:not(.elite-page) .request-submit,
+body:not(.elite-page) .contact-actions .button{
+  background:linear-gradient(180deg,#f0c3d2 0%,#d98cab 55%,#c06a92 100%)!important;
+  background-image:linear-gradient(180deg,#f0c3d2 0%,#d98cab 55%,#c06a92 100%)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.35)!important;
+  border-bottom:4px solid #a85a7e!important;
+  border-radius:14px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 24px rgba(160,60,100,.22),0 0 18px rgba(217,140,171,.30)!important;
+  text-shadow:0 1px 0 rgba(105,30,65,.35);
+  font-weight:700;
+  transition:transform .15s ease,box-shadow .15s ease,border-bottom-width .15s ease,filter .15s ease;
+}
+body:not(.elite-page) .button:hover,
+body:not(.elite-page) .header-cta:hover,
+body:not(.elite-page) .header-phone:hover,
+body:not(.elite-page) .velvet-btn:hover,
+body:not(.elite-page) .banner-round:hover,
+body:not(.elite-page) .mobile-dock a:hover,
+body:not(.elite-page) .request-submit:hover,
+body:not(.elite-page) .contact-actions .button:hover{
+  filter:brightness(1.03);
+}
+body:not(.elite-page) .button:active,
+body:not(.elite-page) .header-cta:active,
+body:not(.elite-page) .header-phone:active,
+body:not(.elite-page) .velvet-btn:active,
+body:not(.elite-page) .banner-round:active,
+body:not(.elite-page) .mobile-dock a:active,
+body:not(.elite-page) .request-submit:active,
+body:not(.elite-page) .contact-actions .button:active{
+  transform:translateY(4px);
+  border-bottom-width:1px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.30),0 4px 12px rgba(160,60,100,.20),0 0 26px rgba(217,140,171,.35)!important;
+}
+@media (prefers-reduced-motion:reduce){
+  body:not(.elite-page) .button,
+  body:not(.elite-page) .mobile-dock a,
+  body:not(.elite-page) .request-submit{transition:none}
+  body:not(.elite-page) .button:active,
+  body:not(.elite-page) .mobile-dock a:active,
+  body:not(.elite-page) .request-submit:active{transform:none;border-bottom-width:4px!important}
+}
+/* Correção: os botões redondos do banner mantêm o círculo, só muda o veludo. */
+body:not(.elite-page) .banner-round{border-radius:50%!important}
