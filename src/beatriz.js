@@ -82,3 +82,38 @@ if(partnerPanel){
 }
 
 updateMessage();
+
+// Banner rotativo: 4 publicidades, 7s, para ao interagir, Pausar/Retomar visível.
+const bannerShell=document.querySelector('.banner');
+if(bannerShell){
+  const slides=Array.from(bannerShell.querySelectorAll('.banner-slide'));
+  const dots=Array.from(bannerShell.querySelectorAll('.banner-dot'));
+  const prevBtn=bannerShell.querySelector('[data-banner-prev]');
+  const nextBtn=bannerShell.querySelector('[data-banner-next]');
+  const pauseBtn=bannerShell.querySelector('[data-banner-pause]');
+  const counter=bannerShell.querySelector('[data-banner-current]');
+  const status=bannerShell.querySelector('[data-banner-status]');
+  const titles=['O descanso não é para passar a ferro.','Roupa cuidada, pronta a vestir.','A loja da Praça das Flores.','Parceiros com a roupa sempre impecável.'];
+  let current=0;let playing=!reduced;let timer=null;
+  const stopTimer=()=>{if(timer){clearInterval(timer);timer=null}};
+  const startTimer=()=>{stopTimer();if(playing&&!reduced)timer=setInterval(()=>show((current+1)%slides.length,false),7000)};
+  const show=(index,manual)=>{
+    current=((index%slides.length)+slides.length)%slides.length;
+    slides.forEach((s,i)=>s.classList.toggle('is-active',i===current));
+    dots.forEach((d,i)=>{d.classList.toggle('is-active',i===current);if(i===current)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')});
+    if(counter)counter.textContent=String(current+1);
+    if(status)status.textContent=`Publicidade ${current+1} de 4: ${titles[current]}`;
+    if(manual){playing=false;if(pauseBtn)pauseBtn.textContent='Retomar';stopTimer()}
+  };
+  prevBtn?.addEventListener('click',()=>show(current-1,true));
+  nextBtn?.addEventListener('click',()=>show(current+1,true));
+  dots.forEach((d,i)=>d.addEventListener('click',()=>show(i,true)));
+  pauseBtn?.addEventListener('click',()=>{playing=!playing;pauseBtn.textContent=playing?'Pausar':'Retomar';if(playing)startTimer();else stopTimer()});
+  const viewport=bannerShell.querySelector('.banner-viewport');
+  viewport?.addEventListener('mouseenter',stopTimer);
+  viewport?.addEventListener('mouseleave',()=>{if(playing)startTimer()});
+  viewport?.addEventListener('focusin',stopTimer);
+  viewport?.addEventListener('focusout',()=>{if(playing)startTimer()});
+  if(pauseBtn)pauseBtn.textContent=playing?'Pausar':'Retomar';
+  show(0,false);if(playing)startTimer();
+}
