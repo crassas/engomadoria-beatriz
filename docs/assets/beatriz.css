@@ -6626,3 +6626,49 @@ body:not(.elite-page) .pack-order p {
 @media (max-width: 700px) {
   body:not(.elite-page) .section-heading > p { max-width: 55ch; line-height: 1.6; }
 }
+
+/* Elite: azul bebé e contrastes inspirados na paleta escolhida. */
+body:not(.elite-page) .partner-elite-v2-footer > span {
+  background: linear-gradient(180deg, #d4eaff 0%, #99ccff 54%, #83b9e4 100%) !important;
+  background-image: linear-gradient(180deg, #d4eaff 0%, #99ccff 54%, #83b9e4 100%) !important;
+  border: 1px solid #e9f6ff !important;
+  border-bottom: 4px solid #6b9fc8 !important;
+  color: #123b55 !important;
+  text-shadow: none !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 9px 22px rgba(34,77,111,.18) !important;
+}
+body.elite-page .el9-primary,
+body.elite-page .el9-cta,
+body.elite-page .el4-btn-light {
+  background: #cce6fb !important;
+  color: #10374f !important;
+  border-color: #a5cce9 !important;
+}
+body.elite-page .el9-primary:hover,
+body.elite-page .el9-cta:hover,
+body.elite-page .el4-btn-light:hover {
+  background: #acd6f5 !important;
+  color: #10374f !important;
+}
+body.elite-page .el16-title em { color: #b8ddf7 !important; }
+body.elite-page .el13-services { background: #f6fbff !important; }
+body.elite-page .el13-copy a {
+  background: #075b80 !important;
+  color: #fff !important;
+  border-radius: 9px;
+}
+body.elite-page .el13-copy a:hover { background: #064664 !important; }
+body.elite-page .el13-copy p,
+body.elite-page .el13-heading > p:not(.el4-overline) {
+  max-width: 58ch;
+  line-height: 1.7;
+}
+body.elite-page .el13-media { overflow: hidden; border-radius: 12px; }
+body.elite-page a:focus-visible,
+body:not(.elite-page) .partner-elite-v2:focus-visible {
+  outline: 3px solid #007ba7 !important;
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.elite-page .el13-copy a { transition: none !important; }
+}
