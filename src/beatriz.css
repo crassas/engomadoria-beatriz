@@ -6758,3 +6758,46 @@ body:not(.elite-page) :is(a,button,input,select,textarea,summary):focus-visible 
   body:not(.elite-page) :is(.velvet-btn,.button-pink,.button-dark,.header-phone,.pack-option) { transition:none!important; }
   body:not(.elite-page) :is(.velvet-btn,.button-pink,.button-dark,.header-phone,.pack-option):active { transform:none!important; }
 }
+
+/* Um rosa claro contínuo, de margem a margem, com superfícies suaves em relevo. */
+html:not(.elite-page),
+body:not(.elite-page),
+body:not(.elite-page) main,
+body:not(.elite-page) .banner,
+body:not(.elite-page) main .section,
+body:not(.elite-page) .packs,
+body:not(.elite-page) .services,
+body:not(.elite-page) .contact,
+body:not(.elite-page) .request,
+body:not(.elite-page) .al,
+body:not(.elite-page) .partners-showcase,
+body:not(.elite-page) .beatriz-facts,
+body:not(.elite-page) .story,
+body:not(.elite-page) .care-strip,
+body:not(.elite-page) .footer {
+  background:#f5dce7!important;
+  background-image:none!important;
+}
+body:not(.elite-page) .header { background:#f9e8ef!important; }
+body:not(.elite-page) .banner-shell {
+  border-color:#e5bdcf;
+  box-shadow:0 18px 38px rgba(126,60,91,.16),inset 0 1px 0 #fff9;
+}
+body:not(.elite-page) .banner-hours {
+  background:linear-gradient(125deg,#fbeef3,#f1e4f0)!important;
+  border-color:#e8c5d5!important;
+  box-shadow:0 8px 22px rgba(124,62,92,.12),inset 0 1px 0 #fff9!important;
+}
+body:not(.elite-page) .pack-order,
+body:not(.elite-page) .request-card,
+body:not(.elite-page) .hours,
+body:not(.elite-page) .story-experience {
+  background:#fceef4!important;
+  border:1px solid #e8c2d4!important;
+  box-shadow:0 10px 25px rgba(128,66,96,.12),inset 0 1px 0 #fff9!important;
+}
+body:not(.elite-page) .faq-list details {
+  background:#fceef4!important;
+  border-color:#e7bfd2!important;
+  box-shadow:0 5px 14px rgba(128,66,96,.09)!important;
+}
