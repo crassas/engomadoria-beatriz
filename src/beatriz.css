@@ -6596,3 +6596,33 @@ body:not(.elite-page) .banner-hours p b{color:#c06a92!important}
   body:not(.elite-page) .pack-option:hover,
   body:not(.elite-page) .pack-option:active{transition:none!important;transform:none!important}
 }
+
+/* Princípios de design: foco, contraste e hierarquia na Beatriz. */
+body:not(.elite-page) .pack-option,
+body:not(.elite-page) .pack-option.selected {
+  background: linear-gradient(180deg, #ad4d77 0%, #96365f 100%) !important;
+  background-image: linear-gradient(180deg, #ad4d77 0%, #96365f 100%) !important;
+  border-bottom-color: #762442 !important;
+}
+body:not(.elite-page) .pack-option.selected {
+  outline: 3px solid #173e52;
+  outline-offset: 3px;
+}
+body:not(.elite-page) .pack-option:focus-visible,
+body:not(.elite-page) .banner button:focus-visible,
+body:not(.elite-page) .banner a:focus-visible,
+body:not(.elite-page) .pack-order a:focus-visible {
+  outline: 3px solid #173e52 !important;
+  outline-offset: 4px;
+}
+body:not(.elite-page) .banner-copy p:not(.eyebrow) {
+  max-width: 42ch;
+  line-height: 1.65;
+}
+body:not(.elite-page) .pack-order p {
+  max-width: 65ch;
+  line-height: 1.6;
+}
+@media (max-width: 700px) {
+  body:not(.elite-page) .section-heading > p { max-width: 55ch; line-height: 1.6; }
+}
