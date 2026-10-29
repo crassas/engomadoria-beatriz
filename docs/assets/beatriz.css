@@ -6672,3 +6672,89 @@ body:not(.elite-page) .partner-elite-v2:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   body.elite-page .el13-copy a { transition: none !important; }
 }
+
+/* Beatriz — linguagem visual inspirada no botão de luz e profundidade. */
+body:not(.elite-page) {
+  background: #fff9fa;
+  color: #173e52;
+}
+body:not(.elite-page) .header {
+  background: rgba(255,250,251,.97);
+  box-shadow: 0 5px 22px rgba(72,49,68,.07);
+}
+body:not(.elite-page) .banner-shell {
+  border-radius: 28px;
+  border: 1px solid #f3dce6;
+  box-shadow: 0 22px 55px rgba(96,50,77,.13), inset 0 1px 0 #fff;
+}
+body:not(.elite-page) .banner-slide--text {
+  background: radial-gradient(ellipse at 82% 15%, #f2d6eb 0%, transparent 48%), linear-gradient(120deg,#fff8f8,#f9e6ef 65%,#e3eff7);
+}
+body:not(.elite-page) .banner-copy { padding: clamp(30px, 4vw, 64px); }
+body:not(.elite-page) .banner-copy h1,
+body:not(.elite-page) .banner-title { line-height: 1.08; letter-spacing: -.025em; }
+body:not(.elite-page) .banner-controls { background:#fffafc; }
+body:not(.elite-page) .banner-hours {
+  background: linear-gradient(115deg,#fffafb,#f3f8fc)!important;
+  border:1px solid #eedce6!important;
+  border-radius:22px!important;
+  box-shadow:0 14px 34px rgba(62,69,91,.08)!important;
+}
+body:not(.elite-page) .section-heading { gap: 26px; }
+body:not(.elite-page) .section-heading > p { max-width: 48ch; line-height: 1.65; }
+body:not(.elite-page) .section h2 { letter-spacing: -.025em; }
+body:not(.elite-page) .pack-option,
+body:not(.elite-page) .pack-option.selected {
+  background: linear-gradient(160deg,#b14e79 0%,#96315f 58%,#81264e 100%)!important;
+  border:1px solid #cf8cad!important;
+  border-radius:20px!important;
+  box-shadow:inset 0 2px 2px #ffd9e980,0 6px 0 #702343,0 14px 25px rgba(134,54,93,.20)!important;
+}
+body:not(.elite-page) .pack-option.selected {
+  outline:3px solid #173e52;
+  outline-offset:4px;
+  box-shadow:inset 0 2px 2px #fff9,0 6px 0 #702343,0 15px 28px rgba(159,65,112,.32),0 0 24px rgba(229,141,190,.3)!important;
+}
+body:not(.elite-page) .pack-option:active { transform:translateY(3px)!important; }
+body:not(.elite-page) .pack-order,
+body:not(.elite-page) .request-form,
+body:not(.elite-page) .hours {
+  border-radius:22px;
+  box-shadow:0 16px 40px rgba(87,61,83,.10),inset 0 1px 0 rgba(255,255,255,.9);
+}
+body:not(.elite-page) .request,
+body:not(.elite-page) .contact {
+  background:linear-gradient(120deg,#fbe9f1 0%,#fff8fa 48%,#e6f2fa 100%);
+}
+body:not(.elite-page) .faq-list details {
+  border-radius:16px;
+  background:#fffafb;
+  border:1px solid #ecd8e2;
+  box-shadow:0 7px 20px rgba(82,52,70,.05);
+}
+body:not(.elite-page) :is(.velvet-btn,.button-pink,.button-dark,.header-phone):not(.button-outline) {
+  background:linear-gradient(180deg,#c35d8d 0%,#a6376e 48%,#8d295b 100%)!important;
+  color:#fff!important;
+  border:1px solid #d99ab9!important;
+  border-radius:18px!important;
+  box-shadow:inset 0 2px 2px rgba(255,255,255,.45),0 5px 0 #762044,0 11px 22px rgba(151,46,100,.25),0 0 18px rgba(230,140,190,.25)!important;
+  text-shadow:0 1px 2px rgba(72,15,44,.45);
+  transition:transform .18s ease,box-shadow .18s ease,filter .18s ease;
+}
+body:not(.elite-page) :is(.velvet-btn,.button-pink,.button-dark,.header-phone):not(.button-outline):hover { filter:brightness(1.08); }
+body:not(.elite-page) :is(.velvet-btn,.button-pink,.button-dark,.header-phone):not(.button-outline):active {
+  transform:translateY(4px);
+  box-shadow:inset 0 2px 3px #fff6,0 1px 0 #762044,0 5px 12px rgba(151,46,100,.24),0 0 22px rgba(230,140,190,.35)!important;
+}
+body:not(.elite-page) :is(a,button,input,select,textarea,summary):focus-visible { outline:3px solid #16516d!important; outline-offset:4px; }
+@media(max-width:700px){
+  body:not(.elite-page) .banner-shell { border-radius:20px; }
+  body:not(.elite-page) .banner-copy { padding:28px 24px; }
+  body:not(.elite-page) .banner-hours { border-radius:16px!important; }
+  body:not(.elite-page) .pack-option,body:not(.elite-page) .pack-option.selected { border-radius:16px!important; }
+  body:not(.elite-page) .pack-order,body:not(.elite-page) .request-form,body:not(.elite-page) .hours { border-radius:18px; }
+}
+@media(prefers-reduced-motion:reduce){
+  body:not(.elite-page) :is(.velvet-btn,.button-pink,.button-dark,.header-phone,.pack-option) { transition:none!important; }
+  body:not(.elite-page) :is(.velvet-btn,.button-pink,.button-dark,.header-phone,.pack-option):active { transform:none!important; }
+}
