@@ -6802,17 +6802,10 @@ body:not(.elite-page) .faq-list details {
   box-shadow:0 5px 14px rgba(128,66,96,.09)!important;
 }
 
-/* Contraste de títulos com fundos claros/escuros — WCAG 2.2 AA.
-   Mantém o destaque rosa sem sacrificar a leitura nas secções comerciais. */
-main .packs h2 em,
-main .partners-showcase h2 em,
-main .al h2 em,
-main .services h2 em,
-main .request h2 em,
-main .faq h2 em,
-main .contact h2 em {
+/* Contraste AA: preservar o rosa-escuro sobre o fundo creme da página inicial.
+   Igualar a especificidade das regras anteriores (também !important). */
+body:not(.elite-page) main h2 em,
+body:not(.elite-page) .partners-showcase h2 em,
+body:not(.elite-page) .story h2 em {
   color: #761b43 !important;
-}
-main .story h2 em {
-  color: #ffe3ee !important;
 }

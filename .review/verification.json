@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-06T11:46:51.278Z",
+  "checkedAt": "2026-11-06T11:50:48.891Z",
   "checks": [
     {
       "name": "all local image files exist on disk",
@@ -155,7 +155,7 @@
     },
     {
       "name": "320: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "320: rotating message 2 is accessible",
@@ -247,7 +247,7 @@
     },
     {
       "name": "360: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "360: rotating message 2 is accessible",
@@ -339,7 +339,7 @@
     },
     {
       "name": "390: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "390: rotating message 2 is accessible",
@@ -423,7 +423,7 @@
     },
     {
       "name": "768: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "768: rotating message 2 is accessible",
@@ -507,7 +507,7 @@
     },
     {
       "name": "1440: no WCAG A/AA violations",
-      "passed": false
+      "passed": true
     },
     {
       "name": "1440: rotating message 2 is accessible",
@@ -574,16 +574,5 @@
       "passed": true
     }
   ],
-  "errors": [
-    "320: no WCAG A/AA violations",
-    "320: color-contrast: #packs-title > em, #partners-title > em, .story-copy > h2 > em, .al-copy > h2 > em, #servicos > .section-heading > div > h2 > em, .request-grid > div > h2 > em, #faq > div:nth-child(1) > h2 > em, .contact-grid > div:nth-child(1) > h2 > em",
-    "360: no WCAG A/AA violations",
-    "360: color-contrast: #packs-title > em, #partners-title > em, .story-copy > h2 > em, .al-copy > h2 > em, #servicos > .section-heading > div > h2 > em, .request-grid > div > h2 > em, #faq > div:nth-child(1) > h2 > em, .contact-grid > div:nth-child(1) > h2 > em",
-    "390: no WCAG A/AA violations",
-    "390: color-contrast: #packs-title > em, #partners-title > em, .story-copy > h2 > em, .al-copy > h2 > em, #servicos > .section-heading > div > h2 > em, .request-grid > div > h2 > em, #faq > div:nth-child(1) > h2 > em, .contact-grid > div:nth-child(1) > h2 > em",
-    "768: no WCAG A/AA violations",
-    "768: color-contrast: #packs-title > em, #partners-title > em, .story-copy > h2 > em, .al-copy > h2 > em, #servicos > .section-heading > div > h2 > em, .request-grid > div > h2 > em, #faq > div:nth-child(1) > h2 > em, .contact-grid > div:nth-child(1) > h2 > em",
-    "1440: no WCAG A/AA violations",
-    "1440: color-contrast: #packs-title > em, #partners-title > em, .story-copy > h2 > em, .al-copy > h2 > em, #servicos > .section-heading > div > h2 > em, .request-grid > div > h2 > em, #faq > div:nth-child(1) > h2 > em, .contact-grid > div:nth-child(1) > h2 > em"
-  ]
+  "errors": []
 }
