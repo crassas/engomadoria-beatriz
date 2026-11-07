@@ -1,3 +1,4 @@
+import {business} from '../../src/data.mjs';
 // Inject the official Neon client. No database credentials belong in the browser.
 export function normalizePhone(value) {
   let phone = String(value).replace(/[\s().-]/g, '');
@@ -45,8 +46,10 @@ export function createCustomerService(client) {
     async submit({pieces,notes='',requestId}) {
       await session();
       if (!requestId) throw new Error('Falta a referência do pedido.');
+      const pack = business.packs.find((item) => item.pieces === Number(pieces));
+      if (!pack) throw new Error('Escolha um dos packs mensais disponíveis.');
       if (notes.length > 1000) throw new Error('A nota deve ter até 1000 caracteres.');
-      return checked(client.rpc('beatriz_submit_order',{pack_pieces:Number(pieces),customer_notes:notes,request_id:requestId}));
+      return checked(client.rpc('beatriz_submit_order',{pack_pieces:pack.pieces,customer_notes:notes,request_id:requestId}));
     },
     async staffOrders() {
       await session();

@@ -42,7 +42,8 @@ for(const width of [320,360,390,768,1440]){
   check(await page.locator('#care-video').count()===0,`${width}: presentation video removed`);check(await page.locator('.hero-hours').innerText().then(t=>t.includes('10:00–12:30')&&t.includes('Alojamento Local')),`${width}: hours and AL visible`);const motion=page.locator('.care-type .motion-toggle');if(await motion.count()){await motion.click();check(await motion.getAttribute('aria-pressed')==='true',`${width}: moving text can pause`);await motion.click();check(await motion.getAttribute('aria-pressed')==='false',`${width}: moving text can resume`)}else{check(true,`${width}: motion control intentionally absent`)};
  check(await page.locator('a[href^="https://wa.me/"]').evaluateAll(a=>a.every(el=>{const u=new URL(el.href);return u.pathname==='/351923250845'&&u.searchParams.get('text')?.trim().length>0})),`${width}: every WhatsApp CTA has correct contact and message`);
  // Measure readable resting states, rather than sampling halfway through a dissolve.
- const resting=await page.addStyleTag({content:'.hero-steam-title>span,.announcement-steam>span{animation:none!important;opacity:1!important;filter:none!important;transform:none!important;display:none!important}.hero-steam-title>span:first-child,.announcement-steam>span:first-child{display:block!important}'});
+ await page.waitForFunction(()=>{const summary=document.querySelector('#pack-summary');return !!summary&&getComputedStyle(summary).opacity==='1'&&summary.getAnimations().every(animation=>animation.playState==='finished')});
+ const resting=await page.addStyleTag({content:'.hero-steam-title>span,.announcement-steam>span{animation:none!important;opacity:1!important;filter:none!important;transform:none!important;display:none!important}.hero-steam-title>span:first-child,.announcement-steam>span:first-child{display:block!important}#pack-summary{opacity:1!important}'});
  const axe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();check(axe.violations.length===0,`${width}: no WCAG A/AA violations`);if(axe.violations.length)errors.push(...axe.violations.map(v=>`${width}: ${v.id}: ${v.nodes.map(n=>n.target.join(' ')).join(', ')}`));
  for(const n of [2,3]){const state=await page.addStyleTag({content:`.hero-steam-title>span:first-child,.announcement-steam>span:first-child{display:none!important}.hero-steam-title>span:nth-child(${n}),.announcement-steam>span:nth-child(2){display:block!important}`});const audit=await new AxeBuilder({page}).include('.hero-brand-motion').include('.announcement').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();check(!audit.violations.length,`${width}: rotating message ${n} is accessible`);if(audit.violations.length)errors.push(...audit.violations.map(v=>`${width}: message ${n}: ${v.id}`));await state.evaluate(e=>e.remove())}
  await resting.evaluate(e=>e.remove());
@@ -50,6 +51,30 @@ for(const width of [320,360,390,768,1440]){
  await page.evaluate(()=>scrollTo(0,0));await page.waitForTimeout(350);if([390,1440].includes(width)){await page.screenshot({path:`${out}/${width===390?'mobile':'desktop'}.png`,fullPage:true});await page.screenshot({path:`${out}/${width===390?'mobile':'desktop'}-hero.png`})}
  check(!consoleErrors.length,`${width}: no JavaScript errors`);check(!failed.length,`${width}: no failed resources`);if(failed.length)errors.push(...failed);
  await context.close();
+}
+{
+ const page=await browser.newPage({viewport:{width:1440,height:1000}});await page.goto('http://127.0.0.1:4173/?retorno=1',{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>document.documentElement.classList.contains('js'));
+ const layout=await page.evaluate(()=>{const box=document.querySelector('.pack-options').getBoundingClientRect();const cards=[...document.querySelectorAll('.pack-option')].map(el=>el.getBoundingClientRect());const rows=[];for(const card of cards){if(!rows.some(top=>Math.abs(top-card.top)<8))rows.push(card.top)}return {columns:getComputedStyle(document.querySelector('.pack-options')).gridTemplateColumns.split(' ').length,rows:rows.length,trailing:Math.round(box.right-cards.at(-1).right)}});
+ check(layout.columns===4&&layout.rows===1&&layout.trailing<24,'1440: four packs fill the row');await page.close();
+}
+{
+ const page=await browser.newPage({viewport:{width:390,height:900}});await page.goto('http://127.0.0.1:4173/?retorno=1',{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>document.documentElement.classList.contains('js'));
+ await page.locator('#request-notes').focus();await page.keyboard.press('Escape');check(await page.evaluate(()=>document.activeElement.id)==='request-notes','escape: closed menu keeps the request focused');
+ await page.locator('.menu-toggle').click();check(await page.locator('#mobile-menu').isVisible(),'escape: menu can open');await page.keyboard.press('Escape');check(await page.locator('#mobile-menu').isHidden()&&await page.evaluate(()=>document.activeElement.classList.contains('menu-toggle')),'escape: open menu closes and returns focus');
+ const layout=await page.evaluate(()=>{const box=document.querySelector('.pack-options').getBoundingClientRect();const cards=[...document.querySelectorAll('.pack-option')].map(el=>el.getBoundingClientRect());const rows=[];for(const card of cards){if(!rows.some(top=>Math.abs(top-card.top)<8))rows.push(card.top)}return {columns:getComputedStyle(document.querySelector('.pack-options')).gridTemplateColumns.split(' ').length,rows:rows.length,card:Math.round(cards[0].width),trailing:Math.round(box.right-cards.at(-1).right)}});
+ check(layout.columns===2&&layout.rows===2&&layout.card>=140&&layout.trailing<24,'390: four packs form two rows of two');await page.close();
+}
+{
+ const page=await browser.newPage({viewport:{width:390,height:800}});await page.goto('http://127.0.0.1:4173/grupo-elite-limpeza/',{waitUntil:'domcontentloaded'});const bar=page.locator('.el15-mobile-cta');
+ check(!await bar.isVisible(),'elite mobile: quote bar hidden on the hero');
+ await page.evaluate(()=>{const hero=document.querySelector('.el9-hero');scrollTo(0,hero.getBoundingClientRect().bottom+120)});
+ await page.waitForFunction(()=>!document.querySelector('.el15-mobile-cta').hidden,null,{timeout:3000}).catch(()=>{});
+ check(await bar.isVisible(),'elite mobile: quote bar appears after the hero');
+ await page.locator('#contactos').scrollIntoViewIfNeeded();
+ await page.waitForFunction(()=>document.querySelector('.el15-mobile-cta').hasAttribute('hidden'),null,{timeout:3000}).catch(()=>{});
+ check(!await bar.isVisible(),'elite mobile: quote bar hides on the contact section');
+ check(!fs.readFileSync(path.join(root,'precos/index.html'),'utf8').includes('el15-mobile-cta'),'prices page does not carry the partner quote script');
+ await page.close();
 }
 const context=await browser.newContext({reducedMotion:'reduce'});const page=await context.newPage();await page.goto('http://127.0.0.1:4173');check(!await page.locator('.intro').count(),'reduced motion: no introduction');await context.close();
 const nojs=await browser.newContext({javaScriptEnabled:false});const p=await nojs.newPage();await p.goto('http://127.0.0.1:4173');check(await p.locator('h1').isVisible(),'no JavaScript: main content remains visible');check(await p.locator('noscript a').count()>=business.packs.length,'no JavaScript: every pack has a direct WhatsApp link');await nojs.close();

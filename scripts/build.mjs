@@ -99,25 +99,7 @@ const subpages=[
  ['perguntas-frequentes/','Perguntas frequentes | Engomadoria Beatriz','Respostas sobre packs de engomadoria, roupa branca para Alojamento Local, limpeza têxtil, horário e pedidos por WhatsApp.',`<p class="eyebrow">INFORMAÇÃO DIRECTA</p><h1>As suas dúvidas.<br><em>Sem rodeios.</em></h1><div class="faq-list">${faqs}</div>`],
  ['contactos/','Engomadoria na Praça das Flores, Porto | Contactos','Loja de engomadoria na Praça das Flores 42, Porto. Consulte morada, horário, telefone e WhatsApp da Engomadoria Beatriz.',`<p class="eyebrow">ENGOMADORIA BEATRIZ</p><h1>Fale com<br><em>a Beatriz.</em></h1><p class="contact-phone"><a href="tel:${b.phone}">${b.displayPhone}</a></p><a class="button button-pink" href="${wa(generalMessage)}">Abrir WhatsApp ${icon('wa')}</a><div class="hours"><h2>Horário</h2><div><span>Segunda a sexta-feira</span><b>10:00–12:30 e 14:00–19:00</b></div><div><span>Sábado · loja</span><b>10:00–15:00</b></div><div><span>Domingos e feriados</span><b>Encerrado</b></div></div><p><strong>Chamadas e novos pedidos:</strong> prefira dias úteis até às 18:00.</p><h2>Morada da loja no Porto</h2><p>Visite a Engomadoria Beatriz em <strong>${b.streetAddress}, ${b.city}</strong>. Consulte o horário antes de se deslocar.</p><p>Se preferir não se deslocar, consulte o <a href="../recolha-entrega-engomadoria-porto/">serviço de engomadoria com recolha e entrega</a>, disponível mediante confirmação da zona e a partir de 25 peças.</p><p class="contact-address"><strong>Morada da loja:</strong> ${b.streetAddress}, ${b.city}.</p><a class="text-link" href="${escape(mapsUrl)}" target="_blank" rel="noopener noreferrer">Ver percurso no Google Maps ${icon('arrow')}</a>`]
 ];
-for(const [route,title,desc,body] of subpages){fs.mkdirSync('docs/'+route,{recursive:true});fs.writeFileSync('docs/'+route+'index.html',head(title,desc,route)+`<body class="subpage">${icons}<header class="header"><div class="wrap header-inner">${brand('../')}<a class="text-link" href="../">Voltar ao início ${icon('arrow')}</a><a class="button button-dark header-cta" href="${wa(generalMessage)}">WhatsApp ${icon('wa')}</a></div></header><main class="wrap sub-content">${body}</main>${footer('../')}<script>
-(function(){
-  var bar=document.querySelector('.el15-mobile-cta');
-  var hero=document.querySelector('.el9-hero');
-  var contact=document.querySelector('#contactos');
-  if(!bar||!hero||!contact||!('IntersectionObserver' in window))return;
-  var pastHero=false,contactVisible=false;
-  function update(){bar.hidden=!pastHero||contactVisible;}
-  var observer=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.target===hero)pastHero=!entry.isIntersecting&&entry.boundingClientRect.bottom<=68;
-      if(entry.target===contact)contactVisible=entry.isIntersecting;
-    });
-    update();
-  },{rootMargin:'-68px 0px 0px 0px'});
-  observer.observe(hero);observer.observe(contact);
-})();
-</script>
-</body></html>`);}
+for(const [route,title,desc,body] of subpages){fs.mkdirSync('docs/'+route,{recursive:true});fs.writeFileSync('docs/'+route+'index.html',head(title,desc,route)+`<body class="subpage">${icons}<header class="header"><div class="wrap header-inner">${brand('../')}<a class="text-link" href="../">Voltar ao início ${icon('arrow')}</a><a class="button button-dark header-cta" href="${wa(generalMessage)}">WhatsApp ${icon('wa')}</a></div></header><main class="wrap sub-content">${body}</main>${footer('../')}</body></html>`);}
 
 const eliteRoute='grupo-elite-limpeza/';
 const eliteUrl=b.url+eliteRoute;
@@ -284,7 +266,24 @@ fs.writeFileSync('docs/'+eliteRoute+'index.html',`<!doctype html><html lang="pt-
   </div>
 </footer>
 <a class="el15-mobile-cta" hidden href="${eliteWa('Olá, Grupo Elite Limpeza! Gostaria de pedir um orçamento.')}">Pedir orçamento ${icon('wa')}</a>
-
+<script>
+(function(){
+  var bar=document.querySelector('.el15-mobile-cta');
+  var hero=document.querySelector('.el9-hero');
+  var contact=document.querySelector('#contactos');
+  if(!bar||!hero||!contact||!('IntersectionObserver' in window))return;
+  var pastHero=false,contactVisible=false;
+  function update(){bar.hidden=!pastHero||contactVisible;}
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.target===hero)pastHero=!entry.isIntersecting&&entry.boundingClientRect.bottom<=68;
+      if(entry.target===contact)contactVisible=entry.isIntersecting;
+    });
+    update();
+  },{rootMargin:'-68px 0px 0px 0px'});
+  observer.observe(hero);observer.observe(contact);
+})();
+</script>
 </body></html>`);
 
 fs.copyFileSync('src/beatriz.css','docs/assets/beatriz.css');

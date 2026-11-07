@@ -15,7 +15,7 @@ const menu=document.querySelector('.menu-toggle');const mobile=document.querySel
 const closeMenu=()=>{if(!menu||!mobile)return;mobile.hidden=true;menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Abrir menu');document.body.classList.remove('menu-open')};
 menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');mobile.hidden=!open;document.body.classList.toggle('menu-open',open)});
 mobile?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMenu();menu?.focus()}});matchMedia('(min-width: 901px)').addEventListener('change',e=>{if(e.matches)closeMenu()});
+document.addEventListener('keydown',e=>{if(e.key!=='Escape'||menu?.getAttribute('aria-expanded')!=='true')return;closeMenu();menu.focus()});matchMedia('(min-width: 901px)').addEventListener('change',e=>{if(e.matches)closeMenu()});
 const select=document.querySelector('#service-select');const packSelect=document.querySelector('#request-pack');const quantity=document.querySelector('#request-quantity');const notes=document.querySelector('#request-notes');
 let selectedPack=business.packs.find(p=>p.pieces===60);
 const updateMessage=()=>{if(!select)return;const type=select.value;document.querySelector('#request-pack-field').hidden=type!=='pack';document.querySelector('#request-al-field').hidden=type!=='al';let message;

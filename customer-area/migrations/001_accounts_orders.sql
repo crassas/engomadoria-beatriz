@@ -30,7 +30,7 @@ CREATE TABLE public.beatriz_packs (
   price numeric(8,2) NOT NULL CHECK (price >= 0)
 );
 -- Matches src/data.mjs; confirm the catalogue with the business before launch.
-INSERT INTO public.beatriz_packs VALUES (20,19),(40,39),(60,49),(80,59),(100,65);
+INSERT INTO public.beatriz_packs VALUES (20,29),(40,49),(60,69),(80,89);
 ALTER TABLE public.beatriz_packs ENABLE ROW LEVEL SECURITY;
 CREATE POLICY packs_read ON public.beatriz_packs FOR SELECT TO authenticated USING (true);
 GRANT SELECT ON public.beatriz_packs TO authenticated;
