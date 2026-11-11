@@ -90,8 +90,8 @@ if(bannerShell){
   const pauseBtn=bannerShell.querySelector('[data-banner-pause]');
   const counter=bannerShell.querySelector('[data-banner-current]');
   const status=bannerShell.querySelector('[data-banner-status]');
-  const titles=['O descanso não é para passar a ferro.','Roupa cuidada, pronta a vestir.','A loja da Praça das Flores.','Parceiros com a roupa sempre impecável.'];
-  let current=0;let playing=!reduced;let timer=null;
+  const titles=['A sua roupa, tratada como merece.','Roupa cuidada, pronta a vestir.','A loja da Praça das Flores.','Parceiros com a roupa sempre impecável.'];
+  let current=0;let playing=false;let timer=null;
   const stopTimer=()=>{if(timer){clearInterval(timer);timer=null}};
   const startTimer=()=>{stopTimer();if(playing&&!reduced)timer=setInterval(()=>show((current+1)%slides.length,false),7000)};
   // Faixa «Como funciona» (explainer passo-a-passo, ror-fly-880547, só com dados reais do site):
@@ -127,7 +127,7 @@ if(bannerShell){
   viewport?.addEventListener('focusin',()=>{stopTimer();stopProcess(false)});
   viewport?.addEventListener('focusout',()=>{if(playing){startTimer();startProcess()}});
   if(pauseBtn)pauseBtn.textContent=playing?'Pausar':'Retomar';
-  show(0,false);if(playing){startTimer();startProcess()}
+  show(0,false);if(playing){startTimer();startProcess()}else{showAllSteps()}
   // Hook de 1s (ishaaqahamed-107563): se não há intro a tapar o banner, o título entra já nítido.
   if(!intro||document.body.classList.contains('intro-done')){bannerShell.classList.add('banner-hook');setTimeout(()=>bannerShell.classList.remove('banner-hook'),1000)}
 }

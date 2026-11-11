@@ -13,7 +13,10 @@ test('a entrada é breve e nunca bloqueia a navegação', () => {
 
 test('o hero orienta logo para os três serviços principais', () => {
   assert.match(build, /A sua roupa,<br>tratada como merece\./);
+  assert.match(build, /option-three-media/);
+  assert.match(build, /Cuidado em<br>cada dobra/);
   assert.match(build, /Packs mensais/);
   assert.match(build, /Alojamento Local/);
   assert.match(build, /Peças especiais/);
+  assert.match(script, /let current=0;let playing=false/);
 });
