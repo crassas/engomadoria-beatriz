@@ -186,6 +186,22 @@ main[tabindex="-1"]:focus{outline:none}
 @keyframes deliveryRoseLight{0%,100%{opacity:.26;transform:translate3d(-2%,1%,0) scale(.98)}50%{opacity:.46;transform:translate3d(2%,-1%,0) scale(1.04)}}
 @media(prefers-reduced-motion:reduce){.intro-stage:after{animation:none;opacity:.32;transform:none}}
 
+/* Entrada curta: uma assinatura visual, nunca uma barreira antes do conteúdo. */
+body.intro-active{overflow:visible}
+.intro-flow{pointer-events:none!important}
+.intro-flow.intro-leaving{animation:flowOpen .18s ease-out forwards}
+.service-shortcuts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:18px 0 12px}
+.service-shortcuts a{min-height:132px;padding:22px 24px;background:#fff8fa;border:1px solid #e5bdcf;border-radius:18px;box-shadow:0 10px 22px rgba(126,60,91,.10);transition:transform .18s ease,box-shadow .18s ease}
+.service-shortcuts a:hover{transform:translateY(-3px);box-shadow:0 16px 28px rgba(126,60,91,.16)}
+.service-shortcuts span{display:block;color:#a6376e;font-size:11px;font-weight:700;letter-spacing:.12em;margin-bottom:14px}
+.service-shortcuts strong{display:block;color:#173e52;font-family:'Beatriz Script',var(--serif);font-size:28px;font-weight:400;line-height:1.05}
+.service-shortcuts small{display:block;color:#65434f;font-size:12px;margin-top:8px}
+@media(max-width:700px){.service-shortcuts{grid-template-columns:1fr;gap:9px;padding:14px 0 10px}.service-shortcuts a{min-height:0;padding:17px 18px}.service-shortcuts strong{font-size:25px}}
+
+/* Contraste reforçado nas secções editorial e Alojamento Local. */
+.story .eyebrow,.story-copy>p{color:#fff3f7!important}
+.al .eyebrow,.al-copy>p,.al-includes>span,.al-example>strong,.al-example>span{color:#173e52!important}
+
 
 /* MONTHLY PICKUP + GRUPO ELITE */
 .monthly-pickup{background:linear-gradient(125deg,#fff7f4,#efd2d3 52%,#dfe9ec)}
