@@ -1,80 +1,24 @@
 {
-  "checkedAt": "2026-11-07T19:13:20.535Z",
+  "checkedAt": "2026-11-11T18:05:28.437Z",
   "checks": [
     {
       "name": "all local image files exist on disk",
       "passed": true
     },
     {
-      "name": "390: full portrait Flow clip plays",
+      "name": "390: brief opening leaves the page immediately usable",
       "passed": true
     },
     {
-      "name": "390: corner entry removed",
+      "name": "390: opening has no WCAG A/AA violations",
       "passed": true
     },
     {
-      "name": "390: logo settles above laundry",
+      "name": "1440: brief opening leaves the page immediately usable",
       "passed": true
     },
     {
-      "name": "390: Enter appears with laundry",
-      "passed": true
-    },
-    {
-      "name": "390: final frame waits for visitor",
-      "passed": true
-    },
-    {
-      "name": "390: background cannot receive focus before entry",
-      "passed": true
-    },
-    {
-      "name": "390: complete film fits without cropping",
-      "passed": true
-    },
-    {
-      "name": "390: accessible intro controls",
-      "passed": true
-    },
-    {
-      "name": "390: Enter or auto-entry reveals usable page",
-      "passed": true
-    },
-    {
-      "name": "1440: full portrait Flow clip plays",
-      "passed": true
-    },
-    {
-      "name": "1440: corner entry removed",
-      "passed": true
-    },
-    {
-      "name": "1440: logo settles above laundry",
-      "passed": true
-    },
-    {
-      "name": "1440: Enter appears with laundry",
-      "passed": true
-    },
-    {
-      "name": "1440: final frame waits for visitor",
-      "passed": true
-    },
-    {
-      "name": "1440: background cannot receive focus before entry",
-      "passed": true
-    },
-    {
-      "name": "1440: complete film fits without cropping",
-      "passed": true
-    },
-    {
-      "name": "1440: accessible intro controls",
-      "passed": true
-    },
-    {
-      "name": "1440: Enter or auto-entry reveals usable page",
+      "name": "1440: opening has no WCAG A/AA violations",
       "passed": true
     },
     {
