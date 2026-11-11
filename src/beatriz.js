@@ -6,7 +6,7 @@ const intro=document.querySelector('.intro');
 const introVideo=document.querySelector('#intro-video');
 let leaving=false;
 const finishIntro=()=>{if(leaving)return;leaving=true;introVideo?.pause();intro?.classList.add('intro-leaving');const reveal=()=>{document.body.classList.add('intro-done');intro?.remove();const bannerEl=document.querySelector('.banner');if(bannerEl&&!reduced){bannerEl.classList.add('banner-hook');setTimeout(()=>bannerEl.classList.remove('banner-hook'),1000)}};if(reduced)reveal();else setTimeout(reveal,180)};
-if(reduced)finishIntro();else if(intro){introVideo?.play().catch(()=>{});setTimeout(finishIntro,420)}
+if(reduced)finishIntro();else if(intro){introVideo?.play().catch(()=>{});setTimeout(finishIntro,6500)}
 
 const menu=document.querySelector('.menu-toggle');const mobile=document.querySelector('#mobile-menu');
 const closeMenu=()=>{if(!menu||!mobile)return;mobile.hidden=true;menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Abrir menu');document.body.classList.remove('menu-open')};
