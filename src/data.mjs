@@ -19,7 +19,7 @@ export const business = {
     ['Quanto custam os packs mensais?', '20 peças: 29 €. 40 peças: 49 €. 60 peças: 69 €. 80 peças: 89 €. Os preços dos packs são fixos. Peças de maior dimensão contam como duas peças.'],
     ['Como funciona um pedido?', 'Escolha o pack ou serviço e contacte a Beatriz. Para recolha e entrega ao domicílio, o serviço abrange o Grande Porto e exige um mínimo de 25 peças. O pagamento é feito antecipadamente, em dinheiro ou por MB WAY.'],
     ['Quanto tempo demora?', 'Na engomadoria, o prazo habitual é até 72 horas. Alojamento Local, tratamento de manchas e outros serviços de lavandaria ou limpeza têxtil podem precisar de mais tempo; o prazo é confirmado caso a caso.'],
-    ['Há recolha e entrega ao domicílio?', 'Sim. A recolha e entrega está disponível no Grande Porto, com um mínimo de 25 peças por serviço. Confirme por WhatsApp a zona, o dia e as condições antes da recolha.'],
+    ['Há recolha e entrega ao domicílio?', 'Sim. A recolha e entrega está disponível no Grande Porto, com um mínimo de 25 peças por serviço. Para esse mínimo, cada peça de maior dimensão conta como duas. Confirme por WhatsApp a zona, o dia e as condições antes da recolha.'],
     ['Posso alterar ou cancelar uma recolha?', 'Sim. Alterações ou cancelamentos devem ser comunicados com pelo menos 24 horas de antecedência.'],
     ['Como são feitos os pagamentos?', 'O serviço é pré-pago. A Beatriz aceita dinheiro ou MB WAY.'],
     ['Como são contadas as peças dos packs?', 'Camisas, calças, vestidos e peças semelhantes contam normalmente como uma peça. Peças de maior dimensão contam como duas peças.'],
